@@ -1,17 +1,15 @@
+/* eslint-disable */
 import { login, logout, getInfo } from '@/api/login'
+import { getlogger, setlogger } from '@/api/logger'
+import { getName, setName, getToken, setToken } from '@/utils/dao'
 
 const user = {
   state: {
     user: '',
     status: '',
-    email: '',
-    code: '',
-    uid: undefined,
-    auth_type: '',
-    token: '',
-    name: '',
+    token: getToken(),
+    name: getName(),
     avatar: '',
-    introduction: '',
     roles: [],
     setting: {
       articlePlatform: []
@@ -19,23 +17,9 @@ const user = {
   },
 
   mutations: {
-    SET_AUTH_TYPE: (state, type) => {
-      state.auth_type = type
-    },
-    SET_CODE: (state, code) => {
-      state.code = code
-    },
     SET_TOKEN: (state, token) => {
       state.token = token
-    },
-    SET_UID: (state, uid) => {
-      state.uid = uid
-    },
-    SET_EMAIL: (state, email) => {
-      state.email = email
-    },
-    SET_INTRODUCTION: (state, introduction) => {
-      state.introduction = introduction
+      setToken(token)
     },
     SET_SETTING: (state, setting) => {
       state.setting = setting
@@ -45,6 +29,7 @@ const user = {
     },
     SET_NAME: (state, name) => {
       state.name = name
+      setName(name)
     },
     SET_AVATAR: (state, avatar) => {
       state.avatar = avatar
@@ -63,14 +48,18 @@ const user = {
   actions: {
     // 登录
     Login ({ commit }, userInfo) {
-      const email = userInfo.email.trim()
+      //console.log("userInfo", userInfo)
+      const username = userInfo.username
       return new Promise((resolve, reject) => {
-        login(email, userInfo.password).then(response => {
+        login(username, userInfo.password).then(response => {
           const data = response.data
-          console.log(response.data)
-          commit('SET_TOKEN', data.token)
-          commit('SET_EMAIL', email)
-          resolve()
+          // console.log(response.data)
+          if (data.code == 0) {
+            commit('SET_TOKEN', data.token)
+            commit('SET_NAME', username)
+          } 
+          // console.log("resolve")
+          resolve(response)
         }).catch(error => {
           reject(error)
         })
@@ -78,15 +67,22 @@ const user = {
     },
 
     // 获取用户信息
-    GetInfo ({ commit, state }) {
+    GetInfo ({ commit, state }, user) {
       return new Promise((resolve, reject) => {
-        getInfo(state.token).then(response => {
+        getInfo(user).then(response => {
           const data = response.data
+          if (!data) {
+            reject('Verification failed, please Login again.')
+          }
+
+          // role must be a non-empty array
+          if (!data.role || data.role.length <= 0) {
+            reject('getInfo: role must be a non-null array!')
+          }
+  
           commit('SET_ROLES', data.role)
           commit('SET_NAME', data.name)
           commit('SET_AVATAR', data.avatar)
-          commit('SET_UID', data.uid)
-          commit('SET_INTRODUCTION', data.introduction)
           resolve(response)
         }).catch(error => {
           reject(error)
@@ -108,11 +104,41 @@ const user = {
     },
 
     // 前端 登出
-    FedLogOut ({ commit }) {
+    FedLogOut ({ commit }, err) {
       return new Promise(resolve => {
         commit('SET_TOKEN', '')
-        alert('has logout')
+        commit('SET_ROLES', [])
+        alert('has logout', err)
         resolve()
+      })
+    },
+
+    GetLogger({ commit }, info) {
+      const {user, page, stime, etime} = info
+      // console.log(info)
+      // console.log(user, page)
+      return new Promise((resolve, reject) => {
+        getlogger(user, page, stime, etime).then(response => {
+          // console.log(response)
+          resolve(response)
+        }).catch(error => {
+          // console.log(error)
+          reject(error)
+        })
+      })
+    },
+
+    SetLogger({ commit }, info) {
+      const {user, formdata} = info
+      // console.log(formdata)
+      return new Promise((resolve, reject) => {
+        setlogger(user, formdata).then(response => {
+          // console.log(response)
+          resolve(response)
+        }).catch(error => {
+          // console.log(error)
+          reject(error)
+        })
       })
     },
 

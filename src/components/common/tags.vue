@@ -23,6 +23,7 @@
 </template>
 
 <script>
+/* eslint-disable */
     import bus from './bus';
     export default {
         data() {

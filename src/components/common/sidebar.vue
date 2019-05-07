@@ -1,4 +1,12 @@
 <template>
+  <el-scrollbar>
+    <el-menu mode="vertical" :default-active="activeMenu" :collapse="isCollapse" background-color="#324157" text-color="#bfcbd9" active-text-color="#20a0ff" unique-opened router>
+      <sidebar-item v-for="route in permission_routers" :key="route.path" :item="route" :base-path="route.path"></sidebar-item>
+    </el-menu>
+  </el-scrollbar>
+</template>
+<!--
+<template>
     <div class="sidebar">
         <el-menu class="sidebar-el-menu" :default-active="onRoutes" :collapse="collapse" background-color="#324157"
             text-color="#bfcbd9" active-text-color="#20a0ff" unique-opened router>
@@ -30,108 +38,47 @@
         </el-menu>
     </div>
 </template>
+-->
 
 <script>
 /* eslint-disable */
     import bus from '../common/bus';
+    import SidebarItem from './sidebaritem'
+    import { mapGetters } from 'vuex'
+    //import request from '@/utils/request'
     export default {
-        data() {
-            return {
-                collapse: false,
-                items: [
-                    {
-                        icon: 'el-icon-lx-home',
-                        index: 'dashboard',
-                        title: '系统首页'
-                    },
-                    {
-                        icon: 'el-icon-lx-cascades',
-                        index: 'table',
-                        title: '基础表格'
-                    },
-                    {
-                        icon: 'el-icon-lx-copy',
-                        index: 'tabs',
-                        title: 'tab选项卡'
-                    },
-                    {
-                        icon: 'el-icon-lx-calendar',
-                        index: '3',
-                        title: '表单相关',
-                        subs: [
-                            {
-                                index: 'form',
-                                title: '基本表单'
-                            },
-                            {
-                                index: '3-2',
-                                title: '三级菜单',
-                                subs: [
-                                    {
-                                        index: 'editor',
-                                        title: '富文本编辑器'
-                                    },
-                                    {
-                                        index: 'markdown',
-                                        title: 'markdown编辑器'
-                                    },
-                                ]
-                            },
-                            {
-                                index: 'upload',
-                                title: '文件上传'
-                            }
-                        ]
-                    },
-                    {
-                        icon: 'el-icon-lx-emoji',
-                        index: 'icon',
-                        title: '自定义图标'
-                    },
-                    {
-                        icon: 'el-icon-lx-favor',
-                        index: 'charts',
-                        title: 'schart图表'
-                    },
-                    {
-                        icon: 'el-icon-rank',
-                        index: '6',
-                        title: '拖拽组件',
-                        subs: [
-                            {
-                                index: 'drag',
-                                title: '拖拽列表',
-                            },
-                            {
-                                index: 'dialog',
-                                title: '拖拽弹框',
-                            }
-                        ]
-                    },
-                    {
-                        icon: 'el-icon-lx-warn',
-                        index: '7',
-                        title: '错误处理',
-                        subs: [
-                            {
-                                index: 'permission',
-                                title: '权限测试'
-                            },
-                            {
-                                index: '404',
-                                title: '404页面'
-                            }
-                        ]
-                    }
-                ]
-            }
-        },
+        components: { SidebarItem },
         computed:{
+            ...mapGetters([
+                'permission_routers',
+                'sidebar'
+            ]),
+            activeMenu() {
+                const route = this.$route
+                // console.log(route)
+                const { meta, path } = route
+                // if set path, the sidebar will highlight the path you set
+                if (meta.activeMenu) {
+                    return meta.activeMenu
+                }
+                return path
+            },
+            isCollapse() {
+                console.log(this.permission_routers)
+                return this.collapse
+                //return true
+            },
             onRoutes(){
                 return this.$route.path.replace('/','');
             }
         },
         created(){
+            // request({url: './vuesidebar.json', method: 'get',}).then(response => {
+            //     this.items = response.data.list
+            //     console.log(this.items)
+            // }).catch(error => {
+            //     console.log(error)
+            // })
             // 通过 Event Bus 进行组件间通信，来折叠侧边栏
             bus.$on('collapse', msg => {
                 this.collapse = msg;
@@ -153,7 +100,7 @@
         width: 0;
     }
     .sidebar-el-menu:not(.el-menu--collapse){
-        width: 250px;
+        width: 200px;
     }
     .sidebar > ul {
         height:100%;

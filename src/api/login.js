@@ -1,28 +1,34 @@
+/* eslint-disable */ 
 import request from '@/utils/request'
+import md5 from 'js-md5'
+import qs from 'qs'
 
-export function login (email, password) {
+export function login (user, password) {
   const data = {
-    email,
-    password
+    user : user,
+    password : md5(password)
   }
   return request({
-    url: '/login/login',
+    url: '/login',
     method: 'post',
+    transformRequest: [function (data) {
+      return qs.stringify(data)
+    }],
     data
   })
 }
 
 export function logout () {
   return request({
-    url: '/login/logout',
+    url: '/logout',
     method: 'post'
   })
 }
 
-export function getInfo (token) {
+export function getInfo (user) {
   return request({
-    url: '/user/info',
+    url: '/vms/user/info',
     method: 'get',
-    params: { token }
+    params: { user }
   })
 }

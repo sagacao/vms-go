@@ -16,7 +16,7 @@
                 <div class="login-btn">
                     <el-button type="primary" @click="submitForm('ruleForm')">登录</el-button>
                 </div>
-                <p class="login-tips">Tips : 用户名和密码随便填。</p>
+                <p class="login-tips">Tips : 请联系管理员。</p>
             </el-form>
         </div>
     </div>
@@ -46,12 +46,17 @@
                 this.$refs[formName].validate(valid => {
                 if (valid) {
                     this.loading = true;
-                    this.$store.dispatch('Login', formName).then(() => {
-                        this.$Message.success('登录成功');
-                        
+                    this.$store.dispatch('Login', this.ruleForm).then((rsp) => {
+                        // console.log(rsp.data)
+                        if (rsp.data.code === 0) {
+                            this.$message.success('登录成功');
+                            this.$router.push({ path: '/' });
+                        } else {
+                            this.$message.success(rsp.data.msg);
+                        }
                         this.loading = false;
-                        this.$router.push({ path: '/' });
                     }).catch(err => {
+                        console.log(err)
                         this.$message.error(err);
                         this.loading = false;
                     });
@@ -60,15 +65,6 @@
                     return false;
                 }
               });
-                // this.$refs[formName].validate((valid) => {
-                //     if (valid) {
-                //         localStorage.setItem('ms_username',this.ruleForm.username);
-                //         this.$router.push('/');
-                //     } else {
-                //         console.log('error submit!!');
-                //         return false;
-                //     }
-                // });
             }
         }
     }

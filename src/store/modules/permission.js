@@ -7,6 +7,7 @@ import { asyncRouterMap, constantRouterMap } from '@/router'
  */
 function hasPermission (roles, route) {
   if (route.meta && route.meta.role) {
+    // return route.meta.role.indexOf(user) >= 0
     return roles.some(role => route.meta.role.indexOf(role) >= 0)
   } else {
     return true
@@ -15,24 +16,39 @@ function hasPermission (roles, route) {
 
 /**
  * 递归过滤异步路由表，返回符合用户角色权限的路由表
- * @param asyncRouterMap
- * @param roles
+ * @param asyncRouters
+ * @param user
  */
-function filterAsyncRouter (asyncRouterMap, roles) {
-  const accessedRouters = asyncRouterMap.filter(route => {
-    if (hasPermission(roles, route)) {
-      if (route.children && route.children.length) {
-        route.children = filterAsyncRouter(route.children, roles)
+function filterAsyncRouter (asyncRouters, roles) {
+  // const accessedRouters = asyncRouters.filter(route => {
+  //   // console.log(route)
+  //   if (hasPermission(roles, route)) {
+  //     if (route.children && route.children.length) {
+  //       route.children = filterAsyncRouter(route.children, roles)
+  //     }
+  //     return true
+  //   }
+  //   return false
+  // })
+  // return accessedRouters
+
+  const res = []
+
+  asyncRouters.forEach(route => {
+    const tmp = { ...route }
+    if (hasPermission(roles, tmp)) {
+      if (tmp.children) {
+        tmp.children = filterAsyncRouter(tmp.children, roles)
       }
-      return true
+      res.push(tmp)
     }
-    return false
   })
-  return accessedRouters
+
+  return res
 }
 
-function getNowRouter (asyncRouterMap, to) {
-  return asyncRouterMap.some(route => {
+function getNowRouter (asyncRouters, to) {
+  return asyncRouters.some(route => {
     if (to.path.indexOf(route.path) !== -1) {
       return true
     } else if (route.children && route.children.length) { // 如果有孩子就遍历孩子
@@ -58,6 +74,7 @@ const permission = {
       //     }
 
       // })
+      // console.log(state.routers)
     },
     SET_NOW_ROUTERS: (state, to) => {
       // 递归访问 accessedRouters，找到包含to 的那个路由对象，设置给siderbar_routers
@@ -74,14 +91,24 @@ const permission = {
     GenerateRoutes ({ commit }, data) {
       return new Promise(resolve => {
         const { roles } = data
+        // console.log('>>>>>>>>>>>', roles)
+        // console.log(asyncRouterMap)
         let accessedRouters
         if (roles.indexOf('admin') >= 0) {
           accessedRouters = asyncRouterMap
         } else {
           accessedRouters = filterAsyncRouter(asyncRouterMap, roles)
         }
+        // console.log(accessedRouters)
 
         commit('SET_ROUTERS', accessedRouters)
+        resolve()
+      })
+    },
+
+    ClearRoutes ({ commit }, data) {
+      return new Promise(resolve => {
+        commit('SET_ROUTERS', [])
         resolve()
       })
     },
