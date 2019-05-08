@@ -32,23 +32,32 @@ export const asyncRouterMap = [
     path: '/',
     redirect: '/introduction',
     name: 'home',
-    icon: 'pie-graph',
     component: layout,
-    meta: { title: '系统首页', icon: 'speedometer'},
+    meta: { title: '系统首页', icon: 'el-icon-s-home'},
     children: [ 
-      {path: '/introduction', name: 'introduction', component: _import('introduction'), meta: { title: '系统首页', icon: 'speedometer' }}
+      {path: '/introduction', name: 'introduction', component: _import('pages/introduction'), meta: { title: '系统首页', icon: 'el-icon-s-home' }}
     ]
   },
   {
     path: '/pages',
     name: 'stats',
-    icon: 'ios-paper',
     component: layout,
     alwaysShow: true,
-    meta: { title: '统计数据', icon: 'ios-paper'},
+    meta: { title: '统计数据', icon: 'el-icon-folder-add'},
     children: [ 
-      {path: '/logger', name: 'stats', component: _import('logger'), meta: { title: '数据管理', icon: 'ios-paper', role: ['admin', 'saga']} },
-      {path: '/loggercut', name: 'stats', component: _import('loggercut'), meta: { title: '数据查询', icon: 'ios-paper', role: ['taptap']} }
+      {path: '/logger', name: 'statsad', component: _import('pages/logger'), meta: { title: '数据管理', icon: 'el-icon-edit', role: ['admin', 'saga']} },
+      {path: '/loggercut', name: 'statscut', component: _import('pages/loggercut'), meta: { title: '数据查询', icon: 'el-icon-view', role: ['taptap']} }
+    ]
+  },
+  {
+    path: '/settings',
+    name: 'settings',
+    component: layout,
+    alwaysShow: true,
+    meta: { title: '游戏管理', icon: 'el-icon-setting'},
+    children: [ 
+      {path: '/share', name: 'share', component: _import('settings/share'), meta: { title: '分享设置', icon: 'el-icon-share', role: ['admin', 'saga']} },
+      {path: '/switch', name: 'switch', component: _import('settings/switch'), meta: { title: '功能开关', icon: 'el-icon-open', role: ['admin', 'saga']} }
     ]
   },
   { path: '*', redirect: '/404', hidden: true }

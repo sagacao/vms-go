@@ -45,6 +45,7 @@ var SvrConfig struct {
 		ACCESS_LOG_PATH string
 		ACCESS_LOG_NAME string
 
+		URL           string
 		TEMPLATE_PATH string
 	}
 

@@ -20,6 +20,7 @@ func IndexGM(c *gin.Context) {
 	})
 }
 
+// GetUserInfo @Get
 func GetUserInfo(c *gin.Context) {
 	user := c.DefaultQuery("user", "anonymous")
 	logger.Debug("GetUserInfo --------------", user)

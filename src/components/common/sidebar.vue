@@ -64,7 +64,7 @@
                 return path
             },
             isCollapse() {
-                console.log(this.permission_routers)
+                // console.log(this.permission_routers)
                 return this.collapse
                 //return true
             },

@@ -2,17 +2,18 @@
   <div v-if="!isHidden(item)" class="menu-wrapper">
     <template v-if="hasOneShowingChild(item.children,item) && (!onlyOneChild.children||onlyOneChild.noShowingChildren)&&!item.alwaysShow">
       <router-link v-if="onlyOneChild.meta" :to="resolvePath(onlyOneChild.path)">
-        <el-menu-item :index="resolvePath(onlyOneChild.path)" :key="resolvePath(onlyOneChild.path)" :class="{'submenu-title-noDropdown':!isNest}">
+        <el-menu-item :index="resolvePath(onlyOneChild.path)" :class="{'submenu-title-noDropdown':!isNest}">
           <template slot="title">
-              <i :class="onlyOneChild.meta.icon"></i><span slot="title">{{ generateTitle(onlyOneChild.meta.title) }}</span>
+              <i :class="showIcon(onlyOneChild.meta)"></i>
+              <span slot="title">{{ generateTitle(onlyOneChild.meta.title) }}</span>
           </template>
         </el-menu-item>
       </router-link>
     </template>
 
-    <el-submenu v-else ref="subMenu" :index="resolvePath(item.path)" :key="item.name" popper-append-to-body>
+    <el-submenu v-else :index="resolvePath(item.path)" :key="item.name" popper-append-to-body>
       <template slot="title">
-        <svg-icon v-if="item.meta&&item.meta.icon" :icon-class="item.meta.icon"/>
+        <i :class="showIcon(item.meta)"></i>
         <span slot='title'>{{ generateTitle(item.meta.title) }}</span>
       </template>
       <sidebar-item v-for="child in item.children" :key="child.path" :is-nest="true" :item="child" :base-path="resolvePath(child.path)" class="nest-menu" />
@@ -84,6 +85,10 @@ export default {
         }
 
         return false
+    },
+    showIcon(meta) {
+      // console.log(meta)
+      return meta.icon
     },
     resolvePath(routePath) {
       if (isExternal(routePath)) {

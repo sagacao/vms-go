@@ -19,13 +19,16 @@ func registerRouter(router *gin.Engine) {
 		vms.GET("/logger", controllers.GetLogger)
 		vms.POST("/logger", controllers.SetLogger)
 
+		vms.GET("/cfg/req", controllers.ReqSvrCfg)
+		vms.POST("/cfg/edit", controllers.EditSvrCfg)
+
+		vms.GET("/switch/req", controllers.ReqSvrSwitch)
+		vms.POST("/switch/edit", controllers.EditSvrSwitch)
+		vms.POST("/switch/remove", controllers.RemoveSvrSwitch)
+
 		// gm.GET("/notice/search", controllers.GMNoticeSearch)
 		// gm.POST("/notice/add", controllers.GMNoticeAdd)
 		// gm.POST("/notice/del", controllers.GMNoticeDel)
-
-		// gm.GET("/funcswitch/search", controllers.GMFuncSwitchSearch)
-		// gm.POST("/funcswitch/add", controllers.GMFuncSwitchAdd)
-		// gm.POST("/funcswitch/del", controllers.GMFuncSwitchDel)
 
 		// gm.GET("/magic/search", controllers.GMMagicSearch)
 		// gm.POST("/magic/add", controllers.GMMagicAdd)
@@ -33,8 +36,5 @@ func registerRouter(router *gin.Engine) {
 
 		// gm.GET("/gates/search", controllers.GMGatesSearch)
 		// gm.POST("/gates/del", controllers.GMGatesDel)
-
-		// gm.GET("/config/search", controllers.GMServerConfigSearch)
-		// gm.POST("/config/update", controllers.GMSetServerConfig)
 	}
 }
