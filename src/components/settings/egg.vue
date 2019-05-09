@@ -26,12 +26,11 @@
                 </el-table-column>
                 <el-table-column prop="funcname" label="名字" width="100">
                 </el-table-column>
-                <el-table-column prop="funcswitch" label="状态" width="100">
+                <el-table-column prop="funcswitch" label="限制次数" width="100">
                 </el-table-column>
                 <el-table-column label="操作" align="center">
                     <template slot-scope="scope">
                         <el-button type="text" icon="el-icon-edit" @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
-                        <el-button type="text" icon="el-icon-delete" @click="handleDel(scope.$index, scope.row)">删除</el-button>
                     </template>
                 </el-table-column>
             </el-table>
@@ -79,46 +78,34 @@ export default {
         return {
             options:[
                 {
-                    value: 'invite',
-                    label: 'invite'
-                },
-                {
-                    value: 'push',
-                    label: 'push'
-                },
-                {
-                    value: 'forcar',
-                    label: 'forcar'
-                },
-                {
-                    value: 'clickTips',
-                    label: 'clickTips'
-                },
-                {
-                    value: 'unlockLevelMode',
-                    label: 'unlockLevelMode'
-                },
-                {
-                    value: 'banner',
-                    label: 'banner'
-                },
-                {
-                    value: 'mute',
-                    label: 'mute'
-                },
-                {
-                    value: 'comic',
-                    label: 'comic'
+                    value: 'maxPumpTimes',
+                    label: 'maxPumpTimes'
                 }
             ],
             funcstatus:[
                 {
+                    value: '5',
+                    label: '5'
+                },
+                {
+                    value: '4',
+                    label: '4'
+                },
+                {
+                    value: '3',
+                    label: '3'
+                },
+                {
+                    value: '2',
+                    label: '2'
+                },
+                {
                     value: '1',
-                    label: '开'
+                    label: '1'
                 },
                 {
                     value: '0',
-                    label: '关'
+                    label: '0'
                 }
             ],
             tableData: [],
@@ -128,8 +115,8 @@ export default {
             editVisible: false,
             form: {
                 game: this.selected_game,
-                funcname : 'push',
-                funcswitch: '1'
+                funcname : 'maxPumpTimes',
+                funcswitch: '3'
             },
             idx: -1
         }
@@ -167,47 +154,16 @@ export default {
                     this.$message.error('服务器返回失败:' + res.data.errorCode)
                 } else {
                     //const svalue = res.data.data
-                    this.tableData = res.data.data
+                    this.tableData = res.data.data.filter(egg => {
+                        if (egg.funcname === 'maxPumpTimes') {
+                            return true
+                        }
+                        return false
+                    })
+                    // this.tableData = res.data.data
                 } 
             }).catch(err => {
                 console.log(err)
-                this.$message.error(err);
-            });
-        },
-        handleDel(index, row) {
-            this.idx = index;
-            this.$confirm('此操作将永久删除, 是否继续?', '提示', {
-                confirmButtonText: '确定',
-                cancelButtonText: '取消',
-                type: 'warning'
-            }).then(() => {
-                this.delCommit(index)
-            }).catch((err) => {
-                console.log(err)
-                this.$message({
-                    type: 'info',
-                    message: '已取消删除' + err
-                });
-            });
-        },
-        delCommit(index) {
-            const item = this.tableData[index];
-            const formdata = {
-                game : this.selected_game,
-                funcname : item.funcname,
-                funcswitch: item.funcswitch
-            }
-            // console.log(formdata)
-            const user = this.$store.getters.name
-            this.$store.dispatch('RemoveSvrSwitch', { user, formdata}).then((res) => {
-                console.log(res.data)
-                if (res.data.errorCode != 0) {
-                    this.$message.error(`执行失败 :` + res.data.errorCode);
-                } else {
-                    this.$message.success(`执行成功`);
-                    this.handleSearch()
-                }
-            }).catch(err => {
                 this.$message.error(err);
             });
         },
@@ -218,8 +174,8 @@ export default {
             }
             this.form = {
                 game: this.selected_game,
-                funcname : 'push',
-                funcswitch: '1'
+                funcname : 'maxPumpTimes',
+                funcswitch: '3'
             }
             this.editVisible = true
         },

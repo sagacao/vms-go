@@ -1,5 +1,5 @@
 /* eslint-disable */
-import { getSvrCfg, setSvrCfg, getSvrSwitch, setSvrSwitch, reomveSvrSwitch } from '@/api/svrsettings'
+import { getSvrCfg, setSvrCfg, getSvrSwitch, setSvrSwitch, removeSvrSwitch } from '@/api/svrsettings'
 
 const svrSettings = {
   state: {

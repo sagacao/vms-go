@@ -21,8 +21,32 @@ export default {
                     label: '方块部落'
                 }, 
                 {
+                    value: '20301',
+                    label: '国王'
+                },
+                {
                     value: '20401',
                     label: '春节红包'
+                },
+                {
+                    value: '20501',
+                    label: '休闲射击'
+                },
+                {
+                    value: '20601',
+                    label: '猫咪'
+                },
+                {
+                    value: '20701',
+                    label: '消灭星星'
+                },
+                {
+                    value: '20801',
+                    label: '挂机奇迹'
+                },
+                {
+                    value: '20901',
+                    label: '方块2'
                 }
             ],
             svalue: ''

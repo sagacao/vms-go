@@ -38,10 +38,11 @@ export function getSvrSwitch (user, page, game) {
 }
 
 export function setSvrSwitch (user, form) {
-    // console.log('setSvrSwitch', user, form)
+    console.log('setSvrSwitch', user, form)
     const data = {
         game: form.game,
-        value: form.cfg
+        funcname: form.funcname,
+        funcswitch : form.funcswitch
     }
     return request({
         url: '/vms/switch/edit',
@@ -58,7 +59,8 @@ export function removeSvrSwitch (user, form) {
     // console.log('removeSvrSwitch', user, form)
     const data = {
         game: form.game,
-        value: form.cfg
+        funcname: form.funcname,
+        funcswitch : ''
     }
     return request({
         url: '/vms/switch/remove',

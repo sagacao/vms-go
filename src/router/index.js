@@ -43,7 +43,7 @@ export const asyncRouterMap = [
     name: 'stats',
     component: layout,
     alwaysShow: true,
-    meta: { title: '统计数据', icon: 'el-icon-folder-add'},
+    meta: { title: '统计数据', icon: 'el-icon-edit'},
     children: [ 
       {path: '/logger', name: 'statsad', component: _import('pages/logger'), meta: { title: '数据管理', icon: 'el-icon-edit', role: ['admin', 'saga']} },
       {path: '/loggercut', name: 'statscut', component: _import('pages/loggercut'), meta: { title: '数据查询', icon: 'el-icon-view', role: ['taptap']} }
@@ -57,7 +57,8 @@ export const asyncRouterMap = [
     meta: { title: '游戏管理', icon: 'el-icon-setting'},
     children: [ 
       {path: '/share', name: 'share', component: _import('settings/share'), meta: { title: '分享设置', icon: 'el-icon-share', role: ['admin', 'saga']} },
-      {path: '/switch', name: 'switch', component: _import('settings/switch'), meta: { title: '功能开关', icon: 'el-icon-open', role: ['admin', 'saga']} }
+      {path: '/switch', name: 'switch', component: _import('settings/switch'), meta: { title: '功能开关', icon: 'el-icon-share', role: ['admin', 'saga']} },
+      {path: '/egg', name: 'egg', component: _import('settings/egg'), meta: { title: '每日砸蛋控制', icon: 'el-icon-share', role: ['admin', 'saga']} }
     ]
   },
   { path: '*', redirect: '/404', hidden: true }
