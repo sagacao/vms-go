@@ -91,6 +91,10 @@ export default {
                     label: 'forcar'
                 },
                 {
+                    value: 'redirect',
+                    label: 'redirect'
+                },
+                {
                     value: 'clickTips',
                     label: 'clickTips'
                 },
