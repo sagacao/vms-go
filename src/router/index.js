@@ -53,9 +53,8 @@ export const asyncRouterMap = [
     path: '/settings',
     name: 'settings',
     component: layout,
-    alwaysShow: true,
     meta: { title: '游戏管理', icon: 'el-icon-setting'},
-    children: [ 
+    children: [
       {path: '/share', name: 'share', component: _import('settings/share'), meta: { title: '分享设置', icon: 'el-icon-share', role: ['admin', 'saga']} },
       {path: '/switch', name: 'switch', component: _import('settings/switch'), meta: { title: '功能开关', icon: 'el-icon-share', role: ['admin', 'saga']} },
       {path: '/egg', name: 'egg', component: _import('settings/egg'), meta: { title: '每日砸蛋控制', icon: 'el-icon-share', role: ['admin', 'saga']} }

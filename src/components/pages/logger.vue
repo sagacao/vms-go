@@ -196,7 +196,7 @@
             saveEdit() {
                 const user = this.$store.getters.name
                 const formdata = this.form
-                // console.log(this.select_daterange)
+                console.log(formdata)
                 this.$store.dispatch('SetLogger', { user, formdata}).then((res) => {
                     this.$set(this.tableData, this.idx, this.form);
                     //this.editVisible = false;

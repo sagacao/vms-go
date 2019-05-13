@@ -115,9 +115,9 @@ func GetLogger(c *gin.Context) {
 
 			rete := utils.ToFloat64(v.Retention) / 100.00
 			stats.Newly = utils.ToString(utils.Round(utils.ToFloat64(v.Newly) * rete))
-			stats.TowPr = utils.ToString(utils.Round(utils.ToFloat64(v.TowPr) * rete))
-			stats.ThreePr = utils.ToString(utils.Round(utils.ToFloat64(v.ThreePr) * rete))
-			stats.SevenPr = utils.ToString(utils.Round(utils.ToFloat64(v.SevenPr) * rete))
+			stats.TowPr = v.TowPr
+			stats.ThreePr = v.ThreePr
+			stats.SevenPr = v.SevenPr
 			stats.Retention = "0"
 			cutReply = append(cutReply, stats)
 		}
