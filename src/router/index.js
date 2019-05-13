@@ -46,14 +46,14 @@ export const asyncRouterMap = [
     meta: { title: '统计数据', icon: 'el-icon-edit'},
     children: [ 
       {path: '/logger', name: 'statsad', component: _import('pages/logger'), meta: { title: '数据管理', icon: 'el-icon-edit', role: ['admin', 'saga']} },
-      {path: '/loggercut', name: 'statscut', component: _import('pages/loggercut'), meta: { title: '数据查询', icon: 'el-icon-view', role: ['taptap']} }
+      {path: '/loggercut', name: 'statscut', component: _import('pages/loggercut'), meta: { title: '数据查询', icon: 'el-icon-view', role: ['taptap', 'dychannel']} }
     ]
   },
   {
     path: '/settings',
     name: 'settings',
     component: layout,
-    meta: { title: '游戏管理', icon: 'el-icon-setting'},
+    meta: { title: '游戏管理', icon: 'el-icon-setting', role: ['admin', 'saga']},
     children: [
       {path: '/share', name: 'share', component: _import('settings/share'), meta: { title: '分享设置', icon: 'el-icon-share', role: ['admin', 'saga']} },
       {path: '/switch', name: 'switch', component: _import('settings/switch'), meta: { title: '功能开关', icon: 'el-icon-share', role: ['admin', 'saga']} },

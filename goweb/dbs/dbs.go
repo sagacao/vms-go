@@ -1,6 +1,7 @@
 package dbs
 
 import (
+	"database/sql"
 	"vms-go/goweb/logger"
 	"vms-go/goweb/models"
 )
@@ -31,13 +32,28 @@ func (db *DBService) Destory() {
 }
 
 func (db *DBService) QueryLoggerStats(channel string, sdate, edate string, replys *[]*models.LogStats) {
-	sqlstr := "select channel, gameid, newly, tow_pr, three_pr, seven_pr, retention, logdate from log_stat where channel=? and logdate>=? and logdate<=?"
-	exec := db.mysql.QueryFuture(sqlstr, channel, sdate, edate)
+	// sqlstr := "select channel, gameid, newly, tow_pr, three_pr, seven_pr, retention, logdate from log_stat where channel=? and logdate>=? and logdate<=?"
+	// exec := db.mysql.QueryFuture(sqlstr, channel, sdate, edate)
+	// if channel == "admin" {
+	// 	sqlstr = "select channel, gameid, newly, tow_pr, three_pr, seven_pr, retention, logdate from log_stat where logdate>=? and logdate<=?"
+	// 	exec = db.mysql.QueryFuture(sqlstr, sdate, edate)
+	// }
+	// logger.Debug(sqlstr)
+	// rows, err := exec()
+	// if err != nil {
+	// 	logger.Error("QueryLoggerStats ", err)
+	// 	return
+	// }
+	var rows *sql.Rows
+	var err error
 	if channel == "admin" {
-		sqlstr = "select channel, gameid, newly, tow_pr, three_pr, seven_pr, retention, logdate from log_stat where logdate>=? and logdate<=?"
-		exec = db.mysql.QueryFuture(sqlstr, sdate, edate)
+		sqlstr := "select channel, gameid, newly, tow_pr, three_pr, seven_pr, retention, logdate from log_stat where logdate>=? and logdate<=?"
+		rows, err = db.mysql.Query(sqlstr, sdate, edate)
+	} else {
+		sqlstr := "select channel, gameid, newly, tow_pr, three_pr, seven_pr, retention, logdate from log_stat where channel=? and logdate>=? and logdate<=?"
+		rows, err = db.mysql.Query(sqlstr, channel, sdate, edate)
 	}
-	rows, err := exec()
+
 	if err != nil {
 		logger.Error("QueryLoggerStats ", err)
 		return

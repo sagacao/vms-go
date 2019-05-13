@@ -62,6 +62,10 @@ func (ms *MysqlIface) QueryFuture(query string, args ...interface{}) func() (*sq
 	}
 }
 
+func (ms *MysqlIface) Query(query string, args ...interface{}) (*sql.Rows, error) {
+	return ms.db.Query(query, args...)
+}
+
 func (ms *MysqlIface) ReplaceFuture(query string, args ...interface{}) func() (sql.Result, error) {
 	var res sql.Result
 	var err error
