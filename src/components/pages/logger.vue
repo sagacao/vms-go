@@ -180,10 +180,13 @@
             handleEdit(index, row) {
                 this.idx = index;
                 const item = this.tableData[index];
+                // console.log(index)
+                // console.log(item)
+                // let edittime = Date.parse(item.logdate.replace(/-/g,'/'))
                 this.form = {
                     channel: item.channel,
                     game: item.game,
-                    date: item.date,
+                    date: item.logdate,
                     newly: item.newly,
                     tow_pr: item.tow_pr,
                     three_pr: item.three_pr,
