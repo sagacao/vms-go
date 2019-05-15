@@ -57,7 +57,12 @@ var SvrConfig struct {
 	}
 }
 
-var userSecret map[string]string
+type authData struct {
+	Passwd    string   `json:"passwd"`
+	Privilege []string `json:"privilege"`
+}
+
+var userSecret map[string]authData
 
 func initEnv(apppath string) {
 	path.Join()
@@ -78,7 +83,7 @@ func initUserSecret(apppath string) {
 	if err != nil {
 		panic(err)
 	}
-	userSecret = make(map[string]string)
+	userSecret = make(map[string]authData)
 	var json = jsoniter.ConfigCompatibleWithStandardLibrary
 	err = json.Unmarshal(data, &userSecret)
 	if err != nil {
@@ -92,7 +97,16 @@ func GetUser(user string) (string, bool) {
 		return "", false
 	}
 
-	return v, true
+	return v.Passwd, true
+}
+
+func GetUserPrivilege(user string) ([]string, bool) {
+	v, ok := userSecret[user]
+	if !ok {
+		return nil, false
+	}
+
+	return v.Privilege, true
 }
 
 func init() {

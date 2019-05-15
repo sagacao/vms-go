@@ -24,7 +24,7 @@ func IndexGM(c *gin.Context) {
 func GetUserInfo(c *gin.Context) {
 	user := c.DefaultQuery("user", "anonymous")
 	logger.Debug("GetUserInfo --------------", user)
-	_, ok := settings.GetUser(user)
+	roles, ok := settings.GetUserPrivilege(user)
 	if !ok {
 		c.JSON(http.StatusOK, gin.H{
 			"code": 1,
@@ -34,7 +34,7 @@ func GetUserInfo(c *gin.Context) {
 	}
 
 	c.JSON(http.StatusOK, gin.H{
-		"role": []string{user},
+		"role": roles,
 		"name": user,
 	})
 }
