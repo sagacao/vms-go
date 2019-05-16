@@ -6,6 +6,9 @@ import (
 	"sync"
 	"vms-go/goweb/logger"
 	"vms-go/goweb/settings"
+	"vms-go/goweb/utils"
+
+	_ "github.com/go-sql-driver/mysql"
 )
 
 type MysqlIface struct {
@@ -66,6 +69,15 @@ func (ms *MysqlIface) Query(query string, args ...interface{}) (*sql.Rows, error
 	return ms.db.Query(query, args...)
 }
 
+func (ms *MysqlIface) QueryV2(query string, args ...interface{}) (*sql.Rows, error) {
+	exec := utils.Future(func() (interface{}, error) {
+		return ms.db.Query(query, args...)
+	})
+
+	ret, err := exec()
+	return ret.(*sql.Rows), err
+}
+
 func (ms *MysqlIface) ReplaceFuture(query string, args ...interface{}) func() (sql.Result, error) {
 	var res sql.Result
 	var err error
@@ -79,4 +91,13 @@ func (ms *MysqlIface) ReplaceFuture(query string, args ...interface{}) func() (s
 		<-c
 		return res, err
 	}
+}
+
+func (ms *MysqlIface) ReplaceV2(query string, args ...interface{}) (sql.Result, error) {
+	exec := utils.Future(func() (interface{}, error) {
+		return ms.db.Exec(query, args...)
+	})
+
+	ret, err := exec()
+	return ret.(sql.Result), err
 }

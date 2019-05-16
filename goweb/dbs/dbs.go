@@ -32,37 +32,30 @@ func (db *DBService) Destory() {
 }
 
 func (db *DBService) QueryLoggerStats(channel string, sdate, edate string, replys *[]*models.LogStats) {
-	// sqlstr := "select channel, gameid, newly, tow_pr, three_pr, seven_pr, retention, logdate from log_stat where channel=? and logdate>=? and logdate<=?"
-	// exec := db.mysql.QueryFuture(sqlstr, channel, sdate, edate)
-	// if channel == "admin" {
-	// 	sqlstr = "select channel, gameid, newly, tow_pr, three_pr, seven_pr, retention, logdate from log_stat where logdate>=? and logdate<=?"
-	// 	exec = db.mysql.QueryFuture(sqlstr, sdate, edate)
-	// }
-	// logger.Debug(sqlstr)
-	// rows, err := exec()
-	// if err != nil {
-	// 	logger.Error("QueryLoggerStats ", err)
-	// 	return
-	// }
 	var rows *sql.Rows
 	var err error
 	if channel == "admin" {
 		sqlstr := "select channel, gameid, newly, tow_pr, three_pr, seven_pr, retention, logdate from log_stat where logdate>=? and logdate<=?"
-		rows, err = db.mysql.Query(sqlstr, sdate, edate)
+		rows, err = db.mysql.QueryV2(sqlstr, sdate, edate)
 	} else {
 		sqlstr := "select channel, gameid, newly, tow_pr, three_pr, seven_pr, retention, logdate from log_stat where channel=? and logdate>=? and logdate<=?"
-		rows, err = db.mysql.Query(sqlstr, channel, sdate, edate)
+		rows, err = db.mysql.QueryV2(sqlstr, channel, sdate, edate)
 	}
 
+	defer func() {
+		if rows != nil {
+			rows.Close()
+		}
+	}()
 	if err != nil {
-		logger.Error("QueryLoggerStats ", err)
+		logger.Error("Query: failed: ", err)
 		return
 	}
 
 	for rows.Next() {
 		stats := &models.LogStats{}
 		if err := rows.Scan(&stats.Channel, &stats.Game, &stats.Newly, &stats.TowPr, &stats.ThreePr, &stats.SevenPr, &stats.Retention, &stats.LogDate); err != nil {
-			logger.Error(err)
+			logger.Error("Scan: failed: ", err)
 			continue
 		}
 
@@ -72,10 +65,15 @@ func (db *DBService) QueryLoggerStats(channel string, sdate, edate string, reply
 
 func (db *DBService) ReplaceLoggerStats(channel string, game string, newly, tow_pr, three_pr, seven_pr, retention, logdate string) {
 	sqlstr := "replace into log_stat values(?, ?, ?, ?, ?, ?, ?, ?)"
-	exec := db.mysql.ReplaceFuture(sqlstr, channel, game, newly, tow_pr, three_pr, seven_pr, retention, logdate)
-	_, err := exec()
+	_, err := db.mysql.ReplaceV2(sqlstr, channel, game, newly, tow_pr, three_pr, seven_pr, retention, logdate)
 	if err != nil {
 		logger.Error("ReplaceLoggerStats ", err)
 		return
 	}
+	// exec := db.mysql.ReplaceFuture(sqlstr, channel, game, newly, tow_pr, three_pr, seven_pr, retention, logdate)
+	// _, err := exec()
+	// if err != nil {
+	// 	logger.Error("ReplaceLoggerStats ", err)
+	// 	return
+	// }
 }
