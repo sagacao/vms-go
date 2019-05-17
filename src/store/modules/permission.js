@@ -1,44 +1,31 @@
 import { asyncRouterMap, constantRouterMap } from '@/router'
 
 /**
- * 通过meta.role判断是否与当前用户权限匹配
+ * Use meta.role to determine if the current user has permission
  * @param roles
  * @param route
  */
-function hasPermission (roles, route) {
-  if (route.meta && route.meta.role) {
-    // return route.meta.role.indexOf(user) >= 0
-    return roles.some(role => route.meta.role.indexOf(role) >= 0)
+function hasPermission(roles, route) {
+  if (route.meta && route.meta.roles) {
+    return roles.some(role => route.meta.roles.includes(role))
   } else {
     return true
   }
 }
 
 /**
- * 递归过滤异步路由表，返回符合用户角色权限的路由表
- * @param asyncRouters
- * @param user
+ * Filter asynchronous routing tables by recursion
+ * @param routes asyncRoutes
+ * @param roles
  */
-function filterAsyncRouter (asyncRouters, roles) {
-  // const accessedRouters = asyncRouters.filter(route => {
-  //   // console.log(route)
-  //   if (hasPermission(roles, route)) {
-  //     if (route.children && route.children.length) {
-  //       route.children = filterAsyncRouter(route.children, roles)
-  //     }
-  //     return true
-  //   }
-  //   return false
-  // })
-  // return accessedRouters
-
+export function filterAsyncRoutes(routes, roles) {
   const res = []
 
-  asyncRouters.forEach(route => {
+  routes.forEach(route => {
     const tmp = { ...route }
     if (hasPermission(roles, tmp)) {
       if (tmp.children) {
-        tmp.children = filterAsyncRouter(tmp.children, roles)
+        tmp.children = filterAsyncRoutes(tmp.children, roles)
       }
       res.push(tmp)
     }
@@ -47,80 +34,36 @@ function filterAsyncRouter (asyncRouters, roles) {
   return res
 }
 
-function getNowRouter (asyncRouters, to) {
-  return asyncRouters.some(route => {
-    if (to.path.indexOf(route.path) !== -1) {
-      return true
-    } else if (route.children && route.children.length) { // 如果有孩子就遍历孩子
-      return getNowRouter(route.children, to)
-    }
-  })
+const state = {
+  routes: [],
+  addRoutes: []
 }
 
-const permission = {
-  state: {
-    routers: constantRouterMap,
-    addRouters: [],
-    siderbar_routers: []
-  },
-  mutations: {
-    SET_ROUTERS: (state, routers) => {
-      state.addRouters = routers
-      state.routers = constantRouterMap.concat(routers)
-      // state.routers.forEach(function(e){
-      //     if(e.name==="首页"){
-      //     state.siderbar_routers=e;
-
-      //     }
-
-      // })
-      // console.log(state.routers)
-    },
-    SET_NOW_ROUTERS: (state, to) => {
-      // 递归访问 accessedRouters，找到包含to 的那个路由对象，设置给siderbar_routers
-      console.log(state.addRouters)
-      state.addRouters.forEach(e => {
-        if (e.children && e.children.length) {
-          if (getNowRouter(e.children, to) === true) { state.siderbar_routers = e }
-        }
-      })
-    }
-
-  },
-  actions: {
-    GenerateRoutes ({ commit }, data) {
-      return new Promise(resolve => {
-        const { roles } = data
-        // console.log('>>>>>>>>>>>', roles)
-        // console.log(asyncRouterMap)
-        let accessedRouters
-        if (roles.indexOf('admin') >= 0) {
-          accessedRouters = asyncRouterMap
-        } else {
-          accessedRouters = filterAsyncRouter(asyncRouterMap, roles)
-        }
-        // console.log(accessedRouters)
-
-        commit('SET_ROUTERS', accessedRouters)
-        resolve()
-      })
-    },
-
-    ClearRoutes ({ commit }, data) {
-      return new Promise(resolve => {
-        commit('SET_ROUTERS', [])
-        resolve()
-      })
-    },
-
-    getNowRoutes ({ commit }, data) {
-      return new Promise(resolve => {
-        // data => to
-        commit('SET_NOW_ROUTERS', data)
-        resolve()
-      })
-    }
+const mutations = {
+  SET_ROUTES: (state, routes) => {
+    state.addRoutes = routes
+    state.routes = constantRouterMap.concat(routes)
   }
 }
 
-export default permission
+const actions = {
+  generateRoutes({ commit }, roles) {
+    return new Promise(resolve => {
+      let accessedRoutes
+      if (roles.includes('admin')) {
+        accessedRoutes = asyncRouterMap || []
+      } else {
+        accessedRoutes = filterAsyncRoutes(asyncRouterMap, roles)
+      }
+      commit('SET_ROUTES', accessedRoutes)
+      resolve(accessedRoutes)
+    })
+  }
+}
+
+export default {
+  namespaced: true,
+  state,
+  mutations,
+  actions
+}
