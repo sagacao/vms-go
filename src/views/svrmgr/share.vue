@@ -160,6 +160,7 @@ export default {
             });
 
             this.editVisible = false;
+            this.handleSearch()
         },
     }
 }

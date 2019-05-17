@@ -161,12 +161,20 @@ export default {
             const game = this.selected_game
             console.log(this.selected_game)
             this.$store.dispatch('svrmgr/GetSvrSwitch', { user, page, game}).then((res) => {
-                console.log(res.data)
-                if (res.data.errorCode != 0) {
-                    this.$message.error('服务器返回失败:' + res.data.errorCode)
+                console.log(res)
+                if (res.errorCode != 0) {
+                    this.$message.error('服务器返回失败:' + res.errorCode)
                 } else {
-                    //const svalue = res.data.data
-                    this.tableData = res.data.data
+                    this.tableData = []
+                    // this.tableData = res.data
+                    for(var i = 0; i < res.data.length; i++) {
+                        if (res.data[i].funcname == 'maxPumpTimes') {
+                            continue
+                        }
+                        let item = res.data[i]
+                        item['game'] = game
+                        this.tableData.push(item)
+                    } 
                 } 
             }).catch(err => {
                 console.log(err)
@@ -255,6 +263,7 @@ export default {
             });
 
             this.editVisible = false;
+            this.handleSearch()
         },
     }
 }

@@ -148,12 +148,21 @@ export default {
                 if (res.errorCode != 0) {
                     this.$message.error('服务器返回失败:' + res.errorCode)
                 } else {
-                    this.tableData = res.data.filter(egg => {
-                        if (egg.funcname === 'maxPumpTimes') {
-                            return true
+                    this.tableData = []
+                    // this.tableData = res.data
+                    for(var i = 0; i < res.data.length; i++) {
+                        if (res.data[i].funcname == 'maxPumpTimes') {
+                            let item = res.data[i]
+                            item['game'] = game
+                            this.tableData.push(item)
                         }
-                        return false
-                    })
+                    } 
+                    // this.tableData = res.data.filter(egg => {
+                    //     if (egg.funcname === 'maxPumpTimes') {
+                    //         return true
+                    //     }
+                    //     return false
+                    // })
                 } 
             }).catch(err => {
                 console.log(err)
@@ -205,6 +214,7 @@ export default {
             });
 
             this.editVisible = false;
+            this.handleSearch()
         },
     }
 }
