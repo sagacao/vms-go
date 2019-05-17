@@ -99,5 +99,20 @@ func (ms *MysqlIface) ReplaceV2(query string, args ...interface{}) (sql.Result, 
 	})
 
 	ret, err := exec()
+	if err != nil {
+		return nil, err
+	}
+	return ret.(sql.Result), err
+}
+
+func (ms *MysqlIface) ExecV2(query string, args ...interface{}) (sql.Result, error) {
+	exec := utils.Future(func() (interface{}, error) {
+		return ms.db.Exec(query, args...)
+	})
+
+	ret, err := exec()
+	if err != nil {
+		return nil, err
+	}
 	return ret.(sql.Result), err
 }

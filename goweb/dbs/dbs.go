@@ -31,7 +31,7 @@ func (db *DBService) Destory() {
 	db.mysql.Close()
 }
 
-func (db *DBService) QueryLoggerStats(channel string, sdate, edate string, replys *[]*models.LogStats) {
+func (db *DBService) QueryLoggerStats(channel string, sdate, edate string, replys *[]*models.LogStats) error {
 	var rows *sql.Rows
 	var err error
 	if channel == "admin" {
@@ -49,7 +49,7 @@ func (db *DBService) QueryLoggerStats(channel string, sdate, edate string, reply
 	}()
 	if err != nil {
 		logger.Error("Query: failed: ", err)
-		return
+		return err
 	}
 
 	for rows.Next() {
@@ -61,19 +61,25 @@ func (db *DBService) QueryLoggerStats(channel string, sdate, edate string, reply
 
 		*replys = append(*replys, stats)
 	}
+	return nil
 }
 
-func (db *DBService) ReplaceLoggerStats(channel string, game string, newly, tow_pr, three_pr, seven_pr, retention, logdate string) {
+func (db *DBService) ReplaceLoggerStats(channel string, game string, newly, tow_pr, three_pr, seven_pr, retention, logdate string) error {
 	sqlstr := "replace into log_stat values(?, ?, ?, ?, ?, ?, ?, ?)"
 	_, err := db.mysql.ReplaceV2(sqlstr, channel, game, newly, tow_pr, three_pr, seven_pr, retention, logdate)
 	if err != nil {
 		logger.Error("ReplaceLoggerStats ", err)
-		return
+		return err
 	}
-	// exec := db.mysql.ReplaceFuture(sqlstr, channel, game, newly, tow_pr, three_pr, seven_pr, retention, logdate)
-	// _, err := exec()
-	// if err != nil {
-	// 	logger.Error("ReplaceLoggerStats ", err)
-	// 	return
-	// }
+	return nil
+}
+
+func (db *DBService) RemoveLoggerStats(channel string, game string, logdate string) error {
+	sqlstr := "delete from log_stat where channel=? and gameid = ? and logdate = ?"
+	_, err := db.mysql.ExecV2(sqlstr, channel, game, logdate)
+	if err != nil {
+		logger.Error("RemoveLoggerStats ", err)
+		return err
+	}
+	return nil
 }

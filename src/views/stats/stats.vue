@@ -28,6 +28,7 @@
                 <el-table-column label="操作" align="center">
                     <template slot-scope="scope">
                         <el-button type="text" icon="el-icon-edit" @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
+                        <el-button type="text" icon="el-icon-delete" @click="handleDel(scope.$index, scope.row)">删除</el-button>
                     </template>
                 </el-table-column>
             </el-table>
@@ -140,6 +141,43 @@
                     this.$message.error(err);
                 });
             },
+            handleDel(index, row) {
+                this.idx = index;
+                this.$confirm('此操作将永久删除, 是否继续?', '提示', {
+                    confirmButtonText: '确定',
+                    cancelButtonText: '取消',
+                    type: 'warning'
+                }).then(() => {
+                    this.delCommit(index)
+                }).catch((err) => {
+                    console.log(err)
+                    this.$message({
+                        type: 'info',
+                        message: '已取消删除' + err
+                    });
+                });
+            },
+            delCommit(index) {
+                const item = this.tableData[index];
+                const formdata = {
+                    channel: item.channel,
+                    game : item.game, 
+                    logdate : item.logdate
+                }
+                // console.log(formdata)
+                const user = this.$store.getters.name
+                this.$store.dispatch('stats/RemoveStats', { user, formdata}).then((res) => {
+                    // console.log(res)
+                    if (res.code != 0) {
+                        this.$message.error(`执行失败 :` + res.msg);
+                    } else {
+                        this.$message.success(`执行成功`);
+                        this.handleSearch()
+                    }
+                }).catch(err => {
+                    this.$message.error(err);
+                });
+            },
             handleAdd() {
                 this.form = {
                     channel: '',
@@ -169,7 +207,7 @@
                     seven_pr: item.seven_pr,
                     retention: item.retention
                 }
-                this.editVisible = true;
+                this.editVisible = true
             },
             // 保存编辑
             saveEdit() {
@@ -177,15 +215,16 @@
                 const formdata = this.form
                 console.log(formdata)
                 this.$store.dispatch('stats/SetStats', { user, formdata}).then((res) => {
-                    this.$set(this.tableData, this.idx, this.form);
+                    this.$set(this.tableData, this.idx, this.form)
                     //this.editVisible = false;
-                    this.$message.success(`执行成功`);
+                    this.$message.success(`执行成功`)
                 }).catch(err => {
                     console.log(err)
-                    this.$message.error(err);
+                    this.$message.error(err)
                 });
 
-                this.editVisible = false;
+                this.editVisible = false
+                this.handleSearch()
             },
         }
     }

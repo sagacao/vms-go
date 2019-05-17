@@ -16,8 +16,9 @@ func registerRouter(router *gin.Engine) {
 	{
 		vms.GET("/index", controllers.IndexGM)
 		vms.GET("/user/info", controllers.GetUserInfo)
-		vms.GET("/logger", controllers.GetLogger)
-		vms.POST("/logger", controllers.SetLogger)
+		vms.GET("/stats/get", controllers.GetLogger)
+		vms.POST("/stats/edit", controllers.SetLogger)
+		vms.POST("/stats/rm", controllers.DelLogger)
 
 		vms.GET("/cfg/req", controllers.ReqSvrCfg)
 		vms.POST("/cfg/edit", controllers.EditSvrCfg)

@@ -1,5 +1,5 @@
 /* eslint-disable */
-import { getstats, setstats } from '@/api/stats'
+import { getstats, setstats, delstats } from '@/api/stats'
 
 const state = {
 }
@@ -28,6 +28,20 @@ const actions = {
     // console.log(formdata)
     return new Promise((resolve, reject) => {
       setstats(user, formdata).then(response => {
+        // console.log(response)
+        resolve(response)
+      }).catch(error => {
+        // console.log(error)
+        reject(error)
+      })
+    })
+  },
+
+  RemoveStats({ commit }, info) {
+    const {user, formdata} = info
+    // console.log(formdata)
+    return new Promise((resolve, reject) => {
+      delstats(user, formdata).then(response => {
         // console.log(response)
         resolve(response)
       }).catch(error => {

@@ -140,9 +140,10 @@ func SetLogger(c *gin.Context) {
 		return
 	}
 
-	logger.Debug("%v", logStats)
+	logger.Debug(logStats)
 
-	dbs.GetDBService().ReplaceLoggerStats(
+	errcode := 0
+	err := dbs.GetDBService().ReplaceLoggerStats(
 		logStats.Channel,
 		logStats.Game,
 		logStats.Newly,
@@ -151,6 +152,31 @@ func SetLogger(c *gin.Context) {
 		logStats.SevenPr,
 		logStats.Retention,
 		logStats.LogDate)
+	if err != nil {
+		errcode = 1
+	}
 
-	c.JSON(http.StatusOK, gin.H{"msg": logStats.Channel})
+	c.JSON(http.StatusOK, gin.H{"code": errcode, "msg": logStats.Channel})
+}
+
+// DelLogger @Post
+func DelLogger(c *gin.Context) {
+	var logStats models.LogStats
+	if err := c.Bind(&logStats); err != nil {
+		logger.Error(err)
+		return
+	}
+
+	logger.Debug(logStats)
+
+	errcode := 0
+	err := dbs.GetDBService().RemoveLoggerStats(
+		logStats.Channel,
+		logStats.Game,
+		logStats.LogDate)
+	if err != nil {
+		errcode = 1
+	}
+
+	c.JSON(http.StatusOK, gin.H{"code": errcode, "msg": err})
 }
