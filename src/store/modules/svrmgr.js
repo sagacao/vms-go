@@ -1,5 +1,6 @@
 /* eslint-disable */
 import { getSvrCfg, setSvrCfg, getSvrSwitch, setSvrSwitch, removeSvrSwitch } from '@/api/svrmgr'
+import { getSvrGates, setSvrGates, removeSvrGates } from '@/api/gates'
 
 const state = {
 }
@@ -69,6 +70,47 @@ const actions= {
         // console.log(formdata)
         return new Promise((resolve, reject) => {
             removeSvrSwitch(user, formdata).then(response => {
+                // console.log(response)
+                resolve(response)
+            }).catch(error => {
+                // console.log(error)
+                reject(error)
+            })
+        })
+    },
+
+    GetSvrGates({ commit }, info) {
+        const {user, page, game} = info
+        return new Promise((resolve, reject) => {
+            getSvrGates(user, page, game).then(response => {
+                // console.log(response)
+                resolve(response)
+            }).catch(error => {
+                // console.log(error)
+                reject(error)
+            })
+        })
+    },
+
+    SetSvrGates({ commit }, info) {
+        const {user, formdata} = info
+        // console.log(formdata)
+        return new Promise((resolve, reject) => {
+            setSvrGates(user, formdata).then(response => {
+                // console.log(response)
+                resolve(response)
+            }).catch(error => {
+                // console.log(error)
+                reject(error)
+            })
+        })
+    },
+
+    RemoveSvrGates({ commit }, info) {
+        const {user, formdata} = info
+        // console.log(formdata)
+        return new Promise((resolve, reject) => {
+            removeSvrGates(user, formdata).then(response => {
                 // console.log(response)
                 resolve(response)
             }).catch(error => {

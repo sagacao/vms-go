@@ -69,7 +69,7 @@
 import XdhSelect from './xdhselect'
 export default {
     components: { XdhSelect },
-    name: 'settings',
+    name: 'switch',
     data() {
         return {
             options:[
