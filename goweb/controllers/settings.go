@@ -4,11 +4,11 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/url"
-	"vms-go/goweb/logger"
 	"vms-go/goweb/settings"
 
 	"github.com/gin-gonic/gin"
 	jsoniter "github.com/json-iterator/go"
+	"github.com/sagacao/goworld/engine/gwlog"
 )
 
 // ReqSvrCfg @Get
@@ -19,37 +19,37 @@ func ReqSvrCfg(c *gin.Context) {
 		return
 	}
 	user := c.DefaultQuery("user", "anonymous")
-	logger.Debug("ReqSvrCfg --------------", user, game)
+	gwlog.Debugf("ReqSvrCfg --------------%s %s ", user, game)
 
 	urlstr := settings.SvrConfig.Env.URL + "/Logic/user/getServerConfig"
 	req, err := http.NewRequest("GET", urlstr, nil)
 	if err != nil {
-		logger.Error("ReqSvrCfg NewRequest err", err)
+		gwlog.Error("ReqSvrCfg NewRequest err", err)
 		return
 	}
 	query := req.URL.Query()
 	query.Add("gameId", game)
 	req.URL.RawQuery = query.Encode()
-	logger.Debug("ReqSvrCfg ", req.URL.String())
+	gwlog.Debugf("ReqSvrCfg %s", req.URL.String())
 	var resp *http.Response
 	resp, err = http.DefaultClient.Do(req)
 	if err != nil {
-		logger.Error("ReqSvrCfg DefaultClient Do err", err)
+		gwlog.Error("ReqSvrCfg DefaultClient Do err", err)
 		return
 	}
 	defer resp.Body.Close()
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
-		logger.Error("ReqSvrCfg ReadAll err", err)
+		gwlog.Error("ReqSvrCfg ReadAll err", err)
 		return
 	}
-	//logger.Debug("ReqSvrCfg:body", string(body))
+	//gwlog.Debugf("ReqSvrCfg:body %s", string(body))
 
 	args := make(gin.H)
 	var json = jsoniter.ConfigCompatibleWithStandardLibrary
 	err = json.Unmarshal(body, &args)
 	if err != nil {
-		logger.Error("json.Unmarshal", err)
+		gwlog.Error("json.Unmarshal", err)
 		c.JSON(http.StatusOK, args)
 	} else {
 		c.JSON(http.StatusOK, args)
@@ -64,35 +64,35 @@ func EditSvrCfg(c *gin.Context) {
 	}
 
 	if err := c.Bind(&editData); err != nil {
-		logger.Error(err)
+		gwlog.Error(err)
 		return
 	}
-	logger.Info("EditSvrCfg", editData.Game, editData.Value)
+	gwlog.Infof("EditSvrCfg %s %s", editData.Game, editData.Value)
 
 	urlstr := settings.SvrConfig.Env.URL + "/Logic/user/setServerConfig"
 	req, err := http.NewRequest("GET", urlstr, nil)
 	if err != nil {
-		logger.Error("EditSvrCfg NewRequest err", err)
+		gwlog.Error("EditSvrCfg NewRequest err", err)
 		return
 	}
 	query := req.URL.Query()
 	query.Add("gameId", editData.Game)
 	query.Add("value", editData.Value)
 	req.URL.RawQuery = query.Encode()
-	logger.Debug("EditSvrCfg ", req.URL.String())
+	gwlog.Debugf("EditSvrCfg %s", req.URL.String())
 	var resp *http.Response
 	resp, err = http.DefaultClient.Do(req)
 	if err != nil {
-		logger.Error("EditSvrCfg DefaultClient Do err", err)
+		gwlog.Error("EditSvrCfg DefaultClient Do err", err)
 		return
 	}
 	defer resp.Body.Close()
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
-		logger.Error("EditSvrCfg ReadAll err", err)
+		gwlog.Error("EditSvrCfg ReadAll err", err)
 		return
 	}
-	logger.Debug("EditSvrCfg:body", string(body))
+	gwlog.Debugf("EditSvrCfg:body %s", string(body))
 
 	c.JSON(http.StatusOK, gin.H{"data": gin.H{}, "errorCode": 0})
 }
@@ -105,43 +105,43 @@ func ReqSvrSwitch(c *gin.Context) {
 		return
 	}
 	user := c.DefaultQuery("user", "anonymous")
-	logger.Debug("ReqSvrSwitch --------------", user, game)
+	gwlog.Debugf("ReqSvrSwitch ------------- %s %s", user, game)
 
 	urlstr := settings.SvrConfig.Env.URL + "/forbiden/getForbiden"
 	req, err := http.NewRequest("GET", urlstr, nil)
 	if err != nil {
-		logger.Error("ReqSvrSwitch NewRequest err", err)
+		gwlog.Error("ReqSvrSwitch NewRequest err", err)
 		return
 	}
 	query := req.URL.Query()
 	query.Add("gameId", game)
 	req.URL.RawQuery = query.Encode()
-	logger.Debug("ReqSvrSwitch ", req.URL.String())
+	gwlog.Debugf("ReqSvrSwitch %s", req.URL.String())
 	var resp *http.Response
 	resp, err = http.DefaultClient.Do(req)
 	if err != nil {
-		logger.Error("ReqSvrSwitch DefaultClient Do err", err)
+		gwlog.Error("ReqSvrSwitch DefaultClient Do err", err)
 		return
 	}
 	defer resp.Body.Close()
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
-		logger.Error("ReqSvrSwitch ReadAll err", err)
+		gwlog.Error("ReqSvrSwitch ReadAll err", err)
 		return
 	}
-	logger.Debug("ReqSvrSwitch:body", string(body))
+	gwlog.Debugf("ReqSvrSwitch:body %s", string(body))
 
 	args := make(gin.H)
 	var json = jsoniter.ConfigCompatibleWithStandardLibrary
 	err = json.Unmarshal(body, &args)
 	if err != nil {
-		logger.Error("json.Unmarshal", err)
+		gwlog.Error("json.Unmarshal", err)
 		c.JSON(http.StatusOK, args)
 	} else {
 		//utils.DumpSocketData(args["data"])
 		rspdata, ok := args["data"].(map[string]interface{})
 		if !ok {
-			logger.Error("json. no data")
+			gwlog.Error("json. no data")
 			c.JSON(http.StatusOK, args)
 		} else {
 			var rsp []gin.H
@@ -162,10 +162,10 @@ func EditSvrSwitch(c *gin.Context) {
 	}
 
 	if err := c.Bind(&editData); err != nil {
-		logger.Error(err)
+		gwlog.Error(err)
 		return
 	}
-	logger.Info("EditSvrSwitch", editData.Game, editData.Funcname, editData.Funcswitch)
+	gwlog.Infof("EditSvrSwitch %s %s %s", editData.Game, editData.Funcname, editData.Funcswitch)
 
 	urlstr := settings.SvrConfig.Env.URL + "/forbiden/setForbiden"
 	resp, err := http.PostForm(urlstr,
@@ -175,16 +175,16 @@ func EditSvrSwitch(c *gin.Context) {
 			"flag":   {editData.Funcswitch},
 		})
 	if err != nil {
-		logger.Error("EditSvrSwitch PostForm err", err)
+		gwlog.Error("EditSvrSwitch PostForm err", err)
 		return
 	}
 	defer resp.Body.Close()
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
-		logger.Error("EditSvrSwitch ReadAll err", err)
+		gwlog.Error("EditSvrSwitch ReadAll err", err)
 		return
 	}
-	logger.Debug("EditSvrSwitch:body", string(body))
+	gwlog.Debugf("EditSvrSwitch:body %s", string(body))
 
 	c.JSON(http.StatusOK, gin.H{"data": gin.H{}, "errorCode": 0})
 }
@@ -198,10 +198,10 @@ func RemoveSvrSwitch(c *gin.Context) {
 	}
 
 	if err := c.Bind(&editData); err != nil {
-		logger.Error(err)
+		gwlog.Error(err)
 		return
 	}
-	logger.Info("RemoveSvrSwitch", editData.Game, editData.Funcname, editData.Funcswitch)
+	gwlog.Infof("RemoveSvrSwitch %s %s %s ", editData.Game, editData.Funcname, editData.Funcswitch)
 
 	urlstr := settings.SvrConfig.Env.URL + "/forbiden/delForbiden"
 	resp, err := http.PostForm(urlstr,
@@ -210,16 +210,16 @@ func RemoveSvrSwitch(c *gin.Context) {
 			"name":   {editData.Funcname},
 		})
 	if err != nil {
-		logger.Error("RemoveSvrSwitch PostForm err", err)
+		gwlog.Error("RemoveSvrSwitch PostForm err", err)
 		return
 	}
 	defer resp.Body.Close()
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
-		logger.Error("RemoveSvrSwitch ReadAll err", err)
+		gwlog.Error("RemoveSvrSwitch ReadAll err", err)
 		return
 	}
-	logger.Debug("RemoveSvrSwitch:body", string(body))
+	gwlog.Debugf("RemoveSvrSwitch:body %s", string(body))
 
 	c.JSON(http.StatusOK, gin.H{"data": gin.H{}, "errorCode": 0})
 }

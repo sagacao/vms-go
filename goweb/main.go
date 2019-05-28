@@ -5,29 +5,35 @@ import (
 	"net/http"
 	"os"
 	"os/signal"
+	"path"
 	"time"
 	"vms-go/goweb/dbs"
-	"vms-go/goweb/logger"
 	"vms-go/goweb/routers"
 	"vms-go/goweb/settings"
+
+	"github.com/sagacao/goworld/engine/binutil"
+	"github.com/sagacao/goworld/engine/gwlog"
 
 	"github.com/gin-gonic/gin"
 )
 
 func prepare() {
-	logger.SetRollingDaily(settings.SvrConfig.Env.ACCESS_LOG_PATH, settings.SvrConfig.Env.ACCESS_LOG_NAME)
+	// logger.SetRollingDaily(settings.SvrConfig.Env.ACCESS_LOG_PATH, settings.SvrConfig.Env.ACCESS_LOG_NAME)
+	logfile := path.Join(settings.SvrConfig.Env.ACCESS_LOG_PATH, settings.SvrConfig.Env.ACCESS_LOG_NAME)
 	if settings.SvrConfig.Env.DEBUG {
 		gin.SetMode(gin.DebugMode)
-		logger.SetConsole(true)
-		logger.SetLevel(logger.DEBUG)
+		// logger.SetConsole(true)
+		// logger.SetLevel(logger.DEBUG)
+		binutil.SetupGWLog("vms", "debug", logfile, true)
 	} else {
 		gin.SetMode(gin.ReleaseMode)
-		logger.SetLevel(logger.INFO)
+		// logger.SetLevel(logger.INFO)
+		binutil.SetupGWLog("vms", "info", logfile, false)
 	}
 
 	err := dbs.NewDBService()
 	if err != nil {
-		logger.Fatal("mysql init ", err)
+		gwlog.Fatal("mysql init ", err)
 	}
 }
 
@@ -53,20 +59,21 @@ func main() {
 
 	go func() {
 		if err := srv.ListenAndServe(); err != nil && err != http.ErrServerClosed {
-			logger.Fatal("listen: ", err)
+			gwlog.Fatal("listen: ", err)
 		}
 	}()
-	logger.Info("Http Serving at: ", addr)
+	// logger.Info("Http Serving at: ", addr)
+	gwlog.Infof("Http Serving at: %s", addr)
 
 	quit := make(chan os.Signal)
 	signal.Notify(quit, os.Interrupt)
 	<-quit
-	logger.Info("Shutdown Server ...")
+	gwlog.Infof("Shutdown Server ...")
 
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
 	if err := srv.Shutdown(ctx); err != nil {
-		logger.Fatal("Server Shutdown:", err)
+		gwlog.Fatal("Server Shutdown:", err)
 	}
-	logger.Info("Server exiting")
+	gwlog.Infof("Server exiting")
 }

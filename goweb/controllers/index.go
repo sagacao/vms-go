@@ -5,12 +5,12 @@ import (
 	"strings"
 	"vms-go/goweb/dbs"
 	"vms-go/goweb/filters/auth"
-	"vms-go/goweb/logger"
 	"vms-go/goweb/models"
 	"vms-go/goweb/settings"
 	"vms-go/goweb/utils"
 
 	"github.com/gin-gonic/gin"
+	"github.com/sagacao/goworld/engine/gwlog"
 )
 
 func IndexGM(c *gin.Context) {
@@ -23,7 +23,7 @@ func IndexGM(c *gin.Context) {
 // GetUserInfo @Get
 func GetUserInfo(c *gin.Context) {
 	user := c.DefaultQuery("user", "anonymous")
-	logger.Debug("GetUserInfo --------------", user)
+	gwlog.Debugf("GetUserInfo -------------- %s ", user)
 	roles, ok := settings.GetUserPrivilege(user)
 	if !ok {
 		c.JSON(http.StatusOK, gin.H{
@@ -53,17 +53,17 @@ func Login(c *gin.Context) {
 		Password string `json:"password"  form:"password" binding:"required"`
 	}
 
-	// logger.Debug("######################################")
+	// gwlog.Debug("######################################")
 	// user := c.PostForm("user")
-	// logger.Debug(user)
-	// logger.Debug(c.Request.ParseForm())
-	// logger.Debug(c.Request.Body)
-	// logger.Debug(c.ContentType())
+	// gwlog.Debug(user)
+	// gwlog.Debug(c.Request.ParseForm())
+	// gwlog.Debug(c.Request.Body)
+	// gwlog.Debug(c.ContentType())
 	// data, _ := ioutil.ReadAll(c.Request.Body)
-	// logger.Debug("ctx.Request.body:", string(data))
+	// gwlog.Debug("ctx.Request.body:", string(data))
 
 	if err := c.Bind(&userCredentials); err != nil {
-		logger.Error(err)
+		gwlog.Error(err)
 		return
 	}
 
@@ -76,7 +76,7 @@ func Login(c *gin.Context) {
 		return
 	}
 
-	logger.Debug("Login --------------", userCredentials.User, userCredentials.Password, utils.MD5V(pwd))
+	gwlog.Debugf("Login -------------- %s %s %s ", userCredentials.User, userCredentials.Password, utils.MD5V(pwd))
 	if userCredentials.Password != utils.MD5V(pwd) {
 		c.JSON(http.StatusOK, gin.H{
 			"code": 2,
@@ -101,7 +101,7 @@ func GetLogger(c *gin.Context) {
 	stime := c.Query("stime")
 	etime := c.Query("etime")
 
-	logger.Debug("Logger----------", user, page, stime, etime)
+	gwlog.Debug("Logger----------", user, page, stime, etime)
 	//reply := make([]*models.LogStats, 0)
 	var reply []*models.LogStats
 	dbs.GetDBService().QueryLoggerStats(user, stime, etime, &reply)
@@ -136,11 +136,11 @@ func GetLogger(c *gin.Context) {
 func SetLogger(c *gin.Context) {
 	var logStats models.LogStats
 	if err := c.Bind(&logStats); err != nil {
-		logger.Error(err)
+		gwlog.Error(err)
 		return
 	}
 
-	logger.Debug(logStats)
+	gwlog.Debug(logStats)
 
 	errcode := 0
 	err := dbs.GetDBService().ReplaceLoggerStats(
@@ -163,11 +163,11 @@ func SetLogger(c *gin.Context) {
 func DelLogger(c *gin.Context) {
 	var logStats models.LogStats
 	if err := c.Bind(&logStats); err != nil {
-		logger.Error(err)
+		gwlog.Error(err)
 		return
 	}
 
-	logger.Debug(logStats)
+	gwlog.Debug(logStats)
 
 	errcode := 0
 	err := dbs.GetDBService().RemoveLoggerStats(

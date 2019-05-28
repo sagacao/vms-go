@@ -6,12 +6,12 @@ import (
 	"net/http"
 	"strings"
 	"time"
-	"vms-go/goweb/logger"
 	"vms-go/goweb/settings"
 
 	jwt_lib "github.com/dgrijalva/jwt-go"
 	"github.com/dgrijalva/jwt-go/request"
 	"github.com/gin-gonic/gin"
+	"github.com/sagacao/goworld/engine/gwlog"
 )
 
 type jwtAuthManager struct {
@@ -33,7 +33,7 @@ func (jwtAuth *jwtAuthManager) Check(c *gin.Context) bool {
 	token := c.Request.Header.Get("Authorization")
 	token = strings.Replace(token, "Bearer ", "", -1)
 	if token == "" {
-		logger.Debug("jwt Check no token")
+		gwlog.Debugf("jwt Check no token")
 		return false
 	}
 	var keyFun jwt_lib.Keyfunc
@@ -43,7 +43,7 @@ func (jwtAuth *jwtAuthManager) Check(c *gin.Context) bool {
 	}
 	authJwtToken, err := request.ParseFromRequest(c.Request, request.OAuth2Extractor, keyFun)
 	if err != nil {
-		logger.Debug("jwt Check------>", err)
+		gwlog.Debugf("jwt Check------> %v", err)
 		return false
 	}
 

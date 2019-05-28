@@ -727,3 +727,79 @@
 2019/05/27 14:11:42 gates.go:33: debug [ReqSvrGates  https://qgame-test.dayukeji.com:12004/gates/getGates?gameId=20201]
 2019/05/27 16:07:01 main.go:64: info [Shutdown Server ...]
 2019/05/27 16:07:01 main.go:71: info [Server exiting]
+2019/05/28 14:48:53 mysql.go:45: info [Mysql Has Open at  127.0.0.1]
+{"level":"info","ts":"2019-05-28T14:48:53.120+0800","msg":"Http Serving at: :8080","source":"vms"}
+2019/05/28 14:48:57 main.go:72: info [Shutdown Server ...]
+2019/05/28 14:48:57 main.go:79: info [Server exiting]
+{"level":"info","ts":"2019-05-28T16:40:11.940+0800","caller":"goweb/main.go:66","msg":"Http Serving at: :8080","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:40:30.032+0800","caller":"drivers/jwt.go:46","msg":"jwt Check------> Token is expired","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:40:37.730+0800","caller":"controllers/index.go:79","msg":"Login -------------- admin e10adc3949ba59abbe56e057f20f883e e10adc3949ba59abbe56e057f20f883e ","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:40:37.740+0800","caller":"controllers/index.go:26","msg":"GetUserInfo -------------- admin ","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:40:40.954+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:41:05.681+0800","caller":"controllers/index.go:143","msg":"{taptap 20201 2019-05-28 123 23 12 33 90}","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:41:05.683+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:41:10.450+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:41:20.423+0800","caller":"controllers/index.go:143","msg":"{taptap 20201 2019-05-28 123 23 12 8 90}","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:41:20.424+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:41:22.914+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:41:33.036+0800","caller":"controllers/index.go:170","msg":"{taptap 20201 2019-05-28     }","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:41:33.047+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:41:34.485+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:41:39.514+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:41:39.874+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:41:40.074+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:41:40.265+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:41:40.458+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:41:40.617+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:41:40.801+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:41:40.993+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:41:41.178+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:41:41.362+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:41:41.545+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:41:41.714+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:41:44.322+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:41:44.491+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:41:44.684+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:41:44.884+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:41:45.075+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:41:45.266+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:41:45.466+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:42:03.080+0800","caller":"controllers/index.go:143","msg":"{taptap 20201 2019-05-28 123 23 12 6 90}","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:42:03.081+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:42:04.338+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:42:04.530+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:42:04.730+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:42:04.905+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:42:05.089+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:42:05.265+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:42:05.437+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:42:05.601+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:42:05.794+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:42:05.979+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:42:06.163+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:42:06.346+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:42:06.531+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:42:06.700+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:42:06.873+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:42:07.050+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:42:08.938+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:42:09.121+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:42:09.322+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:42:09.533+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:42:09.673+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:42:09.843+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:42:10.026+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:42:10.201+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:42:10.385+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:42:10.561+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:42:10.746+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:42:10.921+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:42:11.122+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:42:13.085+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:42:13.273+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:42:13.481+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:42:13.673+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:42:13.857+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:42:14.033+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:42:14.217+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}
+{"level":"debug","ts":"2019-05-28T16:42:14.369+0800","caller":"controllers/index.go:104","msg":"Logger----------admin/stats/stats2019-5-212019-5-28","source":"vms"}

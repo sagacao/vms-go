@@ -2,12 +2,18 @@ package dbs
 
 import (
 	"database/sql"
-	"vms-go/goweb/logger"
+	"fmt"
+	"nuvem/engine/asyncdb/dbmysql"
 	"vms-go/goweb/models"
+	"vms-go/goweb/settings"
+
+	"github.com/sagacao/goworld/engine/gwlog"
 )
 
 type DBService struct {
-	mysql *MysqlIface
+	// mysql *MysqlIface
+
+	dbmysql *dbmysql.DBMysql
 }
 
 var _dbService *DBService
@@ -19,8 +25,19 @@ func GetDBService() *DBService {
 func NewDBService() error {
 	_dbService = &DBService{}
 	var err error
-	_dbService.mysql, err = NewMysqlIface()
+	// _dbService.mysql, err = NewMysqlIface()
+	// if err != nil {
+	// 	return err
+	// }
+
+	dataSource := fmt.Sprintf("%s:%s@tcp(%s)/%s?charset=utf8&allowOldPasswords=1",
+		settings.SvrConfig.Mysql.USER,
+		settings.SvrConfig.Mysql.PASSWD,
+		settings.SvrConfig.Mysql.HOST,
+		settings.SvrConfig.Mysql.DBNAME)
+	_dbService.dbmysql, err = dbmysql.OpenMySQL(dataSource)
 	if err != nil {
+		gwlog.Error("NewDBService err:", err)
 		return err
 	}
 
@@ -28,7 +45,8 @@ func NewDBService() error {
 }
 
 func (db *DBService) Destory() {
-	db.mysql.Close()
+	// db.mysql.Close()
+	db.dbmysql.Close()
 }
 
 func (db *DBService) QueryLoggerStats(channel string, sdate, edate string, replys *[]*models.LogStats) error {
@@ -36,10 +54,10 @@ func (db *DBService) QueryLoggerStats(channel string, sdate, edate string, reply
 	var err error
 	if channel == "admin" {
 		sqlstr := "select channel, gameid, newly, tow_pr, three_pr, seven_pr, retention, logdate from log_stat where logdate>=? and logdate<=?"
-		rows, err = db.mysql.QueryV2(sqlstr, sdate, edate)
+		rows, err = db.dbmysql.AsyncQuery(sqlstr, sdate, edate) //db.mysql.QueryV2(sqlstr, sdate, edate)
 	} else {
 		sqlstr := "select channel, gameid, newly, tow_pr, three_pr, seven_pr, retention, logdate from log_stat where channel=? and logdate>=? and logdate<=?"
-		rows, err = db.mysql.QueryV2(sqlstr, channel, sdate, edate)
+		rows, err = db.dbmysql.AsyncQuery(sqlstr, channel, sdate, edate) //db.mysql.QueryV2(sqlstr, channel, sdate, edate)
 	}
 
 	defer func() {
@@ -48,14 +66,14 @@ func (db *DBService) QueryLoggerStats(channel string, sdate, edate string, reply
 		}
 	}()
 	if err != nil {
-		logger.Error("Query: failed: ", err)
+		gwlog.Error("Query: failed: ", err)
 		return err
 	}
 
 	for rows.Next() {
 		stats := &models.LogStats{}
 		if err := rows.Scan(&stats.Channel, &stats.Game, &stats.Newly, &stats.TowPr, &stats.ThreePr, &stats.SevenPr, &stats.Retention, &stats.LogDate); err != nil {
-			logger.Error("Scan: failed: ", err)
+			gwlog.Error("Scan: failed: ", err)
 			continue
 		}
 
@@ -66,9 +84,9 @@ func (db *DBService) QueryLoggerStats(channel string, sdate, edate string, reply
 
 func (db *DBService) ReplaceLoggerStats(channel string, game string, newly, tow_pr, three_pr, seven_pr, retention, logdate string) error {
 	sqlstr := "replace into log_stat values(?, ?, ?, ?, ?, ?, ?, ?)"
-	_, err := db.mysql.ReplaceV2(sqlstr, channel, game, newly, tow_pr, three_pr, seven_pr, retention, logdate)
+	_, err := db.dbmysql.AsyncExec(sqlstr, channel, game, newly, tow_pr, three_pr, seven_pr, retention, logdate) //db.mysql.ReplaceV2(sqlstr, channel, game, newly, tow_pr, three_pr, seven_pr, retention, logdate)
 	if err != nil {
-		logger.Error("ReplaceLoggerStats ", err)
+		gwlog.Error("ReplaceLoggerStats ", err)
 		return err
 	}
 	return nil
@@ -76,9 +94,9 @@ func (db *DBService) ReplaceLoggerStats(channel string, game string, newly, tow_
 
 func (db *DBService) RemoveLoggerStats(channel string, game string, logdate string) error {
 	sqlstr := "delete from log_stat where channel=? and gameid = ? and logdate = ?"
-	_, err := db.mysql.ExecV2(sqlstr, channel, game, logdate)
+	_, err := db.dbmysql.AsyncExec(sqlstr, channel, game, logdate)
 	if err != nil {
-		logger.Error("RemoveLoggerStats ", err)
+		gwlog.Error("RemoveLoggerStats ", err)
 		return err
 	}
 	return nil

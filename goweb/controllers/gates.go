@@ -4,11 +4,11 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/url"
-	"vms-go/goweb/logger"
 	"vms-go/goweb/settings"
 
 	"github.com/gin-gonic/gin"
 	jsoniter "github.com/json-iterator/go"
+	"github.com/sagacao/goworld/engine/gwlog"
 )
 
 // ReqSvrGates @Get
@@ -19,37 +19,37 @@ func ReqSvrGates(c *gin.Context) {
 		return
 	}
 	user := c.DefaultQuery("user", "anonymous")
-	logger.Debug("ReqSvrGates --------------", user, game)
+	gwlog.Debug("ReqSvrGates --------------", user, game)
 
 	urlstr := settings.SvrConfig.Env.URL + "/gates/getGates"
 	req, err := http.NewRequest("GET", urlstr, nil)
 	if err != nil {
-		logger.Error("ReqSvrGates NewRequest err", err)
+		gwlog.Error("ReqSvrGates NewRequest err", err)
 		return
 	}
 	query := req.URL.Query()
 	query.Add("gameId", game)
 	req.URL.RawQuery = query.Encode()
-	logger.Debug("ReqSvrGates ", req.URL.String())
+	gwlog.Debug("ReqSvrGates ", req.URL.String())
 	var resp *http.Response
 	resp, err = http.DefaultClient.Do(req)
 	if err != nil {
-		logger.Error("ReqSvrGates DefaultClient Do err", err)
+		gwlog.Error("ReqSvrGates DefaultClient Do err", err)
 		return
 	}
 	defer resp.Body.Close()
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
-		logger.Error("ReqSvrCfg ReadAll err", err)
+		gwlog.Error("ReqSvrCfg ReadAll err", err)
 		return
 	}
-	//logger.Debug("ReqSvrCfg:body", string(body))
+	//gwlog.Debug("ReqSvrCfg:body", string(body))
 
 	args := make(gin.H)
 	var json = jsoniter.ConfigCompatibleWithStandardLibrary
 	err = json.Unmarshal(body, &args)
 	if err != nil {
-		logger.Error("json.Unmarshal", err)
+		gwlog.Error("json.Unmarshal", err)
 		c.JSON(http.StatusOK, args)
 	} else {
 		c.JSON(http.StatusOK, args)
@@ -66,10 +66,10 @@ func EditSvrGates(c *gin.Context) {
 	}
 
 	if err := c.Bind(&editData); err != nil {
-		logger.Error(err)
+		gwlog.Error(err)
 		return
 	}
-	logger.Info("EditSvrGates", editData.Game, editData.Value)
+	gwlog.Info("EditSvrGates", editData.Game, editData.Value)
 
 	urlstr := settings.SvrConfig.Env.URL + "/Logic/user/setServerGates"
 	resp, err := http.PostForm(urlstr,
@@ -81,16 +81,16 @@ func EditSvrGates(c *gin.Context) {
 			"svr":    {editData.Svr},
 		})
 	if err != nil {
-		logger.Error("EditSvrGates PostForm err", err)
+		gwlog.Error("EditSvrGates PostForm err", err)
 		return
 	}
 	defer resp.Body.Close()
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
-		logger.Error("EditSvrGates ReadAll err", err)
+		gwlog.Error("EditSvrGates ReadAll err", err)
 		return
 	}
-	logger.Debug("EditSvrGates:body", string(body))
+	gwlog.Debug("EditSvrGates:body", string(body))
 
 	c.JSON(http.StatusOK, gin.H{"data": gin.H{}, "errorCode": 0})
 }
@@ -103,10 +103,10 @@ func RemoveSvrGates(c *gin.Context) {
 	}
 
 	if err := c.Bind(&editData); err != nil {
-		logger.Error(err)
+		gwlog.Error(err)
 		return
 	}
-	logger.Info("RemoveSvrGates", editData.Game, editData.Name)
+	gwlog.Info("RemoveSvrGates", editData.Game, editData.Name)
 
 	urlstr := settings.SvrConfig.Env.URL + "/gates/delGates"
 	resp, err := http.PostForm(urlstr,
@@ -115,16 +115,16 @@ func RemoveSvrGates(c *gin.Context) {
 			"name":   {editData.Name},
 		})
 	if err != nil {
-		logger.Error("RemoveSvrGates PostForm err", err)
+		gwlog.Error("RemoveSvrGates PostForm err", err)
 		return
 	}
 	defer resp.Body.Close()
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
-		logger.Error("RemoveSvrGates ReadAll err", err)
+		gwlog.Error("RemoveSvrGates ReadAll err", err)
 		return
 	}
-	logger.Debug("RemoveSvrGates:body", string(body))
+	gwlog.Debug("RemoveSvrGates:body", string(body))
 
 	c.JSON(http.StatusOK, gin.H{"data": gin.H{}, "errorCode": 0})
 }
