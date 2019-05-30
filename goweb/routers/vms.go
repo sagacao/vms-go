@@ -38,5 +38,9 @@ func registerRouter(router *gin.Engine) {
 		vms.GET("/gates/req", controllers.ReqSvrGates)
 		vms.POST("/gates/edit", controllers.EditSvrGates)
 		vms.POST("/gates/remove", controllers.RemoveSvrGates)
+
+		vms.GET("/vapp/req", controllers.ReqSvrAppInfo)
+		vms.POST("/vapp/edit", controllers.EditSvrAppInfo)
+		vms.POST("/vapp/remove", controllers.RemoveSvrAppInfo)
 	}
 }

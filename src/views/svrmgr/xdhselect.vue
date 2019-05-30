@@ -47,6 +47,14 @@ export default {
                 {
                     value: '20901',
                     label: '方块2'
+                },
+                {
+                    value: '21001',
+                    label: '守望猎手'
+                },
+                {
+                    value: '21101',
+                    label: '俄罗斯方块pk'
                 }
             ],
             svalue: ''

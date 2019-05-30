@@ -150,6 +150,12 @@ export const asyncRouterMap = [
         component: () => import('@/views/svrmgr/gates'), // Parent router-view
         name: 'gates',
         meta: { title: '网关配置', roles: ['admin', 'saga'] }
+      },
+      {
+        path: 'appctor',
+        component: () => import('@/views/svrmgr/appctor'), // Parent router-view
+        name: 'appctor',
+        meta: { title: 'APP配置', roles: ['admin', 'saga'] }
       }
     ]
   },

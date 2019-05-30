@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { getSvrCfg, setSvrCfg, getSvrSwitch, setSvrSwitch, removeSvrSwitch } from '@/api/svrmgr'
 import { getSvrGates, setSvrGates, removeSvrGates } from '@/api/gates'
+import { getSvrAppInfo, setSvrAppInfo, removeSvrAppInfo } from '@/api/appctor'
 
 const state = {
 }
@@ -111,6 +112,47 @@ const actions= {
         // console.log(formdata)
         return new Promise((resolve, reject) => {
             removeSvrGates(user, formdata).then(response => {
+                // console.log(response)
+                resolve(response)
+            }).catch(error => {
+                // console.log(error)
+                reject(error)
+            })
+        })
+    },
+
+    GetSvrAppInfo({ commit }, info) {
+        const {user, page, game} = info
+        return new Promise((resolve, reject) => {
+            getSvrAppInfo(user, page, game).then(response => {
+                // console.log(response)
+                resolve(response)
+            }).catch(error => {
+                // console.log(error)
+                reject(error)
+            })
+        })
+    },
+
+    SetSvrAppInfo({ commit }, info) {
+        const {user, formdata} = info
+        // console.log(formdata)
+        return new Promise((resolve, reject) => {
+            setSvrAppInfo(user, formdata).then(response => {
+                // console.log(response)
+                resolve(response)
+            }).catch(error => {
+                // console.log(error)
+                reject(error)
+            })
+        })
+    },
+
+    RemoveSvrAppInfo({ commit }, info) {
+        const {user, formdata} = info
+        // console.log(formdata)
+        return new Promise((resolve, reject) => {
+            removeSvrAppInfo(user, formdata).then(response => {
                 // console.log(response)
                 resolve(response)
             }).catch(error => {
