@@ -64,6 +64,7 @@ func EditSvrAppInfo(c *gin.Context) {
 		AppID     string `json:"appid"  form:"appid" binding:"required"`
 		AppSecret string `json:"secret"  form:"secret" binding:"required"`
 		Desc      string `json:"desc"  form:"desc" binding:"required"`
+		Action    string `json:"action"  form:"action" binding:"required"`
 	}
 
 	if err := c.Bind(&editData); err != nil {
@@ -80,6 +81,7 @@ func EditSvrAppInfo(c *gin.Context) {
 			"appid":     {editData.AppID},
 			"appsecret": {editData.AppSecret},
 			"desc":      {editData.Desc},
+			"action":    {editData.Action},
 		})
 	if err != nil {
 		gwlog.Error("EditSvrAppInfo PostForm err", err)

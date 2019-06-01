@@ -1,10 +1,12 @@
 import Vue from 'vue'
 
 import 'normalize.css/normalize.css' // A modern alternative to CSS resets
+import 'vue-json-viewer/style.css'
 
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import locale from 'element-ui/lib/locale/lang/en' // lang i18n
+import JsonViewer from 'vue-json-viewer'
 
 import '@/styles/index.scss' // global css
 
@@ -26,6 +28,7 @@ import '@/permission' // permission control
 
 // set ElementUI lang to EN
 Vue.use(ElementUI, { locale })
+Vue.use(JsonViewer)
 
 Vue.config.productionTip = false
 

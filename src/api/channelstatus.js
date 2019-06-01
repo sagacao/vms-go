@@ -2,27 +2,26 @@
 import request from '@/utils/request'
 import qs from 'qs'
 
-export function getSvrAppInfo (user, page, game) {
-    // console.log('getSvrGates', user, page)
+export function getSvrChannelStatus (user, page, game) {
+    // console.log('getSvrChannelStatus', user, page)
     return request({
-        url: '/vms/vapp/req',
+        url: '/vms/cstatus/req',
         method: 'get',
         params: { user, page, game }
     })
 }
 
-export function setSvrAppInfo (user, form) {
-    console.log('setSvrAppInfo', user, form)
+export function setSvrChannelStatus (user, form) {
+    console.log('setSvrChannelStatus', user, form)
     const data = {
         game: form.game,
         channel: form.channel,
-        appid : form.appid,
-        secret : form.secret,
-        desc : form.desc,
+        name : form.name,
+        status : form.status,
         action : form.action
     }
     return request({
-        url: '/vms/vapp/edit',
+        url: '/vms/cstatus/edit',
         method: 'post',
         params: { user },
         transformRequest: [function (data) {
@@ -32,14 +31,15 @@ export function setSvrAppInfo (user, form) {
     })
 }
 
-export function removeSvrAppInfo (user, form) {
-    // console.log('removeSvrGates', user, form)
+export function removeChannelStatus (user, form) {
+    // console.log('removeChannelStatus', user, form)
     const data = {
         game: form.game,
-        appid: form.appid
+        channel: form.channel,
+        name : form.name,
     }
     return request({
-        url: '/vms/vapp/remove',
+        url: '/vms/cstatus/remove',
         method: 'post',
         params: { user },
         transformRequest: [function (data) {

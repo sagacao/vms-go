@@ -2,6 +2,7 @@
 import { getSvrCfg, setSvrCfg, getSvrSwitch, setSvrSwitch, removeSvrSwitch } from '@/api/svrmgr'
 import { getSvrGates, setSvrGates, removeSvrGates } from '@/api/gates'
 import { getSvrAppInfo, setSvrAppInfo, removeSvrAppInfo } from '@/api/appctor'
+import { getSvrChannelStatus, setSvrChannelStatus, removeChannelStatus } from '@/api/channelstatus'
 
 const state = {
 }
@@ -153,6 +154,47 @@ const actions= {
         // console.log(formdata)
         return new Promise((resolve, reject) => {
             removeSvrAppInfo(user, formdata).then(response => {
+                // console.log(response)
+                resolve(response)
+            }).catch(error => {
+                // console.log(error)
+                reject(error)
+            })
+        })
+    },
+
+    GetSvrChannelStatus({ commit }, info) {
+        const {user, page, game} = info
+        return new Promise((resolve, reject) => {
+            getSvrChannelStatus(user, page, game).then(response => {
+                // console.log(response)
+                resolve(response)
+            }).catch(error => {
+                // console.log(error)
+                reject(error)
+            })
+        })
+    },
+
+    SetSvrChannelStatus({ commit }, info) {
+        const {user, formdata} = info
+        // console.log(formdata)
+        return new Promise((resolve, reject) => {
+            setSvrChannelStatus(user, formdata).then(response => {
+                // console.log(response)
+                resolve(response)
+            }).catch(error => {
+                // console.log(error)
+                reject(error)
+            })
+        })
+    },
+
+    RemoveSvrChannelStatus({ commit }, info) {
+        const {user, formdata} = info
+        // console.log(formdata)
+        return new Promise((resolve, reject) => {
+            removeChannelStatus(user, formdata).then(response => {
                 // console.log(response)
                 resolve(response)
             }).catch(error => {

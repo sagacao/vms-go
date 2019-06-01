@@ -25,6 +25,7 @@
                 <el-table-column prop="game" label="游戏" width="100">
                 </el-table-column>
                 <el-table-column prop="value" label="配置" width="600">
+                    <json-viewer :value="value" :expand-depth=5 copyable boxed sort></json-viewer>
                 </el-table-column>
                 <el-table-column label="操作" align="center">
                     <template slot-scope="scope">

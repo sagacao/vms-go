@@ -19,17 +19,18 @@
             <el-table :data="data" border class="table">
                 <el-table-column prop="game" label="游戏" width="100">
                 </el-table-column>
-                <el-table-column prop="channel" label="渠道" width="160">
+                <el-table-column prop="channel" label="渠道" width="200">
                 </el-table-column>
-                <el-table-column prop="appid" label="APPID" width="200">
+                <el-table-column prop="name" label="名字" width="200">
                 </el-table-column>
-                <el-table-column prop="secret" label="秘钥" width="300">
-                </el-table-column>
-                <el-table-column prop="desc" label="描述" width="300">
+                <el-table-column property="status" label="状态" width="160">
+                    <template slot-scope="scope">
+                        <el-switch active-color="#13ce66" inactive-color="#ff4949" active-value="1" inactive-value="0" v-model="scope.row.status" @change="handleEdit(scope.$index,scope.row)">
+                        </el-switch>
+                    </template>
                 </el-table-column>
                 <el-table-column label="操作" align="center">
                     <template slot-scope="scope">
-                        <el-button type="text" icon="el-icon-edit" @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
                         <el-button type="text" icon="el-icon-delete" @click="handleDel(scope.$index, scope.row)">删除</el-button>
                     </template>
                 </el-table-column>
@@ -46,14 +47,21 @@
                 <el-form-item label="渠道">
                     <el-input v-model="form.channel">wx</el-input>
                 </el-form-item>
-                <el-form-item label="APPID">
-                    <el-input v-model="form.appid"></el-input>
+                <el-form-item label="名字">
+                    <el-select v-model="form.name" placeholder="请选择" >
+                        <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
+                            <span style="float: left">{{ item.label }}</span>
+                            <span style="float: right; color: #8492a6; font-size: 13px">{{ item.value }}</span>
+                        </el-option>
+                    </el-select>
                 </el-form-item>
-                <el-form-item label="秘钥">
-                    <el-input v-model="form.secret"></el-input>
-                </el-form-item>
-                <el-form-item label="描述">
-                    <el-input v-model="form.desc"></el-input>
+                <el-form-item label="状态">
+                    <el-select v-model="form.status" placeholder="请选择" >
+                        <el-option v-for="item in funcstatus" :key="item.value" :label="item.label" :value="item.value">
+                            <span style="float: left">{{ item.label }}</span>
+                            <span style="float: right; color: #8492a6; font-size: 13px">{{ item.value }}</span>
+                        </el-option>
+                    </el-select>
                 </el-form-item>
             </el-form>
             <span slot="footer" class="dialog-footer">
@@ -69,9 +77,57 @@
 import XdhSelect from './xdhselect'
 export default {
     components: { XdhSelect },
-    name: 'gates',
+    name: 'switch',
     data() {
         return {
+            options:[
+                {
+                    value: 'invite',
+                    label: 'invite'
+                },
+                {
+                    value: 'push',
+                    label: 'push'
+                },
+                {
+                    value: 'forcar',
+                    label: 'forcar'
+                },
+                {
+                    value: 'redirect',
+                    label: 'redirect'
+                },
+                {
+                    value: 'clickTips',
+                    label: 'clickTips'
+                },
+                {
+                    value: 'unlockLevelMode',
+                    label: 'unlockLevelMode'
+                },
+                {
+                    value: 'banner',
+                    label: 'banner'
+                },
+                {
+                    value: 'mute',
+                    label: 'mute'
+                },
+                {
+                    value: 'comic',
+                    label: 'comic'
+                }
+            ],
+            funcstatus:[
+                {
+                    value: '1',
+                    label: '开'
+                },
+                {
+                    value: '0',
+                    label: '关'
+                }
+            ],
             tableData: [],
             cur_page: 1,
             is_search: false,
@@ -80,10 +136,9 @@ export default {
             actioning : "add",
             form: {
                 game: this.selected_game,
-                channel : '',
-                appid: '',
-                secret: '',
-                desc: ''
+                channel : 'wx',
+                name : 'push',
+                status: '1'
             },
             idx: -1
         }
@@ -115,7 +170,7 @@ export default {
             const page = this.$route.path
             const game = this.selected_game
             console.log(this.selected_game)
-            this.$store.dispatch('svrmgr/GetSvrAppInfo', { user, page, game}).then((res) => {
+            this.$store.dispatch('svrmgr/GetSvrChannelStatus', { user, page, game}).then((res) => {
                 console.log(res)
                 if (res.errorCode != 0) {
                     if (res.errorCode == 9100) {
@@ -125,13 +180,14 @@ export default {
                     } 
                     this.tableData = []
                 } else {
-                    // this.tableData = []
-                    this.tableData = res.data
-                    // for(var i = 0; i < res.data.length; i++) {
-                    //     let item = res.data[i]
-                    //     item['game'] = game
-                    //     this.tableData.push(item)
-                    // } 
+                    console.log(">>>>", res.data)
+                    this.tableData = []
+                    // this.tableData = res.data
+                    for(var i = 0; i < res.data.length; i++) {
+                        let item = res.data[i]
+                        item['status'] = item.status + ''
+                        this.tableData.push(item)
+                    } 
                 } 
             }).catch(err => {
                 console.log(err)
@@ -158,11 +214,12 @@ export default {
             const item = this.tableData[index];
             const formdata = {
                 game : this.selected_game,
-                appid : item.appid
+                channel : item.channel,
+                name: item.name
             }
             // console.log(formdata)
             const user = this.$store.getters.name
-            this.$store.dispatch('svrmgr/RemoveSvrAppInfo', { user, formdata}).then((res) => {
+            this.$store.dispatch('svrmgr/RemoveSvrChannelStatus', { user, formdata}).then((res) => {
                 console.log(res)
                 if (res.errorCode != 0) {
                     this.$message.error(`执行失败 :` + res.errorCode);
@@ -182,9 +239,8 @@ export default {
             this.form = {
                 game: this.selected_game,
                 channel : 'wx',
-                appid: '',
-                secret : '',
-                desc : ''
+                name : 'push',
+                status: '1'
             }
             this.editVisible = true
             this.actioning = 'add'
@@ -192,15 +248,17 @@ export default {
         handleEdit(index, row) {
             this.idx = index;
             const item = this.tableData[index];
+            // console.log("---------------------------")
+            // console.log(row.status)
             this.form = {
                 game: this.selected_game,
                 channel : item.channel,
-                appid: item.appid,
-                secret: item.secret,
-                desc: item.desc
+                name : item.name,
+                status: item.status
             }
-            this.editVisible = true;
+            // this.editVisible = true;
             this.actioning = 'edit'
+            this.saveEdit()
         },
         // 保存编辑
         saveEdit() {
@@ -208,13 +266,12 @@ export default {
             const formdata = {
                 game : this.selected_game,
                 channel : this.form.channel,
-                appid : this.form.appid,
-                secret : this.form.secret,
-                desc: this.form.desc,
+                name : this.form.name,
+                status: parseInt(this.form.status),
                 action : this.actioning
             }
             console.log(formdata)
-            this.$store.dispatch('svrmgr/SetSvrAppInfo', { user, formdata}).then((res) => {
+            this.$store.dispatch('svrmgr/SetSvrChannelStatus', { user, formdata}).then((res) => {
                 if (res.errorCode != 0) {
                     this.$message.error(`执行失败 :` + res.errorCode);
                 } else {

@@ -941,3 +941,200 @@
 {"level":"debug","ts":"2019-05-30T15:07:41.720+0800","caller":"controllers/appcotr.go:33","msg":"ReqSvrAppInfo https://qgame-test.dayukeji.com:12004/vapp/getvapp?gameId=21101","source":"vms"}
 {"level":"info","ts":"2019-05-30T15:09:26.018+0800","caller":"goweb/main.go:71","msg":"Shutdown Server ...","source":"vms"}
 {"level":"info","ts":"2019-05-30T15:09:26.022+0800","caller":"goweb/main.go:78","msg":"Server exiting","source":"vms"}
+{"level":"info","ts":"2019-05-30T15:10:23.752+0800","caller":"goweb/main.go:66","msg":"Http Serving at: :8080","source":"vms"}
+{"level":"debug","ts":"2019-05-30T15:10:26.881+0800","caller":"controllers/index.go:26","msg":"GetUserInfo --------------  ","source":"vms"}
+{"level":"debug","ts":"2019-05-30T15:10:34.266+0800","caller":"controllers/index.go:79","msg":"Login -------------- admin e10adc3949ba59abbe56e057f20f883e e10adc3949ba59abbe56e057f20f883e ","source":"vms"}
+{"level":"debug","ts":"2019-05-30T15:10:34.279+0800","caller":"controllers/index.go:26","msg":"GetUserInfo -------------- admin ","source":"vms"}
+{"level":"debug","ts":"2019-05-30T15:10:38.927+0800","caller":"controllers/appcotr.go:22","msg":"ReqSvrAppInfo --------------admin21101","source":"vms"}
+{"level":"debug","ts":"2019-05-30T15:10:38.928+0800","caller":"controllers/appcotr.go:33","msg":"ReqSvrAppInfo https://qgame-test.dayukeji.com:12004/vapp/getvapp?gameId=21101","source":"vms"}
+{"level":"info","ts":"2019-05-30T15:10:56.706+0800","caller":"controllers/appcotr.go:73","msg":"EditSvrAppInfo21101wx","source":"vms"}
+{"level":"debug","ts":"2019-05-30T15:10:56.708+0800","caller":"controllers/appcotr.go:22","msg":"ReqSvrAppInfo --------------admin21101","source":"vms"}
+{"level":"debug","ts":"2019-05-30T15:10:56.711+0800","caller":"controllers/appcotr.go:33","msg":"ReqSvrAppInfo https://qgame-test.dayukeji.com:12004/vapp/getvapp?gameId=21101","source":"vms"}
+{"level":"debug","ts":"2019-05-30T15:10:56.742+0800","caller":"controllers/appcotr.go:94","msg":"EditSvrAppInfo:body{\"data\":\"123\",\"errorCode\":0}","source":"vms"}
+{"level":"info","ts":"2019-05-30T15:10:59.741+0800","caller":"controllers/appcotr.go:110","msg":"RemoveSvrAppInfo21101123","source":"vms"}
+{"level":"debug","ts":"2019-05-30T15:10:59.778+0800","caller":"controllers/appcotr.go:128","msg":"RemoveSvrAppInfo:body{\"data\":\"123\",\"errorCode\":0}","source":"vms"}
+{"level":"debug","ts":"2019-05-30T15:10:59.794+0800","caller":"controllers/appcotr.go:22","msg":"ReqSvrAppInfo --------------admin21101","source":"vms"}
+{"level":"debug","ts":"2019-05-30T15:10:59.794+0800","caller":"controllers/appcotr.go:33","msg":"ReqSvrAppInfo https://qgame-test.dayukeji.com:12004/vapp/getvapp?gameId=21101","source":"vms"}
+{"level":"info","ts":"2019-05-30T15:11:26.347+0800","caller":"controllers/appcotr.go:73","msg":"EditSvrAppInfo21101wx","source":"vms"}
+{"level":"debug","ts":"2019-05-30T15:11:26.349+0800","caller":"controllers/appcotr.go:22","msg":"ReqSvrAppInfo --------------admin21101","source":"vms"}
+{"level":"debug","ts":"2019-05-30T15:11:26.354+0800","caller":"controllers/appcotr.go:33","msg":"ReqSvrAppInfo https://qgame-test.dayukeji.com:12004/vapp/getvapp?gameId=21101","source":"vms"}
+{"level":"debug","ts":"2019-05-30T15:11:26.382+0800","caller":"controllers/appcotr.go:94","msg":"EditSvrAppInfo:body{\"data\":\"wx63f0b1eb1560640d\",\"errorCode\":0}","source":"vms"}
+{"level":"debug","ts":"2019-05-30T15:17:08.031+0800","caller":"controllers/appcotr.go:22","msg":"ReqSvrAppInfo --------------admin21001","source":"vms"}
+{"level":"debug","ts":"2019-05-30T15:17:08.036+0800","caller":"controllers/appcotr.go:33","msg":"ReqSvrAppInfo https://qgame-test.dayukeji.com:12004/vapp/getvapp?gameId=21001","source":"vms"}
+{"level":"info","ts":"2019-05-30T15:18:30.490+0800","caller":"controllers/appcotr.go:73","msg":"EditSvrAppInfo21001wx","source":"vms"}
+{"level":"debug","ts":"2019-05-30T15:18:30.492+0800","caller":"controllers/appcotr.go:22","msg":"ReqSvrAppInfo --------------admin21001","source":"vms"}
+{"level":"debug","ts":"2019-05-30T15:18:30.492+0800","caller":"controllers/appcotr.go:33","msg":"ReqSvrAppInfo https://qgame-test.dayukeji.com:12004/vapp/getvapp?gameId=21001","source":"vms"}
+{"level":"debug","ts":"2019-05-30T15:18:30.527+0800","caller":"controllers/appcotr.go:94","msg":"EditSvrAppInfo:body{\"data\":\"wxdc65bce22ad6cf1c\",\"errorCode\":0}","source":"vms"}
+{"level":"debug","ts":"2019-05-30T15:18:42.992+0800","caller":"controllers/appcotr.go:22","msg":"ReqSvrAppInfo --------------admin20801","source":"vms"}
+{"level":"debug","ts":"2019-05-30T15:18:42.992+0800","caller":"controllers/appcotr.go:33","msg":"ReqSvrAppInfo https://qgame-test.dayukeji.com:12004/vapp/getvapp?gameId=20801","source":"vms"}
+{"level":"info","ts":"2019-05-30T15:19:07.600+0800","caller":"controllers/appcotr.go:73","msg":"EditSvrAppInfo20801vivo","source":"vms"}
+{"level":"debug","ts":"2019-05-30T15:19:07.603+0800","caller":"controllers/appcotr.go:22","msg":"ReqSvrAppInfo --------------admin20801","source":"vms"}
+{"level":"debug","ts":"2019-05-30T15:19:07.603+0800","caller":"controllers/appcotr.go:33","msg":"ReqSvrAppInfo https://qgame-test.dayukeji.com:12004/vapp/getvapp?gameId=20801","source":"vms"}
+{"level":"debug","ts":"2019-05-30T15:19:07.639+0800","caller":"controllers/appcotr.go:94","msg":"EditSvrAppInfo:body{\"data\":\"100000958\",\"errorCode\":0}","source":"vms"}
+{"level":"debug","ts":"2019-05-30T15:19:16.028+0800","caller":"controllers/appcotr.go:22","msg":"ReqSvrAppInfo --------------admin20201","source":"vms"}
+{"level":"debug","ts":"2019-05-30T15:19:16.028+0800","caller":"controllers/appcotr.go:33","msg":"ReqSvrAppInfo https://qgame-test.dayukeji.com:12004/vapp/getvapp?gameId=20201","source":"vms"}
+{"level":"debug","ts":"2019-05-30T15:19:40.945+0800","caller":"controllers/appcotr.go:22","msg":"ReqSvrAppInfo --------------admin20201","source":"vms"}
+{"level":"info","ts":"2019-05-30T15:19:40.945+0800","caller":"controllers/appcotr.go:73","msg":"EditSvrAppInfo20201wx","source":"vms"}
+{"level":"debug","ts":"2019-05-30T15:19:40.945+0800","caller":"controllers/appcotr.go:33","msg":"ReqSvrAppInfo https://qgame-test.dayukeji.com:12004/vapp/getvapp?gameId=20201","source":"vms"}
+{"level":"debug","ts":"2019-05-30T15:19:40.981+0800","caller":"controllers/appcotr.go:94","msg":"EditSvrAppInfo:body{\"data\":\"wx639af818b399091e\",\"errorCode\":0}","source":"vms"}
+{"level":"info","ts":"2019-05-30T15:20:01.511+0800","caller":"controllers/appcotr.go:73","msg":"EditSvrAppInfo20201xiaomi","source":"vms"}
+{"level":"debug","ts":"2019-05-30T15:20:01.514+0800","caller":"controllers/appcotr.go:22","msg":"ReqSvrAppInfo --------------admin20201","source":"vms"}
+{"level":"debug","ts":"2019-05-30T15:20:01.514+0800","caller":"controllers/appcotr.go:33","msg":"ReqSvrAppInfo https://qgame-test.dayukeji.com:12004/vapp/getvapp?gameId=20201","source":"vms"}
+{"level":"debug","ts":"2019-05-30T15:20:01.548+0800","caller":"controllers/appcotr.go:94","msg":"EditSvrAppInfo:body{\"data\":\"2882303761518000138\",\"errorCode\":0}","source":"vms"}
+{"level":"info","ts":"2019-05-30T15:23:45.936+0800","caller":"controllers/appcotr.go:73","msg":"EditSvrAppInfo20201tt","source":"vms"}
+{"level":"debug","ts":"2019-05-30T15:23:45.938+0800","caller":"controllers/appcotr.go:22","msg":"ReqSvrAppInfo --------------admin20201","source":"vms"}
+{"level":"debug","ts":"2019-05-30T15:23:45.938+0800","caller":"controllers/appcotr.go:33","msg":"ReqSvrAppInfo https://qgame-test.dayukeji.com:12004/vapp/getvapp?gameId=20201","source":"vms"}
+{"level":"debug","ts":"2019-05-30T15:23:46.097+0800","caller":"controllers/appcotr.go:94","msg":"EditSvrAppInfo:body{\"data\":\"tt2fbe5903b094999c\",\"errorCode\":0}","source":"vms"}
+{"level":"debug","ts":"2019-05-30T15:23:49.188+0800","caller":"controllers/appcotr.go:22","msg":"ReqSvrAppInfo --------------admin20201","source":"vms"}
+{"level":"debug","ts":"2019-05-30T15:23:49.188+0800","caller":"controllers/appcotr.go:33","msg":"ReqSvrAppInfo https://qgame-test.dayukeji.com:12004/vapp/getvapp?gameId=20201","source":"vms"}
+{"level":"info","ts":"2019-05-30T15:52:21.092+0800","caller":"goweb/main.go:71","msg":"Shutdown Server ...","source":"vms"}
+{"level":"info","ts":"2019-05-30T15:52:21.163+0800","caller":"goweb/main.go:78","msg":"Server exiting","source":"vms"}
+{"level":"info","ts":"2019-05-30T15:56:33.991+0800","caller":"goweb/main.go:66","msg":"Http Serving at: :8080","source":"vms"}
+{"level":"debug","ts":"2019-05-30T15:56:48.926+0800","caller":"controllers/index.go:26","msg":"GetUserInfo --------------  ","source":"vms"}
+{"level":"debug","ts":"2019-05-30T15:56:58.781+0800","caller":"controllers/index.go:79","msg":"Login -------------- admin e10adc3949ba59abbe56e057f20f883e e10adc3949ba59abbe56e057f20f883e ","source":"vms"}
+{"level":"debug","ts":"2019-05-30T15:56:58.805+0800","caller":"controllers/index.go:26","msg":"GetUserInfo -------------- admin ","source":"vms"}
+{"level":"debug","ts":"2019-05-30T15:57:02.047+0800","caller":"controllers/appcotr.go:22","msg":"ReqSvrAppInfo --------------admin20201","source":"vms"}
+{"level":"debug","ts":"2019-05-30T15:57:02.056+0800","caller":"controllers/appcotr.go:33","msg":"ReqSvrAppInfo https://qgame-test.dayukeji.com:12004/vapp/getvapp?gameId=20201","source":"vms"}
+{"level":"info","ts":"2019-05-30T15:57:13.709+0800","caller":"controllers/appcotr.go:73","msg":"EditSvrAppInfo20201xiaomi","source":"vms"}
+{"level":"debug","ts":"2019-05-30T15:57:13.710+0800","caller":"controllers/appcotr.go:22","msg":"ReqSvrAppInfo --------------admin20201","source":"vms"}
+{"level":"debug","ts":"2019-05-30T15:57:13.710+0800","caller":"controllers/appcotr.go:33","msg":"ReqSvrAppInfo https://qgame-test.dayukeji.com:12004/vapp/getvapp?gameId=20201","source":"vms"}
+{"level":"debug","ts":"2019-05-30T15:57:13.744+0800","caller":"controllers/appcotr.go:94","msg":"EditSvrAppInfo:body{\"data\":\"2882303761518000138\",\"errorCode\":9001}","source":"vms"}
+{"level":"debug","ts":"2019-05-30T15:57:15.604+0800","caller":"controllers/appcotr.go:22","msg":"ReqSvrAppInfo --------------admin20201","source":"vms"}
+{"level":"debug","ts":"2019-05-30T15:57:15.605+0800","caller":"controllers/appcotr.go:33","msg":"ReqSvrAppInfo https://qgame-test.dayukeji.com:12004/vapp/getvapp?gameId=20201","source":"vms"}
+{"level":"debug","ts":"2019-05-30T15:57:16.733+0800","caller":"controllers/appcotr.go:22","msg":"ReqSvrAppInfo --------------admin20201","source":"vms"}
+{"level":"debug","ts":"2019-05-30T15:57:16.733+0800","caller":"controllers/appcotr.go:33","msg":"ReqSvrAppInfo https://qgame-test.dayukeji.com:12004/vapp/getvapp?gameId=20201","source":"vms"}
+{"level":"info","ts":"2019-05-30T16:00:22.983+0800","caller":"goweb/main.go:71","msg":"Shutdown Server ...","source":"vms"}
+{"level":"info","ts":"2019-05-30T16:00:23.010+0800","caller":"goweb/main.go:78","msg":"Server exiting","source":"vms"}
+{"level":"info","ts":"2019-05-30T16:05:05.511+0800","caller":"goweb/main.go:66","msg":"Http Serving at: :8080","source":"vms"}
+{"level":"debug","ts":"2019-05-30T16:05:13.326+0800","caller":"controllers/index.go:26","msg":"GetUserInfo --------------  ","source":"vms"}
+{"level":"debug","ts":"2019-05-30T16:05:19.395+0800","caller":"controllers/index.go:79","msg":"Login -------------- admin e10adc3949ba59abbe56e057f20f883e e10adc3949ba59abbe56e057f20f883e ","source":"vms"}
+{"level":"debug","ts":"2019-05-30T16:05:19.406+0800","caller":"controllers/index.go:26","msg":"GetUserInfo -------------- admin ","source":"vms"}
+{"level":"debug","ts":"2019-05-30T16:05:23.454+0800","caller":"controllers/appcotr.go:22","msg":"ReqSvrAppInfo --------------admin20201","source":"vms"}
+{"level":"debug","ts":"2019-05-30T16:05:23.454+0800","caller":"controllers/appcotr.go:33","msg":"ReqSvrAppInfo https://qgame-test.dayukeji.com:12004/vapp/getvapp?gameId=20201","source":"vms"}
+{"level":"info","ts":"2019-05-30T16:05:30.528+0800","caller":"controllers/appcotr.go:74","msg":"EditSvrAppInfo20201xiaomi","source":"vms"}
+{"level":"debug","ts":"2019-05-30T16:05:30.531+0800","caller":"controllers/appcotr.go:22","msg":"ReqSvrAppInfo --------------admin20201","source":"vms"}
+{"level":"debug","ts":"2019-05-30T16:05:30.531+0800","caller":"controllers/appcotr.go:33","msg":"ReqSvrAppInfo https://qgame-test.dayukeji.com:12004/vapp/getvapp?gameId=20201","source":"vms"}
+{"level":"debug","ts":"2019-05-30T16:05:30.565+0800","caller":"controllers/appcotr.go:96","msg":"EditSvrAppInfo:body{\"data\":\"2882303761518000138\",\"errorCode\":0}","source":"vms"}
+{"level":"debug","ts":"2019-05-30T16:05:32.900+0800","caller":"controllers/appcotr.go:22","msg":"ReqSvrAppInfo --------------admin20201","source":"vms"}
+{"level":"debug","ts":"2019-05-30T16:05:32.900+0800","caller":"controllers/appcotr.go:33","msg":"ReqSvrAppInfo https://qgame-test.dayukeji.com:12004/vapp/getvapp?gameId=20201","source":"vms"}
+{"level":"info","ts":"2019-05-30T16:05:47.220+0800","caller":"goweb/main.go:71","msg":"Shutdown Server ...","source":"vms"}
+{"level":"info","ts":"2019-05-30T16:05:47.227+0800","caller":"goweb/main.go:78","msg":"Server exiting","source":"vms"}
+{"level":"info","ts":"2019-06-01T13:54:25.898+0800","caller":"goweb/main.go:66","msg":"Http Serving at: :8080","source":"vms"}
+{"level":"debug","ts":"2019-06-01T13:55:29.007+0800","caller":"controllers/index.go:79","msg":"Login -------------- admin e10adc3949ba59abbe56e057f20f883e e10adc3949ba59abbe56e057f20f883e ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T13:55:29.020+0800","caller":"controllers/index.go:26","msg":"GetUserInfo -------------- admin ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T13:55:36.781+0800","caller":"controllers/channelstatus.go:22","msg":"ReqSvrChannelSatatus --------------admin20201","source":"vms"}
+{"level":"debug","ts":"2019-06-01T13:55:36.781+0800","caller":"controllers/channelstatus.go:33","msg":"ReqSvrChannelSatatus https://qgame-test.dayukeji.com:12004/status/getChannelSwitch?gameId=20201","source":"vms"}
+{"level":"info","ts":"2019-06-01T13:55:52.731+0800","caller":"controllers/channelstatus.go:73","msg":"EditSvrChannelStatus21101wx","source":"vms"}
+{"level":"debug","ts":"2019-06-01T13:55:52.733+0800","caller":"controllers/channelstatus.go:22","msg":"ReqSvrChannelSatatus --------------admin21101","source":"vms"}
+{"level":"debug","ts":"2019-06-01T13:55:52.733+0800","caller":"controllers/channelstatus.go:33","msg":"ReqSvrChannelSatatus https://qgame-test.dayukeji.com:12004/status/getChannelSwitch?gameId=21101","source":"vms"}
+{"level":"debug","ts":"2019-06-01T13:55:52.772+0800","caller":"controllers/channelstatus.go:94","msg":"EditSvrChannelStatus:body{\"data\":{\"status\":\"1\"},\"errorCode\":0}","source":"vms"}
+{"level":"info","ts":"2019-06-01T13:56:52.998+0800","caller":"controllers/channelstatus.go:73","msg":"EditSvrChannelStatus211010","source":"vms"}
+{"level":"debug","ts":"2019-06-01T13:56:53.000+0800","caller":"controllers/channelstatus.go:22","msg":"ReqSvrChannelSatatus --------------admin21101","source":"vms"}
+{"level":"debug","ts":"2019-06-01T13:56:53.000+0800","caller":"controllers/channelstatus.go:33","msg":"ReqSvrChannelSatatus https://qgame-test.dayukeji.com:12004/status/getChannelSwitch?gameId=21101","source":"vms"}
+{"level":"debug","ts":"2019-06-01T13:56:53.035+0800","caller":"controllers/channelstatus.go:94","msg":"EditSvrChannelStatus:body{\"data\":{\"status\":\"1\"},\"errorCode\":0}","source":"vms"}
+{"level":"debug","ts":"2019-06-01T13:56:54.886+0800","caller":"controllers/channelstatus.go:22","msg":"ReqSvrChannelSatatus --------------admin21101","source":"vms"}
+{"level":"debug","ts":"2019-06-01T13:56:54.886+0800","caller":"controllers/channelstatus.go:33","msg":"ReqSvrChannelSatatus https://qgame-test.dayukeji.com:12004/status/getChannelSwitch?gameId=21101","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:00:39.685+0800","caller":"controllers/channelstatus.go:22","msg":"ReqSvrChannelSatatus --------------admin21101","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:00:39.685+0800","caller":"controllers/channelstatus.go:33","msg":"ReqSvrChannelSatatus https://qgame-test.dayukeji.com:12004/status/getChannelSwitch?gameId=21101","source":"vms"}
+{"level":"info","ts":"2019-06-01T14:00:43.107+0800","caller":"controllers/channelstatus.go:73","msg":"EditSvrChannelStatus21101wx","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:00:43.108+0800","caller":"controllers/channelstatus.go:22","msg":"ReqSvrChannelSatatus --------------admin21101","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:00:43.109+0800","caller":"controllers/channelstatus.go:33","msg":"ReqSvrChannelSatatus https://qgame-test.dayukeji.com:12004/status/getChannelSwitch?gameId=21101","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:00:43.143+0800","caller":"controllers/channelstatus.go:94","msg":"EditSvrChannelStatus:body{\"data\":{\"status\":\"1\"},\"errorCode\":0}","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:00:47.100+0800","caller":"controllers/channelstatus.go:22","msg":"ReqSvrChannelSatatus --------------admin21101","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:00:47.101+0800","caller":"controllers/channelstatus.go:33","msg":"ReqSvrChannelSatatus https://qgame-test.dayukeji.com:12004/status/getChannelSwitch?gameId=21101","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:00:52.739+0800","caller":"controllers/channelstatus.go:22","msg":"ReqSvrChannelSatatus --------------admin21101","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:00:52.739+0800","caller":"controllers/channelstatus.go:33","msg":"ReqSvrChannelSatatus https://qgame-test.dayukeji.com:12004/status/getChannelSwitch?gameId=21101","source":"vms"}
+{"level":"info","ts":"2019-06-01T14:01:00.273+0800","caller":"controllers/channelstatus.go:73","msg":"EditSvrChannelStatus21101wx","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:01:00.274+0800","caller":"controllers/channelstatus.go:22","msg":"ReqSvrChannelSatatus --------------admin21101","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:01:00.274+0800","caller":"controllers/channelstatus.go:33","msg":"ReqSvrChannelSatatus https://qgame-test.dayukeji.com:12004/status/getChannelSwitch?gameId=21101","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:01:00.308+0800","caller":"controllers/channelstatus.go:94","msg":"EditSvrChannelStatus:body{\"data\":{\"status\":\"1\"},\"errorCode\":0}","source":"vms"}
+{"level":"info","ts":"2019-06-01T14:02:52.806+0800","caller":"goweb/main.go:71","msg":"Shutdown Server ...","source":"vms"}
+{"level":"info","ts":"2019-06-01T14:02:52.816+0800","caller":"goweb/main.go:78","msg":"Server exiting","source":"vms"}
+{"level":"info","ts":"2019-06-01T14:03:05.574+0800","caller":"goweb/main.go:66","msg":"Http Serving at: :8080","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:03:10.389+0800","caller":"controllers/index.go:26","msg":"GetUserInfo --------------  ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:03:16.006+0800","caller":"controllers/index.go:79","msg":"Login -------------- admin e10adc3949ba59abbe56e057f20f883e e10adc3949ba59abbe56e057f20f883e ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:03:16.019+0800","caller":"controllers/index.go:26","msg":"GetUserInfo -------------- admin ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:03:19.084+0800","caller":"controllers/channelstatus.go:22","msg":"ReqSvrChannelSatatus --------------admin20201","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:03:19.084+0800","caller":"controllers/channelstatus.go:33","msg":"ReqSvrChannelSatatus https://qgame-test.dayukeji.com:12004/status/getChannelSwitch?gameId=20201","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:03:23.844+0800","caller":"controllers/channelstatus.go:22","msg":"ReqSvrChannelSatatus --------------admin20201","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:03:23.844+0800","caller":"controllers/channelstatus.go:33","msg":"ReqSvrChannelSatatus https://qgame-test.dayukeji.com:12004/status/getChannelSwitch?gameId=20201","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:03:27.379+0800","caller":"controllers/channelstatus.go:22","msg":"ReqSvrChannelSatatus --------------admin21101","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:03:27.379+0800","caller":"controllers/channelstatus.go:33","msg":"ReqSvrChannelSatatus https://qgame-test.dayukeji.com:12004/status/getChannelSwitch?gameId=21101","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:03:36.046+0800","caller":"controllers/channelstatus.go:22","msg":"ReqSvrChannelSatatus --------------admin21101","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:03:36.048+0800","caller":"controllers/channelstatus.go:33","msg":"ReqSvrChannelSatatus https://qgame-test.dayukeji.com:12004/status/getChannelSwitch?gameId=21101","source":"vms"}
+{"level":"info","ts":"2019-06-01T14:03:36.046+0800","caller":"controllers/channelstatus.go:73","msg":"EditSvrChannelStatus21101wx","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:03:36.090+0800","caller":"controllers/channelstatus.go:94","msg":"EditSvrChannelStatus:body{\"data\":{\"status\":\"1\"},\"errorCode\":0}","source":"vms"}
+{"level":"info","ts":"2019-06-01T14:14:45.224+0800","caller":"goweb/main.go:71","msg":"Shutdown Server ...","source":"vms"}
+{"level":"info","ts":"2019-06-01T14:14:45.224+0800","caller":"goweb/main.go:78","msg":"Server exiting","source":"vms"}
+{"level":"info","ts":"2019-06-01T14:15:34.514+0800","caller":"goweb/main.go:66","msg":"Http Serving at: :8080","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:15:40.395+0800","caller":"controllers/index.go:26","msg":"GetUserInfo --------------  ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:15:45.936+0800","caller":"controllers/index.go:79","msg":"Login -------------- admin e10adc3949ba59abbe56e057f20f883e e10adc3949ba59abbe56e057f20f883e ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:15:45.948+0800","caller":"controllers/index.go:26","msg":"GetUserInfo -------------- admin ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:15:49.587+0800","caller":"controllers/channelstatus.go:22","msg":"ReqSvrChannelSatatus --------------admin21101","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:15:49.587+0800","caller":"controllers/channelstatus.go:33","msg":"ReqSvrChannelSatatus https://qgame-test.dayukeji.com:12004/status/getChannelSwitch?gameId=21101","source":"vms"}
+{"level":"info","ts":"2019-06-01T14:19:59.024+0800","caller":"goweb/main.go:71","msg":"Shutdown Server ...","source":"vms"}
+{"level":"info","ts":"2019-06-01T14:19:59.024+0800","caller":"goweb/main.go:78","msg":"Server exiting","source":"vms"}
+{"level":"info","ts":"2019-06-01T14:20:17.755+0800","caller":"goweb/main.go:66","msg":"Http Serving at: :8080","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:20:20.930+0800","caller":"controllers/index.go:26","msg":"GetUserInfo --------------  ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:20:26.739+0800","caller":"controllers/index.go:79","msg":"Login -------------- admin e10adc3949ba59abbe56e057f20f883e e10adc3949ba59abbe56e057f20f883e ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:20:26.751+0800","caller":"controllers/index.go:26","msg":"GetUserInfo -------------- admin ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:20:30.194+0800","caller":"controllers/channelstatus.go:22","msg":"ReqSvrChannelSatatus --------------admin21101","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:20:30.194+0800","caller":"controllers/channelstatus.go:33","msg":"ReqSvrChannelSatatus https://qgame-test.dayukeji.com:12004/status/getChannelSwitch?gameId=21101","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:20:30.407+0800","caller":"controllers/channelstatus.go:46","msg":"ReqSvrChannelSatatus:body{\"data\":[{\"channel\":\"wx\",\"game\":21101,\"name\":\"push\",\"status\":1}],\"errorCode\":0}","source":"vms"}
+{"level":"info","ts":"2019-06-01T14:24:24.035+0800","caller":"goweb/main.go:71","msg":"Shutdown Server ...","source":"vms"}
+{"level":"info","ts":"2019-06-01T14:24:24.036+0800","caller":"goweb/main.go:78","msg":"Server exiting","source":"vms"}
+{"level":"info","ts":"2019-06-01T14:24:43.735+0800","caller":"goweb/main.go:66","msg":"Http Serving at: :8080","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:24:47.634+0800","caller":"controllers/index.go:26","msg":"GetUserInfo --------------  ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:24:53.045+0800","caller":"controllers/index.go:79","msg":"Login -------------- admin e10adc3949ba59abbe56e057f20f883e e10adc3949ba59abbe56e057f20f883e ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:24:53.078+0800","caller":"controllers/index.go:26","msg":"GetUserInfo -------------- admin ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:24:56.727+0800","caller":"controllers/channelstatus.go:22","msg":"ReqSvrChannelSatatus --------------admin21101","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:24:56.728+0800","caller":"controllers/channelstatus.go:33","msg":"ReqSvrChannelSatatus https://qgame-test.dayukeji.com:12004/status/getChannelSwitch?gameId=21101","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:24:56.908+0800","caller":"controllers/channelstatus.go:55","msg":"map[data:[map[channel:wx game:21101 name:push status:1]] errorCode:0]","source":"vms"}
+{"level":"info","ts":"2019-06-01T14:26:56.826+0800","caller":"goweb/main.go:71","msg":"Shutdown Server ...","source":"vms"}
+{"level":"info","ts":"2019-06-01T14:26:56.830+0800","caller":"goweb/main.go:78","msg":"Server exiting","source":"vms"}
+{"level":"info","ts":"2019-06-01T14:27:10.749+0800","caller":"goweb/main.go:66","msg":"Http Serving at: :8080","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:27:14.323+0800","caller":"controllers/index.go:26","msg":"GetUserInfo --------------  ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:27:21.147+0800","caller":"controllers/index.go:79","msg":"Login -------------- admin e10adc3949ba59abbe56e057f20f883e e10adc3949ba59abbe56e057f20f883e ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:27:21.164+0800","caller":"controllers/index.go:26","msg":"GetUserInfo -------------- admin ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:27:24.744+0800","caller":"controllers/channelstatus.go:22","msg":"ReqSvrChannelSatatus --------------admin21101","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:27:24.745+0800","caller":"controllers/channelstatus.go:33","msg":"ReqSvrChannelSatatus https://qgame-test.dayukeji.com:12004/status/getChannelSwitch?gameId=21101","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:27:24.933+0800","caller":"controllers/channelstatus.go:55","msg":"map[data:[map[status:1 channel:wx game:21101 name:push]] errorCode:0]","source":"vms"}
+{"level":"info","ts":"2019-06-01T14:35:41.218+0800","caller":"controllers/channelstatus.go:112","msg":"RemoveSvrChannelStatus21101wx","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:35:41.389+0800","caller":"controllers/channelstatus.go:131","msg":"RemoveSvrChannelStatus:body{\"data\":{\"channel\":\"wx\"},\"errorCode\":0}","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:35:41.398+0800","caller":"controllers/channelstatus.go:22","msg":"ReqSvrChannelSatatus --------------admin21101","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:35:41.398+0800","caller":"controllers/channelstatus.go:33","msg":"ReqSvrChannelSatatus https://qgame-test.dayukeji.com:12004/status/getChannelSwitch?gameId=21101","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:35:41.439+0800","caller":"controllers/channelstatus.go:55","msg":"map[data:[] errorCode:9100]","source":"vms"}
+{"level":"info","ts":"2019-06-01T14:35:56.637+0800","caller":"controllers/channelstatus.go:74","msg":"EditSvrChannelStatus21101wx","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:35:56.640+0800","caller":"controllers/channelstatus.go:22","msg":"ReqSvrChannelSatatus --------------admin21101","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:35:56.640+0800","caller":"controllers/channelstatus.go:33","msg":"ReqSvrChannelSatatus https://qgame-test.dayukeji.com:12004/status/getChannelSwitch?gameId=21101","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:35:56.680+0800","caller":"controllers/channelstatus.go:95","msg":"EditSvrChannelStatus:body{\"data\":{\"status\":\"0\"},\"errorCode\":0}","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:35:56.681+0800","caller":"controllers/channelstatus.go:55","msg":"map[data:[map[channel:wx game:21101 name:push status:0]] errorCode:0]","source":"vms"}
+{"level":"info","ts":"2019-06-01T14:36:26.706+0800","caller":"controllers/channelstatus.go:74","msg":"EditSvrChannelStatus21101wx","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:36:26.708+0800","caller":"controllers/channelstatus.go:22","msg":"ReqSvrChannelSatatus --------------admin21101","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:36:26.708+0800","caller":"controllers/channelstatus.go:33","msg":"ReqSvrChannelSatatus https://qgame-test.dayukeji.com:12004/status/getChannelSwitch?gameId=21101","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:36:26.750+0800","caller":"controllers/channelstatus.go:95","msg":"EditSvrChannelStatus:body{\"data\":{\"status\":\"1\"},\"errorCode\":0}","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:36:26.752+0800","caller":"controllers/channelstatus.go:55","msg":"map[data:[map[status:1 channel:wx game:21101 name:push]] errorCode:0]","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:37:07.076+0800","caller":"controllers/channelstatus.go:22","msg":"ReqSvrChannelSatatus --------------admin21101","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:37:07.077+0800","caller":"controllers/channelstatus.go:33","msg":"ReqSvrChannelSatatus https://qgame-test.dayukeji.com:12004/status/getChannelSwitch?gameId=21101","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:37:07.119+0800","caller":"controllers/channelstatus.go:55","msg":"map[data:[map[name:push status:1 channel:wx game:21101]] errorCode:0]","source":"vms"}
+{"level":"info","ts":"2019-06-01T14:38:45.964+0800","caller":"goweb/main.go:71","msg":"Shutdown Server ...","source":"vms"}
+{"level":"info","ts":"2019-06-01T14:38:45.965+0800","caller":"goweb/main.go:78","msg":"Server exiting","source":"vms"}
+{"level":"info","ts":"2019-06-01T14:41:50.267+0800","caller":"goweb/main.go:66","msg":"Http Serving at: :8080","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:41:55.685+0800","caller":"controllers/index.go:26","msg":"GetUserInfo --------------  ","source":"vms"}
+{"level":"info","ts":"2019-06-01T14:42:45.332+0800","caller":"goweb/main.go:71","msg":"Shutdown Server ...","source":"vms"}
+{"level":"info","ts":"2019-06-01T14:42:45.337+0800","caller":"goweb/main.go:78","msg":"Server exiting","source":"vms"}
+{"level":"info","ts":"2019-06-01T14:42:58.877+0800","caller":"goweb/main.go:66","msg":"Http Serving at: :8080","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:43:07.953+0800","caller":"controllers/index.go:79","msg":"Login -------------- admin e10adc3949ba59abbe56e057f20f883e e10adc3949ba59abbe56e057f20f883e ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:43:07.965+0800","caller":"controllers/index.go:26","msg":"GetUserInfo -------------- admin ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:43:12.892+0800","caller":"controllers/channelstatus.go:22","msg":"ReqSvrChannelSatatus --------------admin21101","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:43:12.892+0800","caller":"controllers/channelstatus.go:33","msg":"ReqSvrChannelSatatus https://qgame-test.dayukeji.com:12004/status/getChannelSwitch?gameId=21101","source":"vms"}
+{"level":"info","ts":"2019-06-01T14:43:18.162+0800","caller":"controllers/channelstatus.go:74","msg":"EditSvrChannelStatus21101wx","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:43:18.163+0800","caller":"controllers/channelstatus.go:22","msg":"ReqSvrChannelSatatus --------------admin21101","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:43:18.164+0800","caller":"controllers/channelstatus.go:33","msg":"ReqSvrChannelSatatus https://qgame-test.dayukeji.com:12004/status/getChannelSwitch?gameId=21101","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:43:18.203+0800","caller":"controllers/channelstatus.go:95","msg":"EditSvrChannelStatus:body{\"data\":{\"status\":\"0\"},\"errorCode\":0}","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:43:21.730+0800","caller":"controllers/channelstatus.go:22","msg":"ReqSvrChannelSatatus --------------admin21101","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:43:21.730+0800","caller":"controllers/channelstatus.go:33","msg":"ReqSvrChannelSatatus https://qgame-test.dayukeji.com:12004/status/getChannelSwitch?gameId=21101","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:43:47.963+0800","caller":"controllers/channelstatus.go:22","msg":"ReqSvrChannelSatatus --------------admin21101","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:43:47.964+0800","caller":"controllers/channelstatus.go:33","msg":"ReqSvrChannelSatatus https://qgame-test.dayukeji.com:12004/status/getChannelSwitch?gameId=21101","source":"vms"}
+{"level":"info","ts":"2019-06-01T14:44:38.665+0800","caller":"goweb/main.go:71","msg":"Shutdown Server ...","source":"vms"}
+{"level":"info","ts":"2019-06-01T14:44:38.666+0800","caller":"goweb/main.go:78","msg":"Server exiting","source":"vms"}
