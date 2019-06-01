@@ -15,7 +15,7 @@ export function setSvrCfg (user, form) {
     // console.log('setSvrCfg', user, form)
     const data = {
         game: form.game,
-        value: form.cfg
+        value: form.jsonvalue
     }
     return request({
         url: '/vms/cfg/edit',

@@ -1138,3 +1138,130 @@
 {"level":"debug","ts":"2019-06-01T14:43:47.964+0800","caller":"controllers/channelstatus.go:33","msg":"ReqSvrChannelSatatus https://qgame-test.dayukeji.com:12004/status/getChannelSwitch?gameId=21101","source":"vms"}
 {"level":"info","ts":"2019-06-01T14:44:38.665+0800","caller":"goweb/main.go:71","msg":"Shutdown Server ...","source":"vms"}
 {"level":"info","ts":"2019-06-01T14:44:38.666+0800","caller":"goweb/main.go:78","msg":"Server exiting","source":"vms"}
+{"level":"info","ts":"2019-06-01T14:51:40.218+0800","caller":"goweb/main.go:66","msg":"Http Serving at: :8080","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:51:45.610+0800","caller":"controllers/settings.go:22","msg":"ReqSvrCfg --------------admin 20201 ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:51:45.611+0800","caller":"controllers/settings.go:33","msg":"ReqSvrCfg https://qgame-test.dayukeji.com:12004/Logic/user/getServerConfig?gameId=20201","source":"vms"}
+{"level":"info","ts":"2019-06-01T14:52:23.990+0800","caller":"controllers/settings.go:70","msg":"EditSvrCfg 20201 %CC%85*@@@B%90%CF%CE%D2%87%5C%5C%u5C31%uBB49%u5F5CN6*@@@B%83%C8%CC%87%5Ckgb6*@@@B%8F%E0%DA%89%5C%95%7D%83%83NN%84%84%7F%896*@@@B%94%D7%CC%CC%DD%9A%5CZB%80%C6%DC%E8%E4%AAi%5E%5DXL%2C%87","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:52:23.990+0800","caller":"controllers/settings.go:82","msg":"EditSvrCfg https://qgame-test.dayukeji.com:12004/Logic/user/setServerConfig?gameId=20201&value=%25CC%2585%2A%40%40%40B%2590%25CF%25CE%25D2%2587%255C%255C%25u5C31%25uBB49%25u5F5CN6%2A%40%40%40B%2583%25C8%25CC%2587%255Ckgb6%2A%40%40%40B%258F%25E0%25DA%2589%255C%2595%257D%2583%2583NN%2584%2584%257F%25896%2A%40%40%40B%2594%25D7%25CC%25CC%25DD%259A%255CZB%2580%25C6%25DC%25E8%25E4%25AAi%255E%255DXL%252C%2587","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:52:23.991+0800","caller":"controllers/settings.go:22","msg":"ReqSvrCfg --------------admin 20201 ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:52:23.991+0800","caller":"controllers/settings.go:33","msg":"ReqSvrCfg https://qgame-test.dayukeji.com:12004/Logic/user/getServerConfig?gameId=20201","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:52:24.032+0800","caller":"controllers/settings.go:95","msg":"EditSvrCfg:body {\"data\":\"%CC%85*@@@B%90%CF%CE%D2%87%5C%5C%u5C31%uBB49%u5F5CN6*@@@B%83%C8%CC%87%5Ckgb6*@@@B%8F%E0%DA%89%5C%95%7D%83%83NN%84%84%7F%896*@@@B%94%D7%CC%CC%DD%9A%5CZB%80%C6%DC%E8%E4%AAi%5E%5DXL%2C%87\",\"errorCode\":0}","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:52:25.761+0800","caller":"controllers/settings.go:22","msg":"ReqSvrCfg --------------admin 20201 ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:52:25.762+0800","caller":"controllers/settings.go:33","msg":"ReqSvrCfg https://qgame-test.dayukeji.com:12004/Logic/user/getServerConfig?gameId=20201","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:52:26.625+0800","caller":"controllers/settings.go:22","msg":"ReqSvrCfg --------------admin 20201 ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:52:26.625+0800","caller":"controllers/settings.go:33","msg":"ReqSvrCfg https://qgame-test.dayukeji.com:12004/Logic/user/getServerConfig?gameId=20201","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:52:26.881+0800","caller":"controllers/settings.go:22","msg":"ReqSvrCfg --------------admin 20201 ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:52:26.882+0800","caller":"controllers/settings.go:33","msg":"ReqSvrCfg https://qgame-test.dayukeji.com:12004/Logic/user/getServerConfig?gameId=20201","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:52:27.097+0800","caller":"controllers/settings.go:22","msg":"ReqSvrCfg --------------admin 20201 ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:52:27.097+0800","caller":"controllers/settings.go:33","msg":"ReqSvrCfg https://qgame-test.dayukeji.com:12004/Logic/user/getServerConfig?gameId=20201","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:52:27.306+0800","caller":"controllers/settings.go:22","msg":"ReqSvrCfg --------------admin 20201 ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:52:27.306+0800","caller":"controllers/settings.go:33","msg":"ReqSvrCfg https://qgame-test.dayukeji.com:12004/Logic/user/getServerConfig?gameId=20201","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:52:27.506+0800","caller":"controllers/settings.go:22","msg":"ReqSvrCfg --------------admin 20201 ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:52:27.506+0800","caller":"controllers/settings.go:33","msg":"ReqSvrCfg https://qgame-test.dayukeji.com:12004/Logic/user/getServerConfig?gameId=20201","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:52:27.715+0800","caller":"controllers/settings.go:22","msg":"ReqSvrCfg --------------admin 20201 ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:52:27.715+0800","caller":"controllers/settings.go:33","msg":"ReqSvrCfg https://qgame-test.dayukeji.com:12004/Logic/user/getServerConfig?gameId=20201","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:52:27.916+0800","caller":"controllers/settings.go:22","msg":"ReqSvrCfg --------------admin 20201 ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:52:27.916+0800","caller":"controllers/settings.go:33","msg":"ReqSvrCfg https://qgame-test.dayukeji.com:12004/Logic/user/getServerConfig?gameId=20201","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:52:28.121+0800","caller":"controllers/settings.go:22","msg":"ReqSvrCfg --------------admin 20201 ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:52:28.121+0800","caller":"controllers/settings.go:33","msg":"ReqSvrCfg https://qgame-test.dayukeji.com:12004/Logic/user/getServerConfig?gameId=20201","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:52:28.336+0800","caller":"controllers/settings.go:22","msg":"ReqSvrCfg --------------admin 20201 ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:52:28.337+0800","caller":"controllers/settings.go:33","msg":"ReqSvrCfg https://qgame-test.dayukeji.com:12004/Logic/user/getServerConfig?gameId=20201","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:52:28.594+0800","caller":"controllers/settings.go:22","msg":"ReqSvrCfg --------------admin 20201 ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:52:28.594+0800","caller":"controllers/settings.go:33","msg":"ReqSvrCfg https://qgame-test.dayukeji.com:12004/Logic/user/getServerConfig?gameId=20201","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:52:28.825+0800","caller":"controllers/settings.go:22","msg":"ReqSvrCfg --------------admin 20201 ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:52:28.825+0800","caller":"controllers/settings.go:33","msg":"ReqSvrCfg https://qgame-test.dayukeji.com:12004/Logic/user/getServerConfig?gameId=20201","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:52:29.017+0800","caller":"controllers/settings.go:22","msg":"ReqSvrCfg --------------admin 20201 ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:52:29.017+0800","caller":"controllers/settings.go:33","msg":"ReqSvrCfg https://qgame-test.dayukeji.com:12004/Logic/user/getServerConfig?gameId=20201","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:52:29.251+0800","caller":"controllers/settings.go:22","msg":"ReqSvrCfg --------------admin 20201 ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:52:29.251+0800","caller":"controllers/settings.go:33","msg":"ReqSvrCfg https://qgame-test.dayukeji.com:12004/Logic/user/getServerConfig?gameId=20201","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:52:29.482+0800","caller":"controllers/settings.go:22","msg":"ReqSvrCfg --------------admin 20201 ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:52:29.482+0800","caller":"controllers/settings.go:33","msg":"ReqSvrCfg https://qgame-test.dayukeji.com:12004/Logic/user/getServerConfig?gameId=20201","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:52:29.682+0800","caller":"controllers/settings.go:22","msg":"ReqSvrCfg --------------admin 20201 ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:52:29.682+0800","caller":"controllers/settings.go:33","msg":"ReqSvrCfg https://qgame-test.dayukeji.com:12004/Logic/user/getServerConfig?gameId=20201","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:52:29.897+0800","caller":"controllers/settings.go:22","msg":"ReqSvrCfg --------------admin 20201 ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:52:29.897+0800","caller":"controllers/settings.go:33","msg":"ReqSvrCfg https://qgame-test.dayukeji.com:12004/Logic/user/getServerConfig?gameId=20201","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:52:30.113+0800","caller":"controllers/settings.go:22","msg":"ReqSvrCfg --------------admin 20201 ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:52:30.113+0800","caller":"controllers/settings.go:33","msg":"ReqSvrCfg https://qgame-test.dayukeji.com:12004/Logic/user/getServerConfig?gameId=20201","source":"vms"}
+{"level":"info","ts":"2019-06-01T14:57:58.438+0800","caller":"goweb/main.go:71","msg":"Shutdown Server ...","source":"vms"}
+{"level":"info","ts":"2019-06-01T14:57:58.438+0800","caller":"goweb/main.go:78","msg":"Server exiting","source":"vms"}
+{"level":"info","ts":"2019-06-01T14:58:11.782+0800","caller":"goweb/main.go:66","msg":"Http Serving at: :8080","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:58:16.584+0800","caller":"controllers/index.go:26","msg":"GetUserInfo --------------  ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:58:43.268+0800","caller":"controllers/index.go:79","msg":"Login -------------- admin e10adc3949ba59abbe56e057f20f883e e10adc3949ba59abbe56e057f20f883e ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:58:43.276+0800","caller":"controllers/index.go:26","msg":"GetUserInfo -------------- admin ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:58:47.464+0800","caller":"controllers/settings.go:22","msg":"ReqSvrCfg --------------admin 20201 ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T14:58:47.465+0800","caller":"controllers/settings.go:33","msg":"ReqSvrCfg https://qgame-test.dayukeji.com:12004/Logic/user/getServerConfig?gameId=20201","source":"vms"}
+{"level":"info","ts":"2019-06-01T15:02:26.209+0800","caller":"goweb/main.go:71","msg":"Shutdown Server ...","source":"vms"}
+{"level":"info","ts":"2019-06-01T15:02:26.214+0800","caller":"goweb/main.go:78","msg":"Server exiting","source":"vms"}
+{"level":"info","ts":"2019-06-01T15:02:40.426+0800","caller":"goweb/main.go:66","msg":"Http Serving at: :8080","source":"vms"}
+{"level":"debug","ts":"2019-06-01T15:02:45.049+0800","caller":"controllers/index.go:26","msg":"GetUserInfo --------------  ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T15:02:53.157+0800","caller":"controllers/index.go:79","msg":"Login -------------- admin e10adc3949ba59abbe56e057f20f883e e10adc3949ba59abbe56e057f20f883e ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T15:02:53.170+0800","caller":"controllers/index.go:26","msg":"GetUserInfo -------------- admin ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T15:02:55.873+0800","caller":"controllers/settings.go:22","msg":"ReqSvrCfg --------------admin 20201 ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T15:02:55.874+0800","caller":"controllers/settings.go:33","msg":"ReqSvrCfg https://qgame-test.dayukeji.com:12004/Logic/user/getServerConfig?gameId=20201","source":"vms"}
+{"level":"info","ts":"2019-06-01T15:04:54.461+0800","caller":"goweb/main.go:71","msg":"Shutdown Server ...","source":"vms"}
+{"level":"info","ts":"2019-06-01T15:04:54.462+0800","caller":"goweb/main.go:78","msg":"Server exiting","source":"vms"}
+{"level":"info","ts":"2019-06-01T15:05:08.199+0800","caller":"goweb/main.go:66","msg":"Http Serving at: :8080","source":"vms"}
+{"level":"debug","ts":"2019-06-01T15:05:20.542+0800","caller":"controllers/index.go:26","msg":"GetUserInfo --------------  ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T15:05:26.554+0800","caller":"controllers/index.go:79","msg":"Login -------------- admin e10adc3949ba59abbe56e057f20f883e e10adc3949ba59abbe56e057f20f883e ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T15:05:26.563+0800","caller":"controllers/index.go:26","msg":"GetUserInfo -------------- admin ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T15:05:33.030+0800","caller":"controllers/settings.go:22","msg":"ReqSvrCfg --------------admin 20201 ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T15:05:33.031+0800","caller":"controllers/settings.go:33","msg":"ReqSvrCfg https://qgame-test.dayukeji.com:12004/Logic/user/getServerConfig?gameId=20201","source":"vms"}
+{"level":"info","ts":"2019-06-01T15:06:52.261+0800","caller":"goweb/main.go:71","msg":"Shutdown Server ...","source":"vms"}
+{"level":"info","ts":"2019-06-01T15:06:52.262+0800","caller":"goweb/main.go:78","msg":"Server exiting","source":"vms"}
+{"level":"info","ts":"2019-06-01T15:07:04.749+0800","caller":"goweb/main.go:66","msg":"Http Serving at: :8080","source":"vms"}
+{"level":"debug","ts":"2019-06-01T15:07:08.472+0800","caller":"controllers/index.go:26","msg":"GetUserInfo --------------  ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T15:07:18.634+0800","caller":"controllers/index.go:79","msg":"Login -------------- admin e10adc3949ba59abbe56e057f20f883e e10adc3949ba59abbe56e057f20f883e ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T15:07:18.644+0800","caller":"controllers/index.go:26","msg":"GetUserInfo -------------- admin ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T15:07:21.421+0800","caller":"controllers/settings.go:22","msg":"ReqSvrCfg --------------admin 20201 ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T15:07:21.421+0800","caller":"controllers/settings.go:33","msg":"ReqSvrCfg https://qgame-test.dayukeji.com:12004/Logic/user/getServerConfig?gameId=20201","source":"vms"}
+{"level":"info","ts":"2019-06-01T15:08:15.686+0800","caller":"goweb/main.go:71","msg":"Shutdown Server ...","source":"vms"}
+{"level":"info","ts":"2019-06-01T15:08:15.688+0800","caller":"goweb/main.go:78","msg":"Server exiting","source":"vms"}
+{"level":"info","ts":"2019-06-01T15:08:27.501+0800","caller":"goweb/main.go:66","msg":"Http Serving at: :8080","source":"vms"}
+{"level":"debug","ts":"2019-06-01T15:08:31.769+0800","caller":"controllers/index.go:26","msg":"GetUserInfo --------------  ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T15:08:38.386+0800","caller":"controllers/index.go:79","msg":"Login -------------- admin e10adc3949ba59abbe56e057f20f883e e10adc3949ba59abbe56e057f20f883e ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T15:08:38.394+0800","caller":"controllers/index.go:26","msg":"GetUserInfo -------------- admin ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T15:08:41.503+0800","caller":"controllers/settings.go:22","msg":"ReqSvrCfg --------------admin 20201 ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T15:08:41.503+0800","caller":"controllers/settings.go:33","msg":"ReqSvrCfg https://qgame-test.dayukeji.com:12004/Logic/user/getServerConfig?gameId=20201","source":"vms"}
+{"level":"error","ts":"2019-06-01T15:08:46.946+0800","caller":"controllers/settings.go:67","msg":"Key: '.Value' Error:Field validation for 'Value' failed on the 'required' tag","source":"vms"}
+{"level":"debug","ts":"2019-06-01T15:08:46.947+0800","caller":"controllers/settings.go:22","msg":"ReqSvrCfg --------------admin 20201 ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T15:08:46.947+0800","caller":"controllers/settings.go:33","msg":"ReqSvrCfg https://qgame-test.dayukeji.com:12004/Logic/user/getServerConfig?gameId=20201","source":"vms"}
+{"level":"debug","ts":"2019-06-01T15:09:00.597+0800","caller":"controllers/settings.go:22","msg":"ReqSvrCfg --------------admin 20201 ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T15:09:00.597+0800","caller":"controllers/settings.go:33","msg":"ReqSvrCfg https://qgame-test.dayukeji.com:12004/Logic/user/getServerConfig?gameId=20201","source":"vms"}
+{"level":"error","ts":"2019-06-01T15:09:07.487+0800","caller":"controllers/settings.go:67","msg":"Key: '.Value' Error:Field validation for 'Value' failed on the 'required' tag","source":"vms"}
+{"level":"debug","ts":"2019-06-01T15:09:07.488+0800","caller":"controllers/settings.go:22","msg":"ReqSvrCfg --------------admin 20201 ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T15:09:07.489+0800","caller":"controllers/settings.go:33","msg":"ReqSvrCfg https://qgame-test.dayukeji.com:12004/Logic/user/getServerConfig?gameId=20201","source":"vms"}
+{"level":"info","ts":"2019-06-01T15:09:43.864+0800","caller":"goweb/main.go:71","msg":"Shutdown Server ...","source":"vms"}
+{"level":"info","ts":"2019-06-01T15:09:43.867+0800","caller":"goweb/main.go:78","msg":"Server exiting","source":"vms"}
+{"level":"info","ts":"2019-06-01T15:09:56.812+0800","caller":"goweb/main.go:66","msg":"Http Serving at: :8080","source":"vms"}
+{"level":"debug","ts":"2019-06-01T15:10:01.066+0800","caller":"controllers/index.go:26","msg":"GetUserInfo --------------  ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T15:10:06.515+0800","caller":"controllers/index.go:79","msg":"Login -------------- admin e10adc3949ba59abbe56e057f20f883e e10adc3949ba59abbe56e057f20f883e ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T15:10:06.523+0800","caller":"controllers/index.go:26","msg":"GetUserInfo -------------- admin ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T15:10:09.133+0800","caller":"controllers/settings.go:22","msg":"ReqSvrCfg --------------admin 20201 ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T15:10:09.133+0800","caller":"controllers/settings.go:33","msg":"ReqSvrCfg https://qgame-test.dayukeji.com:12004/Logic/user/getServerConfig?gameId=20201","source":"vms"}
+{"level":"error","ts":"2019-06-01T15:10:13.730+0800","caller":"controllers/settings.go:67","msg":"Key: '.Value' Error:Field validation for 'Value' failed on the 'required' tag","source":"vms"}
+{"level":"debug","ts":"2019-06-01T15:10:13.731+0800","caller":"controllers/settings.go:22","msg":"ReqSvrCfg --------------admin 20201 ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T15:10:13.731+0800","caller":"controllers/settings.go:33","msg":"ReqSvrCfg https://qgame-test.dayukeji.com:12004/Logic/user/getServerConfig?gameId=20201","source":"vms"}
+{"level":"info","ts":"2019-06-01T15:12:45.037+0800","caller":"goweb/main.go:71","msg":"Shutdown Server ...","source":"vms"}
+{"level":"info","ts":"2019-06-01T15:12:45.038+0800","caller":"goweb/main.go:78","msg":"Server exiting","source":"vms"}
+{"level":"info","ts":"2019-06-01T15:13:00.596+0800","caller":"goweb/main.go:66","msg":"Http Serving at: :8080","source":"vms"}
+{"level":"debug","ts":"2019-06-01T15:13:04.966+0800","caller":"controllers/index.go:26","msg":"GetUserInfo --------------  ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T15:13:12.616+0800","caller":"controllers/index.go:79","msg":"Login -------------- admin e10adc3949ba59abbe56e057f20f883e e10adc3949ba59abbe56e057f20f883e ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T15:13:12.627+0800","caller":"controllers/index.go:26","msg":"GetUserInfo -------------- admin ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T15:13:15.246+0800","caller":"controllers/settings.go:22","msg":"ReqSvrCfg --------------admin 20201 ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T15:13:15.246+0800","caller":"controllers/settings.go:33","msg":"ReqSvrCfg https://qgame-test.dayukeji.com:12004/Logic/user/getServerConfig?gameId=20201","source":"vms"}
+{"level":"error","ts":"2019-06-01T15:13:38.630+0800","caller":"controllers/settings.go:67","msg":"Key: '.Value' Error:Field validation for 'Value' failed on the 'required' tag","source":"vms"}
+{"level":"debug","ts":"2019-06-01T15:13:38.632+0800","caller":"controllers/settings.go:22","msg":"ReqSvrCfg --------------admin 20201 ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T15:13:38.633+0800","caller":"controllers/settings.go:33","msg":"ReqSvrCfg https://qgame-test.dayukeji.com:12004/Logic/user/getServerConfig?gameId=20201","source":"vms"}
+{"level":"info","ts":"2019-06-01T15:18:38.113+0800","caller":"goweb/main.go:71","msg":"Shutdown Server ...","source":"vms"}
+{"level":"info","ts":"2019-06-01T15:18:38.115+0800","caller":"goweb/main.go:78","msg":"Server exiting","source":"vms"}
+{"level":"info","ts":"2019-06-01T15:19:03.973+0800","caller":"goweb/main.go:66","msg":"Http Serving at: :8080","source":"vms"}
+{"level":"debug","ts":"2019-06-01T15:19:04.469+0800","caller":"controllers/index.go:26","msg":"GetUserInfo --------------  ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T15:19:19.478+0800","caller":"controllers/index.go:79","msg":"Login -------------- admin e10adc3949ba59abbe56e057f20f883e e10adc3949ba59abbe56e057f20f883e ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T15:19:19.491+0800","caller":"controllers/index.go:26","msg":"GetUserInfo -------------- admin ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T15:19:22.652+0800","caller":"controllers/settings.go:22","msg":"ReqSvrCfg --------------admin 20201 ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T15:19:22.653+0800","caller":"controllers/settings.go:33","msg":"ReqSvrCfg https://qgame-test.dayukeji.com:12004/Logic/user/getServerConfig?gameId=20201","source":"vms"}
+{"level":"error","ts":"2019-06-01T15:19:28.717+0800","caller":"controllers/settings.go:67","msg":"Key: '.Value' Error:Field validation for 'Value' failed on the 'required' tag","source":"vms"}
+{"level":"debug","ts":"2019-06-01T15:19:28.720+0800","caller":"controllers/settings.go:22","msg":"ReqSvrCfg --------------admin 20201 ","source":"vms"}
+{"level":"debug","ts":"2019-06-01T15:19:28.720+0800","caller":"controllers/settings.go:33","msg":"ReqSvrCfg https://qgame-test.dayukeji.com:12004/Logic/user/getServerConfig?gameId=20201","source":"vms"}
+{"level":"info","ts":"2019-06-01T15:23:37.768+0800","caller":"goweb/main.go:71","msg":"Shutdown Server ...","source":"vms"}
+{"level":"info","ts":"2019-06-01T15:23:37.769+0800","caller":"goweb/main.go:78","msg":"Server exiting","source":"vms"}

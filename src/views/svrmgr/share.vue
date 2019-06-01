@@ -24,8 +24,10 @@
             <el-table :data="data" border class="table">
                 <el-table-column prop="game" label="游戏" width="100">
                 </el-table-column>
-                <el-table-column prop="value" label="配置" width="600">
-                    <json-viewer :value="value" :expand-depth=5 copyable boxed sort></json-viewer>
+                <el-table-column prop="jsonvalue" label="配置" width="600">
+                    <template slot-scope="scope">
+                        <json-viewer :value="scope.row.jsonvalue" :expand-depth=5 boxed ></json-viewer>
+                    </template>
                 </el-table-column>
                 <el-table-column label="操作" align="center">
                     <template slot-scope="scope">
@@ -43,7 +45,7 @@
         <el-dialog title="编辑" :visible.sync="editVisible" width="50%">
             <el-form ref="form" :model="form" label-width="100px">
                 <el-form-item label="配置">
-                    <el-input type="textarea" :rows="10" placeholder="请输入内容" v-model="form.cfg"></el-input>
+                    <el-input type="textarea" :rows="10" placeholder="请输入内容" v-model="form.jsonvalue"></el-input>
                 </el-form-item>
             </el-form>
             <span slot="footer" class="dialog-footer">
@@ -70,7 +72,7 @@ export default {
             editVisible: false,
             form: {
                 game:'',
-                cfg: ''           
+                jsonvalue: ''           
             },
             idx: -1
         }
@@ -115,7 +117,7 @@ export default {
                     this.$message.error('服务器返回失败:' + res.errorCode);
                 } else {
                     const svalue = uncompileStr(res.data)
-                    this.tableData = [{game:game, value:svalue}]
+                    this.tableData = [{game:game, jsonvalue:svalue}]
                 } 
             }).catch(err => {
                 console.log(err)
@@ -129,7 +131,7 @@ export default {
             }
             this.form = {
                 game: this.selected_game,
-                cfg: ''
+                jsonvalue: ''
             }
             this.editVisible = true
         },
@@ -138,7 +140,7 @@ export default {
             const item = this.tableData[index];
             this.form = {
                 game: this.selected_game,
-                cfg: item.cfg
+                jsonvalue: item.jsonvalue
             }
             this.editVisible = true;
         },
@@ -147,9 +149,10 @@ export default {
             const user = this.$store.getters.name
             const formdata = {
                 game : this.selected_game,
-                cfg : compileStr(this.form.cfg)
+                jsonvalue : compileStr(this.form.jsonvalue)
             }
-            console.log(formdata)
+            // console.log("SetSvrCfg >>>>>>> ")
+            // console.log(formdata)
             // // console.log(this.select_daterange)
             this.$store.dispatch('svrmgr/SetSvrCfg', { user, formdata}).then((res) => {
                 this.$set(this.tableData, this.idx, this.form);

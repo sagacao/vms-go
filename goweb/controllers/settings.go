@@ -92,7 +92,7 @@ func EditSvrCfg(c *gin.Context) {
 		gwlog.Error("EditSvrCfg ReadAll err", err)
 		return
 	}
-	gwlog.Debugf("EditSvrCfg:body %s", string(body))
+	// gwlog.Debugf("EditSvrCfg:body %s", string(body))
 
 	c.JSON(http.StatusOK, gin.H{"data": gin.H{}, "errorCode": 0})
 }
