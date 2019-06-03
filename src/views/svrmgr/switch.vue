@@ -21,7 +21,11 @@
                 </el-table-column>
                 <el-table-column prop="funcname" label="名字" width="100">
                 </el-table-column>
-                <el-table-column prop="funcswitch" label="状态" width="100">
+                <el-table-column property="funcswitch" label="状态" width="160">
+                    <template slot-scope="scope">
+                        <el-switch active-color="#13ce66" inactive-color="#ff4949" active-value="1" inactive-value="0" v-model="scope.row.funcswitch" @change="handleEdit(scope.$index,scope.row)">
+                        </el-switch>
+                    </template>
                 </el-table-column>
                 <el-table-column label="操作" align="center">
                     <template slot-scope="scope">
@@ -125,6 +129,7 @@ export default {
             is_search: false,
             selected_game : '',
             editVisible: false,
+            actioning : "add",
             form: {
                 game: this.selected_game,
                 funcname : 'push',
@@ -163,7 +168,11 @@ export default {
             this.$store.dispatch('svrmgr/GetSvrSwitch', { user, page, game}).then((res) => {
                 console.log(res)
                 if (res.errorCode != 0) {
-                    this.$message.error('服务器返回失败:' + res.errorCode)
+                    if (res.errorCode == 9100) {
+                        this.$message.error('没有数据')
+                    } else {
+                        this.$message.error('服务器返回失败:' + res.errorCode)
+                    }
                 } else {
                     this.tableData = []
                     // this.tableData = res.data
@@ -173,6 +182,7 @@ export default {
                         }
                         let item = res.data[i]
                         item['game'] = game
+                        item['funcswitch'] = item.funcswitch + ''
                         this.tableData.push(item)
                     } 
                 } 
@@ -229,6 +239,7 @@ export default {
                 funcswitch: '1'
             }
             this.editVisible = true
+            this.actioning = 'add'
         },
         handleEdit(index, row) {
             this.idx = index;
@@ -238,7 +249,9 @@ export default {
                 funcname : item.funcname,
                 funcswitch: item.funcswitch
             }
-            this.editVisible = true;
+            // this.editVisible = true;
+            this.actioning = 'edit'
+            this.saveEdit()
         },
         // 保存编辑
         saveEdit() {
@@ -246,7 +259,8 @@ export default {
             const formdata = {
                 game : this.selected_game,
                 funcname : this.form.funcname,
-                funcswitch: this.form.funcswitch
+                funcswitch: parseInt(this.form.funcswitch),
+                action : this.actioning
             }
             console.log(formdata)
             this.$store.dispatch('svrmgr/SetSvrSwitch', { user, formdata}).then((res) => {

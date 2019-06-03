@@ -1319,3 +1319,41 @@
 {"level":"debug","ts":"2019-06-01T18:50:02.301+0800","caller":"controllers/channelstatus.go:33","msg":"ReqSvrChannelSatatus https://qgame-test.dayukeji.com:12004/status/getChannelSwitch?gameId=21001","source":"vms"}
 {"level":"debug","ts":"2019-06-01T18:50:04.773+0800","caller":"controllers/channelstatus.go:22","msg":"ReqSvrChannelSatatus --------------admin21101","source":"vms"}
 {"level":"debug","ts":"2019-06-01T18:50:04.773+0800","caller":"controllers/channelstatus.go:33","msg":"ReqSvrChannelSatatus https://qgame-test.dayukeji.com:12004/status/getChannelSwitch?gameId=21101","source":"vms"}
+{"level":"info","ts":"2019-06-03T10:31:22.041+0800","caller":"goweb/main.go:66","msg":"Http Serving at: :8080","source":"vms"}
+{"level":"debug","ts":"2019-06-03T10:31:33.762+0800","caller":"controllers/index.go:79","msg":"Login -------------- admin e10adc3949ba59abbe56e057f20f883e e10adc3949ba59abbe56e057f20f883e ","source":"vms"}
+{"level":"debug","ts":"2019-06-03T10:31:33.772+0800","caller":"controllers/index.go:26","msg":"GetUserInfo -------------- admin ","source":"vms"}
+{"level":"debug","ts":"2019-06-03T10:31:39.522+0800","caller":"controllers/channelstatus.go:22","msg":"ReqSvrChannelSatatus --------------admin21101","source":"vms"}
+{"level":"debug","ts":"2019-06-03T10:31:39.523+0800","caller":"controllers/channelstatus.go:33","msg":"ReqSvrChannelSatatus https://qgame-test.dayukeji.com:12004/status/getChannelSwitch?gameId=21101","source":"vms"}
+{"level":"info","ts":"2019-06-03T15:08:22.354+0800","caller":"goweb/main.go:71","msg":"Shutdown Server ...","source":"vms"}
+{"level":"info","ts":"2019-06-03T15:08:22.355+0800","caller":"goweb/main.go:78","msg":"Server exiting","source":"vms"}
+{"level":"info","ts":"2019-06-03T15:08:42.434+0800","caller":"goweb/main.go:66","msg":"Http Serving at: :8080","source":"vms"}
+{"level":"debug","ts":"2019-06-03T15:08:56.068+0800","caller":"drivers/jwt.go:46","msg":"jwt Check------> Token is expired","source":"vms"}
+{"level":"debug","ts":"2019-06-03T15:09:05.274+0800","caller":"controllers/index.go:79","msg":"Login -------------- admin e10adc3949ba59abbe56e057f20f883e e10adc3949ba59abbe56e057f20f883e ","source":"vms"}
+{"level":"debug","ts":"2019-06-03T15:09:05.287+0800","caller":"controllers/index.go:26","msg":"GetUserInfo -------------- admin ","source":"vms"}
+{"level":"debug","ts":"2019-06-03T15:09:10.256+0800","caller":"controllers/settings.go:116","msg":"ReqSvrSwitch ------------- admin 20201","source":"vms"}
+{"level":"debug","ts":"2019-06-03T15:09:10.256+0800","caller":"controllers/settings.go:127","msg":"ReqSvrSwitch https://qgame-test.dayukeji.com:12004/forbiden/getForbiden?gameId=20201","source":"vms"}
+{"level":"debug","ts":"2019-06-03T15:09:10.446+0800","caller":"controllers/settings.go:140","msg":"ReqSvrSwitch:body {\"data\":{\"comic\":1,\"maxPumpTimes\":1},\"errorCode\":0}","source":"vms"}
+{"level":"debug","ts":"2019-06-03T15:09:18.046+0800","caller":"controllers/settings.go:116","msg":"ReqSvrSwitch ------------- admin 20201","source":"vms"}
+{"level":"debug","ts":"2019-06-03T15:09:18.046+0800","caller":"controllers/settings.go:127","msg":"ReqSvrSwitch https://qgame-test.dayukeji.com:12004/forbiden/getForbiden?gameId=20201","source":"vms"}
+{"level":"debug","ts":"2019-06-03T15:09:18.082+0800","caller":"controllers/settings.go:140","msg":"ReqSvrSwitch:body {\"data\":{\"comic\":1,\"maxPumpTimes\":1},\"errorCode\":0}","source":"vms"}
+{"level":"info","ts":"2019-06-03T15:09:39.013+0800","caller":"goweb/main.go:71","msg":"Shutdown Server ...","source":"vms"}
+{"level":"info","ts":"2019-06-03T15:09:39.014+0800","caller":"goweb/main.go:78","msg":"Server exiting","source":"vms"}
+{"level":"info","ts":"2019-06-03T15:09:53.113+0800","caller":"goweb/main.go:66","msg":"Http Serving at: :8080","source":"vms"}
+{"level":"debug","ts":"2019-06-03T15:09:56.584+0800","caller":"controllers/index.go:26","msg":"GetUserInfo --------------  ","source":"vms"}
+{"level":"debug","ts":"2019-06-03T15:10:03.147+0800","caller":"controllers/index.go:79","msg":"Login -------------- admin e10adc3949ba59abbe56e057f20f883e e10adc3949ba59abbe56e057f20f883e ","source":"vms"}
+{"level":"debug","ts":"2019-06-03T15:10:03.159+0800","caller":"controllers/index.go:26","msg":"GetUserInfo -------------- admin ","source":"vms"}
+{"level":"debug","ts":"2019-06-03T15:10:06.135+0800","caller":"controllers/settings.go:116","msg":"ReqSvrSwitch ------------- admin 20201","source":"vms"}
+{"level":"debug","ts":"2019-06-03T15:10:06.135+0800","caller":"controllers/settings.go:127","msg":"ReqSvrSwitch https://qgame-test.dayukeji.com:12004/forbiden/getForbiden?gameId=20201","source":"vms"}
+{"level":"debug","ts":"2019-06-03T15:10:06.342+0800","caller":"controllers/settings.go:140","msg":"ReqSvrSwitch:body {\"data\":{\"comic\":1,\"maxPumpTimes\":1},\"errorCode\":0}","source":"vms"}
+{"level":"info","ts":"2019-06-03T15:10:07.333+0800","caller":"controllers/settings.go:176","msg":"EditSvrSwitch 20201 comic 1","source":"vms"}
+{"level":"debug","ts":"2019-06-03T15:10:07.334+0800","caller":"controllers/settings.go:116","msg":"ReqSvrSwitch ------------- admin 20201","source":"vms"}
+{"level":"debug","ts":"2019-06-03T15:10:07.335+0800","caller":"controllers/settings.go:127","msg":"ReqSvrSwitch https://qgame-test.dayukeji.com:12004/forbiden/getForbiden?gameId=20201","source":"vms"}
+{"level":"debug","ts":"2019-06-03T15:10:07.375+0800","caller":"controllers/settings.go:195","msg":"EditSvrSwitch:body {\"data\":\"comic\",\"errorCode\":0}","source":"vms"}
+{"level":"debug","ts":"2019-06-03T15:10:07.376+0800","caller":"controllers/settings.go:140","msg":"ReqSvrSwitch:body {\"data\":{\"comic\":1,\"maxPumpTimes\":1},\"errorCode\":0}","source":"vms"}
+{"level":"info","ts":"2019-06-03T15:10:08.454+0800","caller":"controllers/settings.go:176","msg":"EditSvrSwitch 20201 comic 1","source":"vms"}
+{"level":"debug","ts":"2019-06-03T15:10:08.456+0800","caller":"controllers/settings.go:116","msg":"ReqSvrSwitch ------------- admin 20201","source":"vms"}
+{"level":"debug","ts":"2019-06-03T15:10:08.456+0800","caller":"controllers/settings.go:127","msg":"ReqSvrSwitch https://qgame-test.dayukeji.com:12004/forbiden/getForbiden?gameId=20201","source":"vms"}
+{"level":"debug","ts":"2019-06-03T15:10:08.496+0800","caller":"controllers/settings.go:195","msg":"EditSvrSwitch:body {\"data\":\"comic\",\"errorCode\":0}","source":"vms"}
+{"level":"debug","ts":"2019-06-03T15:10:08.497+0800","caller":"controllers/settings.go:140","msg":"ReqSvrSwitch:body {\"data\":{\"comic\":1,\"maxPumpTimes\":1},\"errorCode\":0}","source":"vms"}
+{"level":"info","ts":"2019-06-03T15:12:03.991+0800","caller":"goweb/main.go:71","msg":"Shutdown Server ...","source":"vms"}
+{"level":"info","ts":"2019-06-03T15:12:03.992+0800","caller":"goweb/main.go:78","msg":"Server exiting","source":"vms"}
