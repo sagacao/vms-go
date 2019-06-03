@@ -4,6 +4,8 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/url"
+	"nuvem/engine/coder"
+	"nuvem/engine/utils"
 	"vms-go/goweb/settings"
 
 	"github.com/gin-gonic/gin"
@@ -67,7 +69,7 @@ func EditSvrCfg(c *gin.Context) {
 		gwlog.Error(err)
 		return
 	}
-	gwlog.Infof("EditSvrCfg %s %s", editData.Game, editData.Value)
+	// gwlog.Infof("EditSvrCfg %s %s", editData.Game, editData.Value)
 
 	urlstr := settings.SvrConfig.Env.URL + "/Logic/user/setServerConfig"
 	req, err := http.NewRequest("GET", urlstr, nil)
@@ -93,8 +95,14 @@ func EditSvrCfg(c *gin.Context) {
 		return
 	}
 	// gwlog.Debugf("EditSvrCfg:body %s", string(body))
+	var jsondata coder.JSON
+	err = coder.ToJSON(body, jsondata)
+	if err != nil {
+		c.JSON(http.StatusOK, gin.H{"msg": err.Error(), "errorCode": -1})
+		return
+	}
 
-	c.JSON(http.StatusOK, gin.H{"data": gin.H{}, "errorCode": 0})
+	c.JSON(http.StatusOK, gin.H{"msg": "succ", "errorCode": utils.ForceInt("errorCode", jsondata)})
 }
 
 // ReqSvrSwitch @Get

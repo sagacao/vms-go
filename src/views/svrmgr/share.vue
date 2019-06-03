@@ -117,7 +117,7 @@ export default {
                     this.$message.error('服务器返回失败:' + res.errorCode);
                 } else {
                     const svalue = uncompileStr(res.data)
-                    this.tableData = [{game:game, jsonvalue:svalue}]
+                    this.tableData = [{game:game, jsonvalue:JSON.parse(svalue)}]
                 } 
             }).catch(err => {
                 console.log(err)
