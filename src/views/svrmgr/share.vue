@@ -59,7 +59,7 @@
 <script>
 /* eslint-disable */
 import XdhSelect from './xdhselect'
-import {compileStr, uncompileStr} from '@/utils/index'
+import {compileStr, uncompileStr, isJSON} from '@/utils/index'
 export default {
     components: { XdhSelect },
     name: 'settings',
@@ -106,6 +106,7 @@ export default {
         },
         handleSearch() {
             this.is_search = true;
+            this.tableData = []
             const user = this.$store.getters.name
             const page = this.$route.path
             const game = this.selected_game
@@ -118,8 +119,7 @@ export default {
                         this.$message.error('没有数据')
                     } else {
                         this.$message.error('服务器返回失败:' + res.errorCode)
-                    } 
-                    this.tableData = []
+                    }
                 } else {
                     const svalue = uncompileStr(res.data)
                     this.tableData = [{game:game, jsonvalue:JSON.parse(svalue)}]
@@ -151,6 +151,10 @@ export default {
         },
         // 保存编辑
         saveEdit() {
+            if (!isJSON(this.form.jsonvalue)) {
+                this.$message.error(`Json 格式错误`);
+                return
+            }
             const user = this.$store.getters.name
             const formdata = {
                 game : this.selected_game,

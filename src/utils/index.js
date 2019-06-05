@@ -131,3 +131,16 @@ export function uncompileStr (code) {
   }
   return c
 }
+
+export function isJSON(str) {
+  if (typeof str == 'string') {
+      try {
+          JSON.parse(str)
+          return true
+      } catch(e) {
+          console.log(e)
+          return false
+      }
+  }
+  return false
+}
