@@ -26,7 +26,7 @@
                 </el-table-column>
                 <el-table-column prop="jsonvalue" label="配置" width="600">
                     <template slot-scope="scope">
-                        <json-viewer :value="scope.row.jsonvalue" :expand-depth=5 boxed ></json-viewer>
+                        <json-viewer :value="scope.row.jsonvalue" :expand-depth=5 boxed copyable ></json-viewer>
                     </template>
                 </el-table-column>
                 <el-table-column label="操作" align="center">
@@ -114,7 +114,12 @@ export default {
             this.$store.dispatch('svrmgr/GetSvrCfg', { user, page, game}).then((res) => {
                 console.log(res)
                 if (res.errorCode != 0) {
-                    this.$message.error('服务器返回失败:' + res.errorCode);
+                    if (res.errorCode == 9100) {
+                        this.$message.error('没有数据')
+                    } else {
+                        this.$message.error('服务器返回失败:' + res.errorCode)
+                    } 
+                    this.tableData = []
                 } else {
                     const svalue = uncompileStr(res.data)
                     this.tableData = [{game:game, jsonvalue:JSON.parse(svalue)}]
@@ -140,7 +145,7 @@ export default {
             const item = this.tableData[index];
             this.form = {
                 game: this.selected_game,
-                jsonvalue: item.jsonvalue
+                jsonvalue: JSON.stringify(item.jsonvalue)
             }
             this.editVisible = true;
         },

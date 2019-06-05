@@ -16,14 +16,14 @@
             </div>
             <el-divider></el-divider>
             <el-divider></el-divider>
-            <el-table :data="data" border class="table">
+            <el-table :data="data" border class="table" :sort-by = "[{prop: 'channel', order: 'ascending'}, {prop: 'funcname', order: 'ascending'}]" >
                 <el-table-column prop="game" label="游戏" width="100">
                 </el-table-column>
-                <el-table-column prop="channel" label="渠道" width="200">
+                <el-table-column prop="channel" label="渠道" sortable width="200">
                 </el-table-column>
-                <el-table-column prop="name" label="名字" width="200">
+                <el-table-column prop="name" label="名字" sortable width="200">
                 </el-table-column>
-                <el-table-column property="status" label="状态" width="160">
+                <el-table-column property="status" label="状态" width="160" align="center">
                     <template slot-scope="scope">
                         <el-switch active-color="#13ce66" inactive-color="#ff4949" active-value="1" inactive-value="0" v-model="scope.row.status" @change="handleEdit(scope.$index,scope.row)">
                         </el-switch>
