@@ -31,9 +31,8 @@ func registerRouter(router *gin.Engine) {
 		// gm.POST("/notice/add", controllers.GMNoticeAdd)
 		// gm.POST("/notice/del", controllers.GMNoticeDel)
 
-		// gm.GET("/magic/search", controllers.GMMagicSearch)
-		// gm.POST("/magic/add", controllers.GMMagicAdd)
-		// gm.POST("/magic/del", controllers.GMMagicDel)
+		vms.GET("/code/get", controllers.GetGiftCodes)
+		vms.POST("/code/gen", controllers.GenGifts)
 
 		vms.GET("/gates/req", controllers.ReqSvrGates)
 		vms.POST("/gates/edit", controllers.EditSvrGates)

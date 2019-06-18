@@ -10,3 +10,10 @@ type LogStats struct {
 	SevenPr   string `json:"seven_pr" form:"seven_pr" `
 	Retention string `json:"retention" form:"retention" `
 }
+
+type GiftCode struct {
+	Game   string `json:"game" form:"game" binding:"required"`
+	Code   string `json:"code" form:"code" binding:"required"`
+	Atype  string `json:"atype" form:"atype" binding:"required"`
+	Acount string `json:"acount" form:"acount" binding:"required"`
+}

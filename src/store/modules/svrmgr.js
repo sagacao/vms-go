@@ -3,6 +3,7 @@ import { getSvrCfg, setSvrCfg, getSvrSwitch, setSvrSwitch, removeSvrSwitch } fro
 import { getSvrGates, setSvrGates, removeSvrGates } from '@/api/gates'
 import { getSvrAppInfo, setSvrAppInfo, removeSvrAppInfo } from '@/api/appctor'
 import { getSvrChannelStatus, setSvrChannelStatus, removeChannelStatus } from '@/api/channelstatus'
+import { gengifts, getgifts } from '@/api/gifts'
 
 const state = {
 }
@@ -195,6 +196,33 @@ const actions= {
         // console.log(formdata)
         return new Promise((resolve, reject) => {
             removeChannelStatus(user, formdata).then(response => {
+                // console.log(response)
+                resolve(response)
+            }).catch(error => {
+                // console.log(error)
+                reject(error)
+            })
+        })
+    },
+    
+    Getgifts({ commit }, info) {
+        const {user, page, game} = info
+        return new Promise((resolve, reject) => {
+            getgifts(user, page, game).then(response => {
+                // console.log(response)
+                resolve(response)
+            }).catch(error => {
+                // console.log(error)
+                reject(error)
+            })
+        })
+    },
+
+    Gengifts({ commit }, info) {
+        const {user, formdata} = info
+        // console.log(formdata)
+        return new Promise((resolve, reject) => {
+            gengifts(user, formdata).then(response => {
                 // console.log(response)
                 resolve(response)
             }).catch(error => {

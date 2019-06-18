@@ -162,6 +162,12 @@ export const asyncRouterMap = [
         component: () => import('@/views/svrmgr/cstatus'), // Parent router-view
         name: 'cstatus',
         meta: { title: '渠道开关', roles: ['admin', 'saga'] }
+      },
+      {
+        path: 'gifts',
+        component: () => import('@/views/svrmgr/gifts'), // Parent router-view
+        name: 'gifts',
+        meta: { title: '礼包码', roles: ['admin', 'saga'] }
       }
     ]
   },

@@ -55,6 +55,12 @@ var SvrConfig struct {
 		HOST   string
 		PASSWD string
 	}
+
+	Mongo struct {
+		ADDR     string
+		DATABASE string
+		PASSWD   string
+	}
 }
 
 type authData struct {

@@ -1602,3 +1602,116 @@
 {"level":"debug","ts":"2019-06-05T14:38:45.367+0800","caller":"controllers/settings.go:35","msg":"ReqSvrCfg https://qgame-test.dayukeji.com:12004/Logic/user/getServerConfig?gameId=21101","source":"vms"}
 {"level":"info","ts":"2019-06-05T14:39:19.614+0800","caller":"goweb/main.go:71","msg":"Shutdown Server ...","source":"vms"}
 {"level":"info","ts":"2019-06-05T14:39:19.615+0800","caller":"goweb/main.go:78","msg":"Server exiting","source":"vms"}
+{"level":"info","ts":"2019-06-18T11:02:58.439+0800","caller":"goweb/main.go:66","msg":"Http Serving at: :8080","source":"vms"}
+{"level":"debug","ts":"2019-06-18T11:03:33.040+0800","caller":"controllers/index.go:79","msg":"Login -------------- admin e10adc3949ba59abbe56e057f20f883e e10adc3949ba59abbe56e057f20f883e ","source":"vms"}
+{"level":"debug","ts":"2019-06-18T11:03:33.052+0800","caller":"controllers/index.go:26","msg":"GetUserInfo -------------- admin ","source":"vms"}
+{"level":"info","ts":"2019-06-18T11:09:38.445+0800","caller":"goweb/main.go:71","msg":"Shutdown Server ...","source":"vms"}
+{"level":"info","ts":"2019-06-18T11:09:38.446+0800","caller":"goweb/main.go:78","msg":"Server exiting","source":"vms"}
+{"level":"info","ts":"2019-06-18T11:14:12.914+0800","caller":"goweb/main.go:66","msg":"Http Serving at: :8080","source":"vms"}
+{"level":"debug","ts":"2019-06-18T11:14:16.804+0800","caller":"controllers/index.go:26","msg":"GetUserInfo --------------  ","source":"vms"}
+{"level":"debug","ts":"2019-06-18T11:14:22.741+0800","caller":"controllers/index.go:79","msg":"Login -------------- admin e10adc3949ba59abbe56e057f20f883e e10adc3949ba59abbe56e057f20f883e ","source":"vms"}
+{"level":"debug","ts":"2019-06-18T11:14:22.753+0800","caller":"controllers/index.go:26","msg":"GetUserInfo -------------- admin ","source":"vms"}
+{"level":"info","ts":"2019-06-18T11:17:04.334+0800","caller":"goweb/main.go:71","msg":"Shutdown Server ...","source":"vms"}
+{"level":"info","ts":"2019-06-18T11:17:04.341+0800","caller":"goweb/main.go:78","msg":"Server exiting","source":"vms"}
+{"level":"info","ts":"2019-06-18T11:19:00.565+0800","caller":"goweb/main.go:66","msg":"Http Serving at: :8080","source":"vms"}
+{"level":"debug","ts":"2019-06-18T11:19:05.063+0800","caller":"controllers/index.go:26","msg":"GetUserInfo --------------  ","source":"vms"}
+{"level":"debug","ts":"2019-06-18T11:19:10.922+0800","caller":"controllers/index.go:79","msg":"Login -------------- admin e10adc3949ba59abbe56e057f20f883e e10adc3949ba59abbe56e057f20f883e ","source":"vms"}
+{"level":"debug","ts":"2019-06-18T11:19:10.930+0800","caller":"controllers/index.go:26","msg":"GetUserInfo -------------- admin ","source":"vms"}
+{"level":"info","ts":"2019-06-18T13:56:01.346+0800","caller":"goweb/main.go:71","msg":"Shutdown Server ...","source":"vms"}
+{"level":"info","ts":"2019-06-18T13:56:01.347+0800","caller":"goweb/main.go:78","msg":"Server exiting","source":"vms"}
+{"level":"info","ts":"2019-06-18T13:56:24.166+0800","caller":"goweb/main.go:66","msg":"Http Serving at: :8080","source":"vms"}
+{"level":"debug","ts":"2019-06-18T13:56:32.525+0800","caller":"drivers/jwt.go:46","msg":"jwt Check------> Token is expired","source":"vms"}
+{"level":"debug","ts":"2019-06-18T13:56:40.558+0800","caller":"controllers/index.go:79","msg":"Login -------------- admin e10adc3949ba59abbe56e057f20f883e e10adc3949ba59abbe56e057f20f883e ","source":"vms"}
+{"level":"debug","ts":"2019-06-18T13:56:40.568+0800","caller":"controllers/index.go:26","msg":"GetUserInfo -------------- admin ","source":"vms"}
+{"level":"info","ts":"2019-06-18T13:58:10.672+0800","caller":"goweb/main.go:71","msg":"Shutdown Server ...","source":"vms"}
+{"level":"info","ts":"2019-06-18T13:58:10.673+0800","caller":"goweb/main.go:78","msg":"Server exiting","source":"vms"}
+{"level":"info","ts":"2019-06-18T13:59:43.649+0800","caller":"goweb/main.go:66","msg":"Http Serving at: :8080","source":"vms"}
+{"level":"debug","ts":"2019-06-18T13:59:47.282+0800","caller":"controllers/index.go:26","msg":"GetUserInfo --------------  ","source":"vms"}
+{"level":"debug","ts":"2019-06-18T13:59:52.141+0800","caller":"controllers/index.go:79","msg":"Login -------------- admin e10adc3949ba59abbe56e057f20f883e e10adc3949ba59abbe56e057f20f883e ","source":"vms"}
+{"level":"debug","ts":"2019-06-18T13:59:52.158+0800","caller":"controllers/index.go:26","msg":"GetUserInfo -------------- admin ","source":"vms"}
+{"level":"info","ts":"2019-06-18T14:00:24.543+0800","caller":"goweb/main.go:71","msg":"Shutdown Server ...","source":"vms"}
+{"level":"info","ts":"2019-06-18T14:00:24.544+0800","caller":"goweb/main.go:78","msg":"Server exiting","source":"vms"}
+{"level":"info","ts":"2019-06-18T14:00:37.223+0800","caller":"goweb/main.go:66","msg":"Http Serving at: :8080","source":"vms"}
+{"level":"debug","ts":"2019-06-18T14:00:41.861+0800","caller":"controllers/index.go:26","msg":"GetUserInfo --------------  ","source":"vms"}
+{"level":"debug","ts":"2019-06-18T14:00:47.389+0800","caller":"controllers/index.go:79","msg":"Login -------------- admin e10adc3949ba59abbe56e057f20f883e e10adc3949ba59abbe56e057f20f883e ","source":"vms"}
+{"level":"debug","ts":"2019-06-18T14:00:47.401+0800","caller":"controllers/index.go:26","msg":"GetUserInfo -------------- admin ","source":"vms"}
+{"level":"debug","ts":"2019-06-18T14:00:53.057+0800","caller":"controllers/gift.go:45","msg":"{21001 1 1 10}","source":"vms"}
+{"level":"debug","ts":"2019-06-18T14:00:53.057+0800","caller":"dbs/dbs.go:162","msg":"InsertGiftCode sql:[insert into (gameId, code, atype, acount) mem_gift values(21001, 1pw5hdm9k70o, 1, 10),]","source":"vms"}
+{"level":"debug","ts":"2019-06-18T14:00:53.060+0800","caller":"controllers/gift.go:19","msg":"Logger----------admin/svrmgr/gifts21001","source":"vms"}
+{"level":"error","ts":"2019-06-18T14:00:53.062+0800","caller":"dbs/dbs.go:165","msg":"InsertGiftCode Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(gameId, code, atype, acount) mem_gift values(21001, 1pw5hdm9k70o, 1, 10),' at line 1","source":"vms"}
+{"level":"error","ts":"2019-06-18T14:00:53.074+0800","caller":"dbs/dbs.go:183","msg":"Query: failed: Error 1146: Table 'stats.mem_gift' doesn't exist","source":"vms"}
+{"level":"info","ts":"2019-06-18T14:01:50.688+0800","caller":"goweb/main.go:71","msg":"Shutdown Server ...","source":"vms"}
+{"level":"info","ts":"2019-06-18T14:01:50.689+0800","caller":"goweb/main.go:78","msg":"Server exiting","source":"vms"}
+{"level":"info","ts":"2019-06-18T14:01:57.347+0800","caller":"goweb/main.go:66","msg":"Http Serving at: :8080","source":"vms"}
+{"level":"debug","ts":"2019-06-18T14:02:01.774+0800","caller":"controllers/index.go:26","msg":"GetUserInfo --------------  ","source":"vms"}
+{"level":"debug","ts":"2019-06-18T14:02:07.893+0800","caller":"controllers/index.go:79","msg":"Login -------------- admin e10adc3949ba59abbe56e057f20f883e e10adc3949ba59abbe56e057f20f883e ","source":"vms"}
+{"level":"debug","ts":"2019-06-18T14:02:07.902+0800","caller":"controllers/index.go:26","msg":"GetUserInfo -------------- admin ","source":"vms"}
+{"level":"debug","ts":"2019-06-18T14:02:13.036+0800","caller":"controllers/gift.go:19","msg":"Logger----------admin/svrmgr/gifts21001","source":"vms"}
+{"level":"error","ts":"2019-06-18T14:02:13.038+0800","caller":"dbs/dbs.go:183","msg":"Query: failed: Error 1146: Table 'stats.mem_gift' doesn't exist","source":"vms"}
+{"level":"info","ts":"2019-06-18T15:53:37.426+0800","caller":"goweb/main.go:71","msg":"Shutdown Server ...","source":"vms"}
+{"level":"info","ts":"2019-06-18T15:53:37.427+0800","caller":"goweb/main.go:78","msg":"Server exiting","source":"vms"}
+{"level":"info","ts":"2019-06-18T15:53:43.915+0800","caller":"goweb/main.go:66","msg":"Http Serving at: :8080","source":"vms"}
+{"level":"debug","ts":"2019-06-18T15:53:49.739+0800","caller":"drivers/jwt.go:46","msg":"jwt Check------> Token is expired","source":"vms"}
+{"level":"debug","ts":"2019-06-18T15:54:00.242+0800","caller":"controllers/index.go:79","msg":"Login -------------- admin e10adc3949ba59abbe56e057f20f883e e10adc3949ba59abbe56e057f20f883e ","source":"vms"}
+{"level":"debug","ts":"2019-06-18T15:54:00.260+0800","caller":"controllers/index.go:26","msg":"GetUserInfo -------------- admin ","source":"vms"}
+{"level":"debug","ts":"2019-06-18T15:54:04.796+0800","caller":"controllers/gift.go:20","msg":"Logger----------admin/svrmgr/gifts21001","source":"vms"}
+{"level":"debug","ts":"2019-06-18T15:54:04.796+0800","caller":"controllers/gift.go:30","msg":"GetGiftCodes https://qgame-test.dayukeji.com:12004/gift/get?gameId=21001","source":"vms"}
+{"level":"info","ts":"2019-06-18T15:55:10.513+0800","caller":"goweb/main.go:71","msg":"Shutdown Server ...","source":"vms"}
+{"level":"info","ts":"2019-06-18T15:55:10.514+0800","caller":"goweb/main.go:78","msg":"Server exiting","source":"vms"}
+{"level":"info","ts":"2019-06-18T15:55:19.759+0800","caller":"goweb/main.go:66","msg":"Http Serving at: :8080","source":"vms"}
+{"level":"debug","ts":"2019-06-18T15:55:22.670+0800","caller":"controllers/gift.go:20","msg":"Logger----------admin/svrmgr/gifts21001","source":"vms"}
+{"level":"debug","ts":"2019-06-18T15:55:22.670+0800","caller":"controllers/gift.go:30","msg":"GetGiftCodes https://qgame-test.dayukeji.com:12004/game/gift/get?gameId=21001","source":"vms"}
+{"level":"error","ts":"2019-06-18T15:55:22.843+0800","caller":"controllers/gift.go:49","msg":"json.UnmarshalReadMapCB: expect { or n, but found \u0000, error found in #0 byte of ...||..., bigger context ...||...","source":"vms"}
+{"level":"info","ts":"2019-06-18T15:55:57.057+0800","caller":"goweb/main.go:71","msg":"Shutdown Server ...","source":"vms"}
+{"level":"info","ts":"2019-06-18T15:55:57.057+0800","caller":"goweb/main.go:78","msg":"Server exiting","source":"vms"}
+{"level":"info","ts":"2019-06-18T15:56:03.444+0800","caller":"goweb/main.go:66","msg":"Http Serving at: :8080","source":"vms"}
+{"level":"debug","ts":"2019-06-18T15:56:06.011+0800","caller":"controllers/gift.go:20","msg":"Logger----------admin/svrmgr/gifts21001","source":"vms"}
+{"level":"debug","ts":"2019-06-18T15:56:06.011+0800","caller":"controllers/gift.go:30","msg":"GetGiftCodes https://qgame-test.dayukeji.com:12004/game/gift/get?gameId=21001","source":"vms"}
+{"level":"debug","ts":"2019-06-18T15:56:06.185+0800","caller":"controllers/gift.go:43","msg":"GetGiftCodes:body","source":"vms"}
+{"level":"error","ts":"2019-06-18T15:56:06.186+0800","caller":"controllers/gift.go:49","msg":"json.UnmarshalReadMapCB: expect { or n, but found \u0000, error found in #0 byte of ...||..., bigger context ...||...","source":"vms"}
+{"level":"info","ts":"2019-06-18T15:57:10.313+0800","caller":"goweb/main.go:71","msg":"Shutdown Server ...","source":"vms"}
+{"level":"info","ts":"2019-06-18T15:57:10.314+0800","caller":"goweb/main.go:78","msg":"Server exiting","source":"vms"}
+{"level":"info","ts":"2019-06-18T15:57:16.151+0800","caller":"goweb/main.go:66","msg":"Http Serving at: :8080","source":"vms"}
+{"level":"debug","ts":"2019-06-18T15:57:20.380+0800","caller":"controllers/gift.go:20","msg":"Logger----------admin/svrmgr/gifts21001","source":"vms"}
+{"level":"debug","ts":"2019-06-18T15:57:20.380+0800","caller":"controllers/gift.go:30","msg":"GetGiftCodes https://qgame-test.dayukeji.com:12004/game/gift/get?game=21001","source":"vms"}
+{"level":"debug","ts":"2019-06-18T15:57:20.586+0800","caller":"controllers/gift.go:43","msg":"GetGiftCodes:body{\"code\":1,\"list\":null}","source":"vms"}
+{"level":"debug","ts":"2019-06-18T15:57:51.777+0800","caller":"controllers/gift.go:69","msg":"{21001 1 1 10}","source":"vms"}
+{"level":"debug","ts":"2019-06-18T15:57:51.782+0800","caller":"controllers/gift.go:20","msg":"Logger----------admin/svrmgr/gifts21001","source":"vms"}
+{"level":"debug","ts":"2019-06-18T15:57:51.782+0800","caller":"controllers/gift.go:30","msg":"GetGiftCodes https://qgame-test.dayukeji.com:12004/game/gift/get?game=21001","source":"vms"}
+{"level":"debug","ts":"2019-06-18T15:57:51.816+0800","caller":"controllers/gift.go:88","msg":"GenGifts:body{\"code\":404,\"msg\":\"no router\"}","source":"vms"}
+{"level":"debug","ts":"2019-06-18T15:57:51.827+0800","caller":"controllers/gift.go:43","msg":"GetGiftCodes:body{\"code\":1,\"list\":null}","source":"vms"}
+{"level":"debug","ts":"2019-06-18T16:17:15.063+0800","caller":"controllers/gift.go:69","msg":"{21001 1 1 10}","source":"vms"}
+{"level":"debug","ts":"2019-06-18T16:17:15.065+0800","caller":"controllers/gift.go:20","msg":"Logger----------admin/svrmgr/gifts21001","source":"vms"}
+{"level":"debug","ts":"2019-06-18T16:17:15.111+0800","caller":"controllers/gift.go:30","msg":"GetGiftCodes https://qgame-test.dayukeji.com:12004/game/gift/get?game=21001","source":"vms"}
+{"level":"debug","ts":"2019-06-18T16:17:15.263+0800","caller":"controllers/gift.go:43","msg":"GetGiftCodes:body{\"code\":0,\"list\":null}","source":"vms"}
+{"level":"debug","ts":"2019-06-18T16:17:15.270+0800","caller":"controllers/gift.go:88","msg":"GenGifts:body{\"code\":1,\"msg\":\"success\"}","source":"vms"}
+{"level":"debug","ts":"2019-06-18T16:26:12.170+0800","caller":"controllers/gift.go:69","msg":"{21001 1 1 10}","source":"vms"}
+{"level":"debug","ts":"2019-06-18T16:26:12.174+0800","caller":"controllers/gift.go:20","msg":"Logger----------admin/svrmgr/gifts21001","source":"vms"}
+{"level":"debug","ts":"2019-06-18T16:26:12.175+0800","caller":"controllers/gift.go:30","msg":"GetGiftCodes https://qgame-test.dayukeji.com:12004/game/gift/get?game=21001","source":"vms"}
+{"level":"debug","ts":"2019-06-18T16:26:12.322+0800","caller":"controllers/gift.go:43","msg":"GetGiftCodes:body{\"code\":0,\"list\":null}","source":"vms"}
+{"level":"debug","ts":"2019-06-18T16:26:12.337+0800","caller":"controllers/gift.go:88","msg":"GenGifts:body{\"code\":1,\"msg\":\"Error 1054: Unknown column '21001' in 'field list'\"}","source":"vms"}
+{"level":"debug","ts":"2019-06-18T16:28:09.974+0800","caller":"controllers/gift.go:20","msg":"Logger----------admin/svrmgr/gifts21001","source":"vms"}
+{"level":"debug","ts":"2019-06-18T16:28:09.974+0800","caller":"controllers/gift.go:30","msg":"GetGiftCodes https://qgame-test.dayukeji.com:12004/game/gift/get?game=21001","source":"vms"}
+{"level":"debug","ts":"2019-06-18T16:28:10.141+0800","caller":"controllers/gift.go:43","msg":"GetGiftCodes:body{\"code\":0,\"list\":[{\"game\":\"21001\",\"code\":\"etsigxjbsukd\",\"atype\":\"1\",\"acount\":\"10\"}]}","source":"vms"}
+{"level":"debug","ts":"2019-06-18T16:28:25.881+0800","caller":"controllers/gift.go:20","msg":"Logger----------admin/svrmgr/gifts21001","source":"vms"}
+{"level":"debug","ts":"2019-06-18T16:28:25.882+0800","caller":"controllers/gift.go:30","msg":"GetGiftCodes https://qgame-test.dayukeji.com:12004/game/gift/get?game=21001","source":"vms"}
+{"level":"debug","ts":"2019-06-18T16:28:25.924+0800","caller":"controllers/gift.go:43","msg":"GetGiftCodes:body{\"code\":0,\"list\":[{\"game\":\"21001\",\"code\":\"etsigxjbsukd\",\"atype\":\"1\",\"acount\":\"10\"}]}","source":"vms"}
+{"level":"debug","ts":"2019-06-18T16:28:27.517+0800","caller":"controllers/gift.go:20","msg":"Logger----------admin/svrmgr/gifts21001","source":"vms"}
+{"level":"debug","ts":"2019-06-18T16:28:27.518+0800","caller":"controllers/gift.go:30","msg":"GetGiftCodes https://qgame-test.dayukeji.com:12004/game/gift/get?game=21001","source":"vms"}
+{"level":"debug","ts":"2019-06-18T16:28:27.559+0800","caller":"controllers/gift.go:43","msg":"GetGiftCodes:body{\"code\":0,\"list\":[{\"game\":\"21001\",\"code\":\"etsigxjbsukd\",\"atype\":\"1\",\"acount\":\"10\"}]}","source":"vms"}
+{"level":"info","ts":"2019-06-18T16:32:36.532+0800","caller":"goweb/main.go:71","msg":"Shutdown Server ...","source":"vms"}
+{"level":"info","ts":"2019-06-18T16:32:36.533+0800","caller":"goweb/main.go:78","msg":"Server exiting","source":"vms"}
+{"level":"info","ts":"2019-06-18T16:37:09.841+0800","caller":"goweb/main.go:66","msg":"Http Serving at: :8080","source":"vms"}
+{"level":"debug","ts":"2019-06-18T16:37:11.599+0800","caller":"controllers/index.go:26","msg":"GetUserInfo --------------  ","source":"vms"}
+{"level":"debug","ts":"2019-06-18T16:37:21.184+0800","caller":"controllers/index.go:79","msg":"Login -------------- admin e10adc3949ba59abbe56e057f20f883e e10adc3949ba59abbe56e057f20f883e ","source":"vms"}
+{"level":"debug","ts":"2019-06-18T16:37:21.203+0800","caller":"controllers/index.go:26","msg":"GetUserInfo -------------- admin ","source":"vms"}
+{"level":"debug","ts":"2019-06-18T16:37:26.640+0800","caller":"controllers/gift.go:20","msg":"Logger----------admin/svrmgr/gifts21001","source":"vms"}
+{"level":"debug","ts":"2019-06-18T16:37:26.641+0800","caller":"controllers/gift.go:30","msg":"GetGiftCodes https://qgame-test.dayukeji.com:12004/game/gift/get?game=21001","source":"vms"}
+{"level":"debug","ts":"2019-06-18T16:37:26.850+0800","caller":"controllers/gift.go:43","msg":"GetGiftCodes:body{\"code\":0,\"list\":[{\"game\":\"21001\",\"code\":\"etsigxjbsukd\",\"atype\":\"1\",\"acount\":\"10\"}]}","source":"vms"}
+{"level":"debug","ts":"2019-06-18T16:37:35.451+0800","caller":"controllers/gift.go:69","msg":"{21001 1 1 10}","source":"vms"}
+{"level":"debug","ts":"2019-06-18T16:37:35.455+0800","caller":"controllers/gift.go:20","msg":"Logger----------admin/svrmgr/gifts21001","source":"vms"}
+{"level":"debug","ts":"2019-06-18T16:37:35.455+0800","caller":"controllers/gift.go:30","msg":"GetGiftCodes https://qgame-test.dayukeji.com:12004/game/gift/get?game=21001","source":"vms"}
+{"level":"debug","ts":"2019-06-18T16:37:35.492+0800","caller":"controllers/gift.go:88","msg":"GenGifts:body{\"code\":0,\"msg\":\"success\"}","source":"vms"}
+{"level":"debug","ts":"2019-06-18T16:37:35.495+0800","caller":"controllers/gift.go:43","msg":"GetGiftCodes:body{\"code\":0,\"list\":[{\"game\":\"21001\",\"code\":\"etsigxjbsukd\",\"atype\":\"1\",\"acount\":\"10\"},{\"game\":\"21001\",\"code\":\"kptk2f309v06\",\"atype\":\"1\",\"acount\":\"10\"}]}","source":"vms"}
+{"level":"info","ts":"2019-06-18T17:21:05.610+0800","caller":"goweb/main.go:71","msg":"Shutdown Server ...","source":"vms"}
+{"level":"info","ts":"2019-06-18T17:21:05.611+0800","caller":"goweb/main.go:78","msg":"Server exiting","source":"vms"}
