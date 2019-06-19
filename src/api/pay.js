@@ -1,0 +1,11 @@
+/* eslint-disable */ 
+import request from '@/utils/request'
+
+export function getPayDetail (user, page, channel, stime, etime) {
+    // console.log('getstats', user, page, channel, stime, etime)
+    return request({
+        url: '/vms/pay/detail',
+        method: 'get',
+        params: { user, page, channel, stime, etime }
+    })
+}

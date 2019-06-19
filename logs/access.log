@@ -1715,3 +1715,80 @@
 {"level":"debug","ts":"2019-06-18T16:37:35.495+0800","caller":"controllers/gift.go:43","msg":"GetGiftCodes:body{\"code\":0,\"list\":[{\"game\":\"21001\",\"code\":\"etsigxjbsukd\",\"atype\":\"1\",\"acount\":\"10\"},{\"game\":\"21001\",\"code\":\"kptk2f309v06\",\"atype\":\"1\",\"acount\":\"10\"}]}","source":"vms"}
 {"level":"info","ts":"2019-06-18T17:21:05.610+0800","caller":"goweb/main.go:71","msg":"Shutdown Server ...","source":"vms"}
 {"level":"info","ts":"2019-06-18T17:21:05.611+0800","caller":"goweb/main.go:78","msg":"Server exiting","source":"vms"}
+{"level":"info","ts":"2019-06-19T17:47:49.721+0800","caller":"goweb/main.go:66","msg":"Http Serving at: :8080","source":"vms"}
+{"level":"debug","ts":"2019-06-19T17:48:01.992+0800","caller":"drivers/jwt.go:46","msg":"jwt Check------> Token is expired","source":"vms"}
+{"level":"debug","ts":"2019-06-19T17:48:10.039+0800","caller":"controllers/index.go:79","msg":"Login -------------- admin e10adc3949ba59abbe56e057f20f883e e10adc3949ba59abbe56e057f20f883e ","source":"vms"}
+{"level":"debug","ts":"2019-06-19T17:48:10.049+0800","caller":"controllers/index.go:26","msg":"GetUserInfo -------------- admin ","source":"vms"}
+{"level":"info","ts":"2019-06-19T17:53:09.681+0800","caller":"goweb/main.go:71","msg":"Shutdown Server ...","source":"vms"}
+{"level":"info","ts":"2019-06-19T17:53:09.682+0800","caller":"goweb/main.go:78","msg":"Server exiting","source":"vms"}
+{"level":"info","ts":"2019-06-19T17:53:40.350+0800","caller":"goweb/main.go:66","msg":"Http Serving at: :8080","source":"vms"}
+{"level":"debug","ts":"2019-06-19T17:53:44.307+0800","caller":"controllers/index.go:26","msg":"GetUserInfo --------------  ","source":"vms"}
+{"level":"debug","ts":"2019-06-19T17:53:53.952+0800","caller":"controllers/index.go:79","msg":"Login -------------- admin e10adc3949ba59abbe56e057f20f883e e10adc3949ba59abbe56e057f20f883e ","source":"vms"}
+{"level":"debug","ts":"2019-06-19T17:53:53.971+0800","caller":"controllers/index.go:26","msg":"GetUserInfo -------------- admin ","source":"vms"}
+{"level":"info","ts":"2019-06-19T17:55:37.152+0800","caller":"goweb/main.go:71","msg":"Shutdown Server ...","source":"vms"}
+{"level":"info","ts":"2019-06-19T17:55:37.153+0800","caller":"goweb/main.go:78","msg":"Server exiting","source":"vms"}
+{"level":"info","ts":"2019-06-19T17:55:50.190+0800","caller":"goweb/main.go:66","msg":"Http Serving at: :8080","source":"vms"}
+{"level":"debug","ts":"2019-06-19T17:55:54.428+0800","caller":"controllers/index.go:26","msg":"GetUserInfo --------------  ","source":"vms"}
+{"level":"debug","ts":"2019-06-19T17:56:00.360+0800","caller":"controllers/index.go:79","msg":"Login -------------- admin e10adc3949ba59abbe56e057f20f883e e10adc3949ba59abbe56e057f20f883e ","source":"vms"}
+{"level":"debug","ts":"2019-06-19T17:56:00.374+0800","caller":"controllers/index.go:26","msg":"GetUserInfo -------------- admin ","source":"vms"}
+{"level":"info","ts":"2019-06-19T17:56:54.568+0800","caller":"goweb/main.go:71","msg":"Shutdown Server ...","source":"vms"}
+{"level":"info","ts":"2019-06-19T17:56:54.569+0800","caller":"goweb/main.go:78","msg":"Server exiting","source":"vms"}
+{"level":"info","ts":"2019-06-19T17:57:07.396+0800","caller":"goweb/main.go:66","msg":"Http Serving at: :8080","source":"vms"}
+{"level":"debug","ts":"2019-06-19T17:57:10.728+0800","caller":"controllers/index.go:26","msg":"GetUserInfo --------------  ","source":"vms"}
+{"level":"debug","ts":"2019-06-19T17:57:17.305+0800","caller":"controllers/index.go:79","msg":"Login -------------- admin e10adc3949ba59abbe56e057f20f883e e10adc3949ba59abbe56e057f20f883e ","source":"vms"}
+{"level":"debug","ts":"2019-06-19T17:57:17.319+0800","caller":"controllers/index.go:26","msg":"GetUserInfo -------------- admin ","source":"vms"}
+{"level":"info","ts":"2019-06-19T17:59:31.456+0800","caller":"goweb/main.go:71","msg":"Shutdown Server ...","source":"vms"}
+{"level":"info","ts":"2019-06-19T17:59:31.457+0800","caller":"goweb/main.go:78","msg":"Server exiting","source":"vms"}
+{"level":"info","ts":"2019-06-19T17:59:45.261+0800","caller":"goweb/main.go:66","msg":"Http Serving at: :8080","source":"vms"}
+{"level":"debug","ts":"2019-06-19T17:59:50.242+0800","caller":"controllers/index.go:26","msg":"GetUserInfo --------------  ","source":"vms"}
+{"level":"debug","ts":"2019-06-19T17:59:59.374+0800","caller":"controllers/index.go:79","msg":"Login -------------- admin e10adc3949ba59abbe56e057f20f883e e10adc3949ba59abbe56e057f20f883e ","source":"vms"}
+{"level":"debug","ts":"2019-06-19T17:59:59.392+0800","caller":"controllers/index.go:26","msg":"GetUserInfo -------------- admin ","source":"vms"}
+{"level":"info","ts":"2019-06-19T18:01:54.360+0800","caller":"goweb/main.go:71","msg":"Shutdown Server ...","source":"vms"}
+{"level":"info","ts":"2019-06-19T18:01:54.362+0800","caller":"goweb/main.go:78","msg":"Server exiting","source":"vms"}
+{"level":"info","ts":"2019-06-19T18:02:47.306+0800","caller":"goweb/main.go:66","msg":"Http Serving at: :8080","source":"vms"}
+{"level":"debug","ts":"2019-06-19T18:02:51.585+0800","caller":"controllers/index.go:26","msg":"GetUserInfo --------------  ","source":"vms"}
+{"level":"debug","ts":"2019-06-19T18:02:58.087+0800","caller":"controllers/index.go:79","msg":"Login -------------- admin e10adc3949ba59abbe56e057f20f883e e10adc3949ba59abbe56e057f20f883e ","source":"vms"}
+{"level":"debug","ts":"2019-06-19T18:02:58.101+0800","caller":"controllers/index.go:26","msg":"GetUserInfo -------------- admin ","source":"vms"}
+{"level":"debug","ts":"2019-06-19T18:02:58.242+0800","caller":"controllers/pay.go:21","msg":"GetPayList----------admin/payment/payment","source":"vms"}
+{"level":"debug","ts":"2019-06-19T18:02:58.242+0800","caller":"controllers/pay.go:33","msg":"GetPayList https://qgame-test.dayukeji.com:12004/pay/list/get?channel=&edate=&sdate=","source":"vms"}
+{"level":"debug","ts":"2019-06-19T18:02:58.431+0800","caller":"controllers/pay.go:46","msg":"GetPayList:body","source":"vms"}
+{"level":"error","ts":"2019-06-19T18:02:58.431+0800","caller":"controllers/pay.go:52","msg":"json.UnmarshalReadMapCB: expect { or n, but found \u0000, error found in #0 byte of ...||..., bigger context ...||...","source":"vms"}
+{"level":"debug","ts":"2019-06-19T18:03:09.595+0800","caller":"controllers/pay.go:21","msg":"GetPayList----------admin/payment/payment","source":"vms"}
+{"level":"debug","ts":"2019-06-19T18:03:09.596+0800","caller":"controllers/pay.go:33","msg":"GetPayList https://qgame-test.dayukeji.com:12004/pay/list/get?channel=&edate=&sdate=","source":"vms"}
+{"level":"debug","ts":"2019-06-19T18:03:09.629+0800","caller":"controllers/pay.go:46","msg":"GetPayList:body","source":"vms"}
+{"level":"error","ts":"2019-06-19T18:03:09.630+0800","caller":"controllers/pay.go:52","msg":"json.UnmarshalReadMapCB: expect { or n, but found \u0000, error found in #0 byte of ...||..., bigger context ...||...","source":"vms"}
+{"level":"info","ts":"2019-06-19T18:17:19.767+0800","caller":"goweb/main.go:71","msg":"Shutdown Server ...","source":"vms"}
+{"level":"info","ts":"2019-06-19T18:17:19.768+0800","caller":"goweb/main.go:78","msg":"Server exiting","source":"vms"}
+{"level":"info","ts":"2019-06-19T18:18:08.394+0800","caller":"goweb/main.go:66","msg":"Http Serving at: :8080","source":"vms"}
+{"level":"debug","ts":"2019-06-19T18:18:12.304+0800","caller":"controllers/index.go:26","msg":"GetUserInfo --------------  ","source":"vms"}
+{"level":"debug","ts":"2019-06-19T18:18:20.267+0800","caller":"controllers/index.go:79","msg":"Login -------------- admin e10adc3949ba59abbe56e057f20f883e e10adc3949ba59abbe56e057f20f883e ","source":"vms"}
+{"level":"debug","ts":"2019-06-19T18:18:20.282+0800","caller":"controllers/index.go:26","msg":"GetUserInfo -------------- admin ","source":"vms"}
+{"level":"debug","ts":"2019-06-19T18:18:20.421+0800","caller":"controllers/pay.go:21","msg":"GetPayList----------admin/payment/paymentxiaomi2019-6-122019-6-19","source":"vms"}
+{"level":"debug","ts":"2019-06-19T18:18:20.422+0800","caller":"controllers/pay.go:33","msg":"GetPayList https://qgame-test.dayukeji.com:12004/pay/list/get?channel=xiaomi&edate=2019-6-19&sdate=2019-6-12","source":"vms"}
+{"level":"debug","ts":"2019-06-19T18:18:20.763+0800","caller":"controllers/pay.go:46","msg":"GetPayList:body{\"code\":1,\"msg\":\"sql: expected 2 arguments, got 3\"}","source":"vms"}
+{"level":"debug","ts":"2019-06-19T18:21:31.356+0800","caller":"controllers/pay.go:21","msg":"GetPayList----------admin/payment/paymentxiaomi2019-6-122019-6-19","source":"vms"}
+{"level":"debug","ts":"2019-06-19T18:21:31.357+0800","caller":"controllers/pay.go:33","msg":"GetPayList https://qgame-test.dayukeji.com:12004/pay/list/get?channel=xiaomi&edate=2019-6-19&sdate=2019-6-12","source":"vms"}
+{"level":"debug","ts":"2019-06-19T18:21:31.503+0800","caller":"controllers/pay.go:46","msg":"GetPayList:body{\"code\":0,\"list\":null}","source":"vms"}
+{"level":"info","ts":"2019-06-19T18:31:44.002+0800","caller":"goweb/main.go:71","msg":"Shutdown Server ...","source":"vms"}
+{"level":"info","ts":"2019-06-19T18:31:44.003+0800","caller":"goweb/main.go:78","msg":"Server exiting","source":"vms"}
+{"level":"info","ts":"2019-06-19T18:32:05.681+0800","caller":"goweb/main.go:66","msg":"Http Serving at: :8080","source":"vms"}
+{"level":"debug","ts":"2019-06-19T18:32:10.117+0800","caller":"controllers/index.go:26","msg":"GetUserInfo --------------  ","source":"vms"}
+{"level":"debug","ts":"2019-06-19T18:32:17.375+0800","caller":"controllers/index.go:79","msg":"Login -------------- admin e10adc3949ba59abbe56e057f20f883e e10adc3949ba59abbe56e057f20f883e ","source":"vms"}
+{"level":"debug","ts":"2019-06-19T18:32:17.393+0800","caller":"controllers/index.go:26","msg":"GetUserInfo -------------- admin ","source":"vms"}
+{"level":"debug","ts":"2019-06-19T18:32:17.549+0800","caller":"controllers/pay.go:21","msg":"GetPayList----------admin/payment/paymentxiaomi2019-6-192019-6-19","source":"vms"}
+{"level":"debug","ts":"2019-06-19T18:32:17.549+0800","caller":"controllers/pay.go:33","msg":"GetPayList https://qgame-test.dayukeji.com:12004/pay/list/get?channel=xiaomi&edate=2019-6-19&sdate=2019-6-19","source":"vms"}
+{"level":"debug","ts":"2019-06-19T18:32:17.773+0800","caller":"controllers/pay.go:46","msg":"GetPayList:body{\"code\":0,\"list\":null}","source":"vms"}
+{"level":"info","ts":"2019-06-19T18:32:46.865+0800","caller":"goweb/main.go:71","msg":"Shutdown Server ...","source":"vms"}
+{"level":"info","ts":"2019-06-19T18:32:46.866+0800","caller":"goweb/main.go:78","msg":"Server exiting","source":"vms"}
+{"level":"info","ts":"2019-06-19T18:33:06.309+0800","caller":"goweb/main.go:66","msg":"Http Serving at: :8080","source":"vms"}
+{"level":"debug","ts":"2019-06-19T18:33:09.932+0800","caller":"controllers/index.go:26","msg":"GetUserInfo --------------  ","source":"vms"}
+{"level":"debug","ts":"2019-06-19T18:33:18.088+0800","caller":"controllers/index.go:79","msg":"Login -------------- admin e10adc3949ba59abbe56e057f20f883e e10adc3949ba59abbe56e057f20f883e ","source":"vms"}
+{"level":"debug","ts":"2019-06-19T18:33:18.101+0800","caller":"controllers/index.go:26","msg":"GetUserInfo -------------- admin ","source":"vms"}
+{"level":"debug","ts":"2019-06-19T18:33:18.229+0800","caller":"controllers/pay.go:21","msg":"GetPayList----------admin/payment/paymentxiaomi2019-06-192019-06-19","source":"vms"}
+{"level":"debug","ts":"2019-06-19T18:33:18.229+0800","caller":"controllers/pay.go:33","msg":"GetPayList https://qgame-test.dayukeji.com:12004/pay/list/get?channel=xiaomi&edate=2019-06-19&sdate=2019-06-19","source":"vms"}
+{"level":"debug","ts":"2019-06-19T18:33:18.418+0800","caller":"controllers/pay.go:46","msg":"GetPayList:body{\"code\":0,\"list\":null}","source":"vms"}
+{"level":"debug","ts":"2019-06-19T18:33:30.716+0800","caller":"controllers/pay.go:21","msg":"GetPayList----------admin/payment/paymentxiaomi2019-06-132019-06-19","source":"vms"}
+{"level":"debug","ts":"2019-06-19T18:33:30.717+0800","caller":"controllers/pay.go:33","msg":"GetPayList https://qgame-test.dayukeji.com:12004/pay/list/get?channel=xiaomi&edate=2019-06-19&sdate=2019-06-13","source":"vms"}
+{"level":"debug","ts":"2019-06-19T18:33:30.753+0800","caller":"controllers/pay.go:46","msg":"GetPayList:body{\"code\":0,\"list\":[{\"appid\":\"222\",\"order\":\"232434\",\"cpOrder\":\"2019061359dfeabc2c55f3cb3f5cfb3db2318049\",\"uid\":\"2222\",\"amount\":\"1\",\"productId\":\"232\",\"productCount\":\"100\",\"timestamp\":\"2019-06-13 14:57:42\"},{\"appid\":\"123\",\"order\":\"23244\",\"cpOrder\":\"2019061359dfeabc2c55f3cb3f5cfb3db2318048\",\"uid\":\"2222\",\"amount\":\"1\",\"productId\":\"232\",\"productCount\":\"100\",\"timestamp\":\"2019-06-13 10:57:42\"}]}","source":"vms"}
+{"level":"info","ts":"2019-06-19T18:36:18.051+0800","caller":"goweb/main.go:71","msg":"Shutdown Server ...","source":"vms"}
+{"level":"info","ts":"2019-06-19T18:36:18.052+0800","caller":"goweb/main.go:78","msg":"Server exiting","source":"vms"}

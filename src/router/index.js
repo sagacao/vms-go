@@ -172,6 +172,24 @@ export const asyncRouterMap = [
     ]
   },
 
+  {
+    path: '/payment',
+    component: Layout,
+    name: 'payment',
+    meta: {
+      title: '付费数据',
+      icon: 'nested',
+      roles: ['admin', 'saga'] 
+    },
+    children: [
+      {
+        path: 'payment',
+        component: () => import('@/views/payment/payment'), // Parent router-view
+        name: 'payment',
+        meta: { title: '付费数据', roles: ['admin', 'saga'] }
+      }
+    ]
+  },
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
 ]
