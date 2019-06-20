@@ -1792,3 +1792,21 @@
 {"level":"debug","ts":"2019-06-19T18:33:30.753+0800","caller":"controllers/pay.go:46","msg":"GetPayList:body{\"code\":0,\"list\":[{\"appid\":\"222\",\"order\":\"232434\",\"cpOrder\":\"2019061359dfeabc2c55f3cb3f5cfb3db2318049\",\"uid\":\"2222\",\"amount\":\"1\",\"productId\":\"232\",\"productCount\":\"100\",\"timestamp\":\"2019-06-13 14:57:42\"},{\"appid\":\"123\",\"order\":\"23244\",\"cpOrder\":\"2019061359dfeabc2c55f3cb3f5cfb3db2318048\",\"uid\":\"2222\",\"amount\":\"1\",\"productId\":\"232\",\"productCount\":\"100\",\"timestamp\":\"2019-06-13 10:57:42\"}]}","source":"vms"}
 {"level":"info","ts":"2019-06-19T18:36:18.051+0800","caller":"goweb/main.go:71","msg":"Shutdown Server ...","source":"vms"}
 {"level":"info","ts":"2019-06-19T18:36:18.052+0800","caller":"goweb/main.go:78","msg":"Server exiting","source":"vms"}
+{"level":"info","ts":"2019-06-20T15:10:50.787+0800","caller":"goweb/main.go:66","msg":"Http Serving at: :8080","source":"vms"}
+{"level":"debug","ts":"2019-06-20T15:10:59.206+0800","caller":"drivers/jwt.go:46","msg":"jwt Check------> Token is expired","source":"vms"}
+{"level":"debug","ts":"2019-06-20T15:11:10.872+0800","caller":"controllers/index.go:79","msg":"Login -------------- admin e10adc3949ba59abbe56e057f20f883e e10adc3949ba59abbe56e057f20f883e ","source":"vms"}
+{"level":"debug","ts":"2019-06-20T15:11:10.889+0800","caller":"controllers/index.go:26","msg":"GetUserInfo -------------- admin ","source":"vms"}
+{"level":"debug","ts":"2019-06-20T15:11:17.852+0800","caller":"controllers/pay.go:67","msg":"GetPaySum----------admin/payment/paysumxiaomi2019-06-202019-06-20","source":"vms"}
+{"level":"debug","ts":"2019-06-20T15:11:17.852+0800","caller":"controllers/pay.go:79","msg":"GetPaySum https://qgame-test.dayukeji.com:12004/pay/sum/get?channel=xiaomi&edate=2019-06-20&sdate=2019-06-20","source":"vms"}
+{"level":"debug","ts":"2019-06-20T15:11:18.043+0800","caller":"controllers/pay.go:92","msg":"GetPaySum:body{\"code\":0,\"list\":[{\"productCount\":\"0\",\"count\":0,\"sum\":0}]}","source":"vms"}
+{"level":"debug","ts":"2019-06-20T15:11:35.712+0800","caller":"controllers/pay.go:67","msg":"GetPaySum----------admin/payment/paysumxiaomi2019-06-112019-06-11","source":"vms"}
+{"level":"debug","ts":"2019-06-20T15:11:35.713+0800","caller":"controllers/pay.go:79","msg":"GetPaySum https://qgame-test.dayukeji.com:12004/pay/sum/get?channel=xiaomi&edate=2019-06-11&sdate=2019-06-11","source":"vms"}
+{"level":"debug","ts":"2019-06-20T15:11:35.750+0800","caller":"controllers/pay.go:92","msg":"GetPaySum:body{\"code\":0,\"list\":[{\"productCount\":\"0\",\"count\":0,\"sum\":0}]}","source":"vms"}
+{"level":"debug","ts":"2019-06-20T15:16:59.719+0800","caller":"controllers/pay.go:67","msg":"GetPaySum----------admin/payment/paysumxiaomi2019-07-122019-08-20","source":"vms"}
+{"level":"debug","ts":"2019-06-20T15:16:59.720+0800","caller":"controllers/pay.go:79","msg":"GetPaySum https://qgame-test.dayukeji.com:12004/pay/sum/get?channel=xiaomi&edate=2019-08-20&sdate=2019-07-12","source":"vms"}
+{"level":"debug","ts":"2019-06-20T15:16:59.882+0800","caller":"controllers/pay.go:92","msg":"GetPaySum:body{\"code\":0,\"list\":[{\"productCount\":\"0\",\"count\":0,\"sum\":0}]}","source":"vms"}
+{"level":"debug","ts":"2019-06-20T15:17:31.224+0800","caller":"controllers/pay.go:67","msg":"GetPaySum----------admin/payment/paysumxiaomi2019-06-122019-07-20","source":"vms"}
+{"level":"debug","ts":"2019-06-20T15:17:31.224+0800","caller":"controllers/pay.go:79","msg":"GetPaySum https://qgame-test.dayukeji.com:12004/pay/sum/get?channel=xiaomi&edate=2019-07-20&sdate=2019-06-12","source":"vms"}
+{"level":"debug","ts":"2019-06-20T15:17:31.266+0800","caller":"controllers/pay.go:92","msg":"GetPaySum:body{\"code\":0,\"list\":[{\"productCount\":\"100\",\"count\":2,\"sum\":200},{\"productCount\":\"0\",\"count\":2,\"sum\":200}]}","source":"vms"}
+{"level":"info","ts":"2019-06-20T15:18:19.884+0800","caller":"goweb/main.go:71","msg":"Shutdown Server ...","source":"vms"}
+{"level":"info","ts":"2019-06-20T15:18:19.892+0800","caller":"goweb/main.go:78","msg":"Server exiting","source":"vms"}

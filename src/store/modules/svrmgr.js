@@ -4,7 +4,7 @@ import { getSvrGates, setSvrGates, removeSvrGates } from '@/api/gates'
 import { getSvrAppInfo, setSvrAppInfo, removeSvrAppInfo } from '@/api/appctor'
 import { getSvrChannelStatus, setSvrChannelStatus, removeChannelStatus } from '@/api/channelstatus'
 import { gengifts, getgifts } from '@/api/gifts'
-import { getPayDetail } from '@/api/pay'
+import { getPayDetail, getPaySum } from '@/api/pay'
 
 const state = {
 }
@@ -237,6 +237,19 @@ const actions= {
         const {user, page, channel, stime, etime} = info
         return new Promise((resolve, reject) => {
             getPayDetail(user, page, channel, stime, etime).then(response => {
+                // console.log(response)
+                resolve(response)
+            }).catch(error => {
+                // console.log(error)
+                reject(error)
+            })
+        })
+    },
+
+    GetPaySum({ commit }, info) {
+        const {user, page, channel, stime, etime} = info
+        return new Promise((resolve, reject) => {
+            getPaySum(user, page, channel, stime, etime).then(response => {
                 // console.log(response)
                 resolve(response)
             }).catch(error => {

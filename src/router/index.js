@@ -187,6 +187,12 @@ export const asyncRouterMap = [
         component: () => import('@/views/payment/payment'), // Parent router-view
         name: 'payment',
         meta: { title: '付费数据', roles: ['admin', 'saga'] }
+      },
+      {
+        path: 'paysum',
+        component: () => import('@/views/payment/paysum'), // Parent router-view
+        name: 'paysum',
+        meta: { title: '付费统计', roles: ['admin', 'saga'] }
       }
     ]
   },

@@ -47,5 +47,6 @@ func registerRouter(router *gin.Engine) {
 		vms.POST("/cstatus/remove", controllers.RemoveSvrChannelStatus)
 
 		vms.GET("/pay/detail", controllers.GetPayList)
+		vms.GET("/pay/sum", controllers.GetPaySum)
 	}
 }

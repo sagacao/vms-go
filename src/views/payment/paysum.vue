@@ -14,19 +14,11 @@
                 <el-col class="line" :span="20"></el-col>
             </div>
             <el-table :data="data" border class="table">
-                <el-table-column prop="appid" label="APPID" width="120">
+                <el-table-column prop="productCount" label="付费金额" width="220" sortable>
                 </el-table-column>
-                <el-table-column prop="order" label="订单" width="220">
+                <el-table-column prop="count" label="付费笔数" width="220" sortable>
                 </el-table-column>
-                <el-table-column prop="uid" label="用户ID" width="100">
-                </el-table-column>
-                <el-table-column prop="amount" label="金额" width="100" sortable>
-                </el-table-column>
-                <el-table-column prop="productId" label="产品编号" width="100">
-                </el-table-column>
-                <el-table-column prop="productCount" label="产品数值" width="100" sortable>
-                </el-table-column>
-                <el-table-column prop="timestamp" label="日期" sortable >
+                <el-table-column prop="sum" label="付费总额" width="220" sortable>
                 </el-table-column>
             </el-table>
             <div class="pagination">
@@ -41,7 +33,7 @@
 /* eslint-disable */
 import {parseTime} from '@/utils/index'
 export default {
-    name: 'payment',
+    name: 'paysum',
     data() {
         return {
             options:[
@@ -107,7 +99,7 @@ export default {
             const etime = parseTime(edate, '{y}-{m}-{d}') //edate.getFullYear() + '-' + (edate.getMonth() + 1) + '-' + edate.getDate()
             const channel = this.cur_channel
             console.log("handleSearch", channel, stime, etime)
-            this.$store.dispatch('svrmgr/GetPayDetail', { user, page, channel, stime, etime}).then((res) => {
+            this.$store.dispatch('svrmgr/GetPaySum', { user, page, channel, stime, etime}).then((res) => {
                 if (res.list) {
                     this.tableData = res.list;
                     this.totalnum = this.tableData.length
