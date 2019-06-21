@@ -1810,3 +1810,76 @@
 {"level":"debug","ts":"2019-06-20T15:17:31.266+0800","caller":"controllers/pay.go:92","msg":"GetPaySum:body{\"code\":0,\"list\":[{\"productCount\":\"100\",\"count\":2,\"sum\":200},{\"productCount\":\"0\",\"count\":2,\"sum\":200}]}","source":"vms"}
 {"level":"info","ts":"2019-06-20T15:18:19.884+0800","caller":"goweb/main.go:71","msg":"Shutdown Server ...","source":"vms"}
 {"level":"info","ts":"2019-06-20T15:18:19.892+0800","caller":"goweb/main.go:78","msg":"Server exiting","source":"vms"}
+{"level":"info","ts":"2019-06-21T16:08:29.438+0800","caller":"goweb/main.go:66","msg":"Http Serving at: :8080","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:08:34.605+0800","caller":"drivers/jwt.go:46","msg":"jwt Check------> Token is expired","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:08:40.194+0800","caller":"controllers/index.go:79","msg":"Login -------------- admin e10adc3949ba59abbe56e057f20f883e e10adc3949ba59abbe56e057f20f883e ","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:08:40.204+0800","caller":"controllers/index.go:26","msg":"GetUserInfo -------------- admin ","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:08:49.580+0800","caller":"controllers/gift.go:20","msg":"Logger----------admin/svrmgr/gifts21001","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:08:49.581+0800","caller":"controllers/gift.go:30","msg":"GetGiftCodes https://qgame-test.dayukeji.com:12004/game/gift/get?game=21001","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:08:49.783+0800","caller":"controllers/gift.go:43","msg":"GetGiftCodes:body{\"code\":0,\"list\":[{\"game\":\"21001\",\"code\":\"etsigxjbsukd\",\"atype\":\"1\",\"acount\":\"10\"},{\"game\":\"21001\",\"code\":\"kptk2f309v06\",\"atype\":\"1\",\"acount\":\"10\"}]}","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:36:28.368+0800","caller":"controllers/gift.go:69","msg":"{21001 1 1 10}","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:36:28.370+0800","caller":"controllers/gift.go:20","msg":"Logger----------admin/svrmgr/gifts21001","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:36:28.370+0800","caller":"controllers/gift.go:30","msg":"GetGiftCodes https://qgame-test.dayukeji.com:12004/game/gift/get?game=21001","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:36:28.511+0800","caller":"controllers/gift.go:43","msg":"GetGiftCodes:body{\"code\":0,\"list\":null}","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:36:28.525+0800","caller":"controllers/gift.go:88","msg":"GenGifts:body{\"code\":0,\"msg\":\"success\"}","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:36:29.702+0800","caller":"controllers/gift.go:20","msg":"Logger----------admin/svrmgr/gifts21001","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:36:29.702+0800","caller":"controllers/gift.go:30","msg":"GetGiftCodes https://qgame-test.dayukeji.com:12004/game/gift/get?game=21001","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:36:29.737+0800","caller":"controllers/gift.go:43","msg":"GetGiftCodes:body{\"code\":0,\"list\":[{\"game\":\"21001\",\"code\":\"8us6avwxr83x\",\"atype\":\"1\",\"acount\":\"10\"}]}","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:36:33.925+0800","caller":"controllers/gift.go:20","msg":"Logger----------admin/svrmgr/gifts21001","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:36:33.925+0800","caller":"controllers/gift.go:30","msg":"GetGiftCodes https://qgame-test.dayukeji.com:12004/game/gift/get?game=21001","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:36:33.960+0800","caller":"controllers/gift.go:43","msg":"GetGiftCodes:body{\"code\":0,\"list\":[{\"game\":\"21001\",\"code\":\"8us6avwxr83x\",\"atype\":\"1\",\"acount\":\"10\"}]}","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:36:34.917+0800","caller":"controllers/gift.go:20","msg":"Logger----------admin/svrmgr/gifts21001","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:36:34.917+0800","caller":"controllers/gift.go:30","msg":"GetGiftCodes https://qgame-test.dayukeji.com:12004/game/gift/get?game=21001","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:36:34.952+0800","caller":"controllers/gift.go:43","msg":"GetGiftCodes:body{\"code\":0,\"list\":[{\"game\":\"21001\",\"code\":\"8us6avwxr83x\",\"atype\":\"1\",\"acount\":\"10\"}]}","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:36:35.840+0800","caller":"controllers/gift.go:20","msg":"Logger----------admin/svrmgr/gifts21001","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:36:35.841+0800","caller":"controllers/gift.go:30","msg":"GetGiftCodes https://qgame-test.dayukeji.com:12004/game/gift/get?game=21001","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:36:35.875+0800","caller":"controllers/gift.go:43","msg":"GetGiftCodes:body{\"code\":0,\"list\":[{\"game\":\"21001\",\"code\":\"8us6avwxr83x\",\"atype\":\"1\",\"acount\":\"10\"}]}","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:36:36.589+0800","caller":"controllers/gift.go:20","msg":"Logger----------admin/svrmgr/gifts21001","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:36:36.589+0800","caller":"controllers/gift.go:30","msg":"GetGiftCodes https://qgame-test.dayukeji.com:12004/game/gift/get?game=21001","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:36:36.624+0800","caller":"controllers/gift.go:43","msg":"GetGiftCodes:body{\"code\":0,\"list\":[{\"game\":\"21001\",\"code\":\"8us6avwxr83x\",\"atype\":\"1\",\"acount\":\"10\"}]}","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:36:37.773+0800","caller":"controllers/gift.go:20","msg":"Logger----------admin/svrmgr/gifts21001","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:36:37.773+0800","caller":"controllers/gift.go:30","msg":"GetGiftCodes https://qgame-test.dayukeji.com:12004/game/gift/get?game=21001","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:36:37.807+0800","caller":"controllers/gift.go:43","msg":"GetGiftCodes:body{\"code\":0,\"list\":[{\"game\":\"21001\",\"code\":\"8us6avwxr83x\",\"atype\":\"1\",\"acount\":\"10\"}]}","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:36:38.252+0800","caller":"controllers/gift.go:20","msg":"Logger----------admin/svrmgr/gifts21001","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:36:38.252+0800","caller":"controllers/gift.go:30","msg":"GetGiftCodes https://qgame-test.dayukeji.com:12004/game/gift/get?game=21001","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:36:38.286+0800","caller":"controllers/gift.go:43","msg":"GetGiftCodes:body{\"code\":0,\"list\":[{\"game\":\"21001\",\"code\":\"8us6avwxr83x\",\"atype\":\"1\",\"acount\":\"10\"}]}","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:36:43.622+0800","caller":"controllers/gift.go:20","msg":"Logger----------admin/svrmgr/gifts21001","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:36:43.623+0800","caller":"controllers/gift.go:30","msg":"GetGiftCodes https://qgame-test.dayukeji.com:12004/game/gift/get?game=21001","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:36:43.658+0800","caller":"controllers/gift.go:43","msg":"GetGiftCodes:body{\"code\":0,\"list\":[{\"game\":\"21001\",\"code\":\"8us6avwxr83x\",\"atype\":\"1\",\"acount\":\"10\"}]}","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:37:00.180+0800","caller":"controllers/gift.go:69","msg":"{21001 1 1 10}","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:37:00.181+0800","caller":"controllers/gift.go:20","msg":"Logger----------admin/svrmgr/gifts21001","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:37:00.181+0800","caller":"controllers/gift.go:30","msg":"GetGiftCodes https://qgame-test.dayukeji.com:12004/game/gift/get?game=21001","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:37:00.214+0800","caller":"controllers/gift.go:88","msg":"GenGifts:body{\"code\":0,\"msg\":\"success\"}","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:37:00.221+0800","caller":"controllers/gift.go:43","msg":"GetGiftCodes:body{\"code\":0,\"list\":[{\"game\":\"21001\",\"code\":\"8us6avwxr83x\",\"atype\":\"1\",\"acount\":\"10\"},{\"game\":\"21001\",\"code\":\"elusba6bccl2\",\"atype\":\"1\",\"acount\":\"10\"}]}","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:42:08.150+0800","caller":"controllers/gift.go:69","msg":"{21001 1 1 10}","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:42:08.153+0800","caller":"controllers/gift.go:20","msg":"Logger----------admin/svrmgr/gifts21001","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:42:08.153+0800","caller":"controllers/gift.go:30","msg":"GetGiftCodes https://qgame-test.dayukeji.com:12004/game/gift/get?game=21001","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:42:08.320+0800","caller":"controllers/gift.go:88","msg":"GenGifts:body{\"code\":0,\"msg\":\"success\"}","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:42:08.326+0800","caller":"controllers/gift.go:43","msg":"GetGiftCodes:body{\"code\":0,\"list\":[{\"game\":\"21001\",\"code\":\"8us6avwxr83x\",\"atype\":\"1\",\"acount\":\"10\"},{\"game\":\"21001\",\"code\":\"d420tn3tdl8u\",\"atype\":\"1\",\"acount\":\"10\"},{\"game\":\"21001\",\"code\":\"elusba6bccl2\",\"atype\":\"1\",\"acount\":\"10\"}]}","source":"vms"}
+{"level":"info","ts":"2019-06-21T16:49:29.615+0800","caller":"goweb/main.go:71","msg":"Shutdown Server ...","source":"vms"}
+{"level":"info","ts":"2019-06-21T16:49:29.615+0800","caller":"goweb/main.go:78","msg":"Server exiting","source":"vms"}
+{"level":"info","ts":"2019-06-21T16:49:56.140+0800","caller":"goweb/main.go:66","msg":"Http Serving at: :8080","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:50:06.559+0800","caller":"controllers/gift.go:69","msg":"{21001 1 1 10}","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:50:06.563+0800","caller":"controllers/gift.go:20","msg":"Logger----------admin/svrmgr/gifts21001","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:50:06.564+0800","caller":"controllers/gift.go:30","msg":"GetGiftCodes https://qgame-test.dayukeji.com:12004/game/gift/get?game=21001","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:50:06.741+0800","caller":"controllers/gift.go:43","msg":"GetGiftCodes:body{\"code\":0,\"list\":[{\"game\":\"21001\",\"code\":\"8us6avwxr83x\",\"atype\":\"1\",\"acount\":\"10\"},{\"game\":\"21001\",\"code\":\"d420tn3tdl8u\",\"atype\":\"1\",\"acount\":\"10\"},{\"game\":\"21001\",\"code\":\"elusba6bccl2\",\"atype\":\"1\",\"acount\":\"10\"}]}","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:50:06.746+0800","caller":"controllers/gift.go:88","msg":"GenGifts:body{\"code\":0,\"msg\":\"success\"}","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:50:09.429+0800","caller":"controllers/gift.go:20","msg":"Logger----------admin/svrmgr/gifts21001","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:50:09.430+0800","caller":"controllers/gift.go:30","msg":"GetGiftCodes https://qgame-test.dayukeji.com:12004/game/gift/get?game=21001","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:50:09.464+0800","caller":"controllers/gift.go:43","msg":"GetGiftCodes:body{\"code\":0,\"list\":[{\"game\":\"21001\",\"code\":\"8us6avwxr83x\",\"atype\":\"1\",\"acount\":\"10\"},{\"game\":\"21001\",\"code\":\"d420tn3tdl8u\",\"atype\":\"1\",\"acount\":\"10\"},{\"game\":\"21001\",\"code\":\"elusba6bccl2\",\"atype\":\"1\",\"acount\":\"10\"},{\"game\":\"21001\",\"code\":\"ht5vyvrzhzmc\",\"atype\":\"1\",\"acount\":\"10\"}]}","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:50:43.069+0800","caller":"controllers/gift.go:20","msg":"Logger----------admin/svrmgr/gifts21001","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:50:43.070+0800","caller":"controllers/gift.go:30","msg":"GetGiftCodes https://qgame-test.dayukeji.com:12004/game/gift/get?game=21001","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:50:43.108+0800","caller":"controllers/gift.go:43","msg":"GetGiftCodes:body{\"code\":0,\"list\":[{\"game\":\"21001\",\"code\":\"8us6avwxr83x\",\"atype\":\"1\",\"acount\":\"10\"},{\"game\":\"21001\",\"code\":\"d420tn3tdl8u\",\"atype\":\"1\",\"acount\":\"10\"},{\"game\":\"21001\",\"code\":\"elusba6bccl2\",\"atype\":\"1\",\"acount\":\"10\"},{\"game\":\"21001\",\"code\":\"ht5vyvrzhzmc\",\"atype\":\"1\",\"acount\":\"10\"}]}","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:50:52.452+0800","caller":"controllers/index.go:26","msg":"GetUserInfo --------------  ","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:51:01.339+0800","caller":"controllers/index.go:79","msg":"Login -------------- admin e10adc3949ba59abbe56e057f20f883e e10adc3949ba59abbe56e057f20f883e ","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:51:01.351+0800","caller":"controllers/index.go:26","msg":"GetUserInfo -------------- admin ","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:51:06.538+0800","caller":"controllers/gift.go:20","msg":"Logger----------admin/svrmgr/gifts21001","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:51:06.539+0800","caller":"controllers/gift.go:30","msg":"GetGiftCodes https://qgame-test.dayukeji.com:12004/game/gift/get?game=21001","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:51:06.575+0800","caller":"controllers/gift.go:43","msg":"GetGiftCodes:body{\"code\":0,\"list\":[{\"game\":\"21001\",\"code\":\"8us6avwxr83x\",\"atype\":\"1\",\"acount\":\"10\"},{\"game\":\"21001\",\"code\":\"d420tn3tdl8u\",\"atype\":\"1\",\"acount\":\"10\"},{\"game\":\"21001\",\"code\":\"elusba6bccl2\",\"atype\":\"1\",\"acount\":\"10\"},{\"game\":\"21001\",\"code\":\"ht5vyvrzhzmc\",\"atype\":\"1\",\"acount\":\"10\"}]}","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:51:15.110+0800","caller":"controllers/gift.go:69","msg":"{21001 1 1 10}","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:51:15.114+0800","caller":"controllers/gift.go:20","msg":"Logger----------admin/svrmgr/gifts21001","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:51:15.114+0800","caller":"controllers/gift.go:30","msg":"GetGiftCodes https://qgame-test.dayukeji.com:12004/game/gift/get?game=21001","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:51:15.144+0800","caller":"controllers/gift.go:88","msg":"GenGifts:body{\"code\":0,\"msg\":\"success\"}","source":"vms"}
+{"level":"debug","ts":"2019-06-21T16:51:15.149+0800","caller":"controllers/gift.go:43","msg":"GetGiftCodes:body{\"code\":0,\"list\":[{\"game\":\"21001\",\"code\":\"8us6avwxr83x\",\"atype\":\"1\",\"acount\":\"10\"},{\"game\":\"21001\",\"code\":\"d420tn3tdl8u\",\"atype\":\"1\",\"acount\":\"10\"},{\"game\":\"21001\",\"code\":\"elusba6bccl2\",\"atype\":\"1\",\"acount\":\"10\"},{\"game\":\"21001\",\"code\":\"ht5vyvrzhzmc\",\"atype\":\"1\",\"acount\":\"10\"},{\"game\":\"21001\",\"code\":\"nxvi81qildz5\",\"atype\":\"1\",\"acount\":\"10\"}]}","source":"vms"}
+{"level":"info","ts":"2019-06-21T16:53:36.418+0800","caller":"goweb/main.go:71","msg":"Shutdown Server ...","source":"vms"}
+{"level":"info","ts":"2019-06-21T16:53:36.419+0800","caller":"goweb/main.go:78","msg":"Server exiting","source":"vms"}

@@ -14,13 +14,13 @@
             <div class="handle-box">
                 <el-row :gutter="10">
                     <el-col :span="4">
-                        <el-input placeholder="请输入生成数量" v-model="form.number"> </el-input>
+                        <el-input placeholder="请输入生成数量" v-model="input_number"> </el-input>
                     </el-col>
                     <el-col :span="4">
-                        <el-input placeholder="请输入奖励类型" v-model="form.atype"> </el-input>
+                        <el-input placeholder="请输入奖励类型" v-model="input_atype"> </el-input>
                     </el-col>
                     <el-col :span="4">
-                        <el-input placeholder="请输入奖励数量" v-model="form.acount"> </el-input>
+                        <el-input placeholder="请输入奖励数量" v-model="input_acount"> </el-input>
                     </el-col>
                     <el-col :span="2" >
                         <el-button type="primary"  @click="handleGen">生成<i class="el-icon-upload el-icon--right"></i></el-button>
@@ -58,12 +58,15 @@ export default {
             cur_page: 1,
             is_search: false,
             selected_game : '',
-            actioning : "get",
+            actioning : 'get',
+            input_number : 1,
+            input_atype : '1',
+            input_acount : 1,
             form: {
                 game: this.selected_game,
-                number : '',
-                atype: '',
-                acount: ''
+                number : 1,//this.input_number,
+                atype: '1', //this.input_atype,
+                acount: 1, //this.input_acount
             },
             idx: -1
         }
@@ -120,9 +123,9 @@ export default {
             }
             this.form = {
                 game: this.selected_game,
-                number : 1,
-                atype: '1',
-                acount : 10
+                number : this.input_number,
+                atype: this.input_atype,
+                acount: this.input_acount
             }
             this.actioning = 'gen'
             this.saveEdit()
