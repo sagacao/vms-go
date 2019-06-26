@@ -44,6 +44,10 @@ export default {
                 {
                     value: 'vivo',
                     label: 'vivo'
+                },
+                {
+                    value: 'wx',
+                    label: 'wx'
                 }
             ],
             tableData: [],
