@@ -196,6 +196,24 @@ export const asyncRouterMap = [
       }
     ]
   },
+  {
+    path: '/game',
+    component: Layout,
+    name: 'game',
+    meta: {
+      title: '游戏数据',
+      icon: 'nested',
+      roles: ['admin', 'saga'] 
+    },
+    children: [
+      {
+        path: 'user',
+        component: () => import('@/views/game/user'), // Parent router-view
+        name: 'user',
+        meta: { title: '游戏数据', roles: ['admin', 'saga'] }
+      }
+    ]
+  },
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
 ]

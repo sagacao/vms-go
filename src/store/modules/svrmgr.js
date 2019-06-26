@@ -5,6 +5,7 @@ import { getSvrAppInfo, setSvrAppInfo, removeSvrAppInfo } from '@/api/appctor'
 import { getSvrChannelStatus, setSvrChannelStatus, removeChannelStatus } from '@/api/channelstatus'
 import { gengifts, getgifts } from '@/api/gifts'
 import { getPayDetail, getPaySum } from '@/api/pay'
+import { getPlayerInfo, editPlayerInfo } from '@/api/player'
 
 const state = {
 }
@@ -250,6 +251,33 @@ const actions= {
         const {user, page, channel, stime, etime} = info
         return new Promise((resolve, reject) => {
             getPaySum(user, page, channel, stime, etime).then(response => {
+                // console.log(response)
+                resolve(response)
+            }).catch(error => {
+                // console.log(error)
+                reject(error)
+            })
+        })
+    },
+
+    GetPlayerInfo({ commit }, info) {
+        const {user, page, game, key, ktype} = info
+        return new Promise((resolve, reject) => {
+            getPlayerInfo(user, page, game, key, ktype).then(response => {
+                // console.log(response)
+                resolve(response)
+            }).catch(error => {
+                // console.log(error)
+                reject(error)
+            })
+        })
+    },
+
+    EditPlayerInfo({ commit }, info) {
+        const {user, formdata} = info
+        // console.log(formdata)
+        return new Promise((resolve, reject) => {
+            editPlayerInfo(user, formdata).then(response => {
                 // console.log(response)
                 resolve(response)
             }).catch(error => {

@@ -14,12 +14,15 @@
             <div class="handle-box">
                 <el-row :gutter="10">
                     <el-col :span="4">
+                        <div class="sub-title">输入需要数量</div>
                         <el-input placeholder="请输入生成数量" v-model="input_number"> </el-input>
                     </el-col>
                     <el-col :span="4">
+                        <div class="sub-title">输入奖励类型</div>
                         <el-input placeholder="请输入奖励类型" v-model="input_atype"> </el-input>
                     </el-col>
                     <el-col :span="4">
+                        <div class="sub-title">输入奖励数量</div>
                         <el-input placeholder="请输入奖励数量" v-model="input_acount"> </el-input>
                     </el-col>
                     <el-col :span="2" >
@@ -28,7 +31,7 @@
                 </el-row>
             </div>
 
-            <el-table :data="data" border class="table">
+            <el-table :data="tableData.slice((cur_page-1)*pagesize,cur_page*pagesize)" border class="table">
                 <el-table-column prop="game" label="游戏" width="100">
                 </el-table-column>
                 <el-table-column prop="code" label="礼包码" width="160">
@@ -39,7 +42,7 @@
                 </el-table-column>
             </el-table>
             <div class="pagination">
-                <el-pagination background @current-change="handleCurrentChange" layout="prev, pager, next" :total="50">
+                <el-pagination background @current-change="handleCurrentChange" layout="prev, pager, next" :total="totalsize">
                 </el-pagination>
             </div>
         </div>
@@ -56,12 +59,14 @@ export default {
         return {
             tableData: [],
             cur_page: 1,
+            pagesize: 10,
             is_search: false,
             selected_game : '',
             actioning : 'get',
             input_number : 1,
             input_atype : '1',
             input_acount : 1,
+            totalsize : 1,
             form: {
                 game: this.selected_game,
                 number : 1,//this.input_number,
@@ -107,6 +112,7 @@ export default {
                     if (res.list) {
                         console.log( this.tableData)
                         this.tableData = res.list
+                        this.totalsize= this.tableData.length
                     } else {
                         this.$message.error('没有数据')
                     }

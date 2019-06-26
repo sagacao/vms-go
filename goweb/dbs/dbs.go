@@ -46,10 +46,10 @@ func NewDBService() error {
 		return err
 	}
 
-	_dbService.dbmongo, err = dbmongo.OpenMongo(settings.SvrConfig.Mongo.ADDR, settings.SvrConfig.Mongo.DATABASE, "")
-	if err != nil {
-		gwlog.Fatal("NewDBService err:", err)
-	}
+	// _dbService.dbmongo, err = dbmongo.OpenMongo(settings.SvrConfig.Mongo.ADDR, settings.SvrConfig.Mongo.DATABASE, "")
+	// if err != nil {
+	// 	gwlog.Fatal("NewDBService err:", err)
+	// }
 
 	return nil
 }
@@ -57,9 +57,9 @@ func NewDBService() error {
 func (db *DBService) Destory() {
 	// db.mysql.Close()
 	db.dbmysql.Close()
-	if db.dbmongo != nil {
-		db.dbmongo.Close()
-	}
+	// if db.dbmongo != nil {
+	// 	db.dbmongo.Close()
+	// }
 }
 
 func (db *DBService) QueryLoggerStats(channel string, sdate, edate string, replys *[]*models.LogStats) error {
