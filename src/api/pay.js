@@ -18,3 +18,12 @@ export function getPaySum (user, page, channel, stime, etime) {
         params: { user, page, channel, stime, etime }
     })
 }
+
+export function getPayPlayerSum (user, page, channel, stime, etime) {
+    // console.log('getPayPlayerSum', user, page, channel, stime, etime)
+    return request({
+        url: '/vms/pay/playersum',
+        method: 'get',
+        params: { user, page, channel, stime, etime }
+    })
+}

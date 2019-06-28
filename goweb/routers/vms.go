@@ -48,6 +48,7 @@ func registerRouter(router *gin.Engine) {
 
 		vms.GET("/pay/detail", controllers.GetPayList)
 		vms.GET("/pay/sum", controllers.GetPaySum)
+		vms.GET("/pay/playersum", controllers.GetPayPlayerSum)
 
 		vms.GET("/player/req", controllers.ReqPlayerInfo)
 		vms.POST("/player/edit", controllers.EditPlayerInfo)
