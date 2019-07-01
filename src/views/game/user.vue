@@ -159,12 +159,12 @@ export default {
             // var sjsonvalue = JSON.stringify(this.tableData[index].jsonvalue)
             var jsonobj = this.tableData[index].jsonvalue
             // console.log("--------------------------------")
-            // console.log(this.input_key)
+            console.log(jsonobj["_id"])
             // console.log(sjsonvalue)
             // console.log("--------------------------------")
             this.form = {
                 game: this.selected_game,
-                key : this.input_key,
+                key : jsonobj["_id"],
                 jsonvalue: jsonobj
             }
             console.log(this.form.jsonvalue)
