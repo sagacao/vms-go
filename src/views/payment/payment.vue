@@ -56,6 +56,14 @@ export default {
                 {
                     value: 'wx',
                     label: 'wx'
+                },
+                {
+                    value: 'tt',
+                    label: 'tt'
+                },
+                {
+                    value: 'dayu',
+                    label: 'dayu'
                 }
             ],
             tableData: [],
