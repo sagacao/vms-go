@@ -164,10 +164,18 @@ export default {
                     this.tableData = []
                     // this.tableData = res.data
                     for(var i = 0; i < res.data.length; i++) {
-                        let item = res.data[i]
-                        item['status'] = item.status + ''
-                        this.tableData.push(item)
+                        if (res.data[i].name == 'maxPumpTimes') {
+                            let item = res.data[i]
+                            item['status'] = item.status + ''
+                            this.tableData.push(item)
+                        }
                     } 
+
+                    // for(var i = 0; i < res.data.length; i++) {
+                    //     let item = res.data[i]
+                    //     item['status'] = item.status + ''
+                    //     this.tableData.push(item)
+                    // } 
                 } 
             }).catch(err => {
                 console.log(err)
