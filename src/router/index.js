@@ -124,7 +124,7 @@ export const asyncRouterMap = [
     meta: {
       title: '游戏配置',
       icon: 'nested',
-      roles: ['admin', 'saga'] 
+      roles: ['admin', 'saga']
     },
     children: [
       {
@@ -164,6 +164,12 @@ export const asyncRouterMap = [
         meta: { title: '渠道开关', roles: ['admin', 'saga'] }
       },
       {
+        path: 'cegg',
+        component: () => import('@/views/svrmgr/cegg'), // Parent router-view
+        name: 'cegg',
+        meta: { title: '渠道砸蛋', roles: ['admin', 'saga'] }
+      },
+      {
         path: 'gifts',
         component: () => import('@/views/svrmgr/gifts'), // Parent router-view
         name: 'gifts',
@@ -179,7 +185,7 @@ export const asyncRouterMap = [
     meta: {
       title: '付费数据',
       icon: 'nested',
-      roles: ['admin', 'saga'] 
+      roles: ['admin', 'saga']
     },
     children: [
       {
@@ -209,7 +215,7 @@ export const asyncRouterMap = [
     meta: {
       title: '游戏数据',
       icon: 'nested',
-      roles: ['admin', 'saga'] 
+      roles: ['admin', 'saga']
     },
     children: [
       {
