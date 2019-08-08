@@ -46,6 +46,10 @@ export default {
                     label: 'vivo'
                 },
                 {
+                    value: 'oppo',
+                    label: 'oppo'
+                },
+                {
                     value: 'wx',
                     label: 'wx'
                 },
