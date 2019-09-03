@@ -55,6 +55,10 @@ export default {
                 {
                     value: '21101',
                     label: '俄罗斯方块pk'
+                },
+                {
+                    value: '21201',
+                    label: '躲猫猫'
                 }
             ],
             svalue: ''
