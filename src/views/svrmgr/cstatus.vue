@@ -184,7 +184,7 @@ export default {
                     this.tableData = []
                     // this.tableData = res.data
                     for(var i = 0; i < res.data.length; i++) {
-                        if (res.data[i].name != 'maxPumpTimes') {
+                        if (res.data[i].name != 'maxPumpTimes' && res.data[i].name != 'openVideoModal' ) {
                             let item = res.data[i]
                             item['status'] = item.status + ''
                             this.tableData.push(item)

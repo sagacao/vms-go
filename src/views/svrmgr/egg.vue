@@ -151,7 +151,7 @@ export default {
                     this.tableData = []
                     // this.tableData = res.data
                     for(var i = 0; i < res.data.length; i++) {
-                        if (res.data[i].funcname == 'maxPumpTimes') {
+                        if (res.data[i].funcname == 'maxPumpTimes' || res.data[i].funcname == 'openVideoModal') {
                             let item = res.data[i]
                             item['game'] = game
                             this.tableData.push(item)
