@@ -116,6 +116,10 @@ export default {
                 {
                     value: 'bannerLoop',
                     label: 'bannerLoop'
+                },
+                {
+                    value: 'mainUiRight',
+                    label: 'mainUiRight'
                 }
             ],
             funcstatus:[
