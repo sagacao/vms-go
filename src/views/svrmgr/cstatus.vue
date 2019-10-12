@@ -120,6 +120,10 @@ export default {
                 {
                     value: 'mainUiRight',
                     label: 'mainUiRight'
+                },
+                {
+                    value: 'dropPage',
+                    label: 'dropPage'
                 }
             ],
             funcstatus:[
