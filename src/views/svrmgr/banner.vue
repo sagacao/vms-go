@@ -24,14 +24,10 @@
                 <el-table-column prop="name" label="名字" sortable width="200">
                 </el-table-column>
                 <el-table-column property="status" label="状态" width="160" align="center">
-                    <template slot-scope="scope">
-                        <el-switch active-color="#13ce66" inactive-color="#ff4949" active-value="1" inactive-value="0" v-model="scope.row.status" @change="handleEdit(scope.$index,scope.row)">
-                        </el-switch>
-                    </template>
                 </el-table-column>
                 <el-table-column label="操作" align="center">
                     <template slot-scope="scope">
-                        <el-button type="text" icon="el-icon-delete" @click="handleDel(scope.$index, scope.row)">删除</el-button>
+                        <el-button type="text" icon="el-icon-edit" @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
                     </template>
                 </el-table-column>
             </el-table>
@@ -77,63 +73,59 @@
 import XdhSelect from './xdhselect'
 export default {
     components: { XdhSelect },
-    name: 'switch',
+    name: 'banner',
     data() {
         return {
             options:[
                 {
-                    value: 'invite',
-                    label: 'invite'
-                },
-                {
-                    value: 'push',
-                    label: 'push'
-                },
-                {
-                    value: 'forcar',
-                    label: 'forcar'
-                },
-                {
-                    value: 'redirect',
-                    label: 'redirect'
-                },
-                {
-                    value: 'clickTips',
-                    label: 'clickTips'
-                },
-                {
-                    value: 'unlockLevelMode',
-                    label: 'unlockLevelMode'
-                },
-                {
-                    value: 'banner',
-                    label: 'banner'
-                },
-                {
-                    value: 'mute',
-                    label: 'mute'
-                },
-                {
-                    value: 'bannerLoop',
-                    label: 'bannerLoop'
-                },
-                {
-                    value: 'mainUiRight',
-                    label: 'mainUiRight'
-                },
-                {
-                    value: 'dropPage',
-                    label: 'dropPage'
+                    value: 'bannerRate',
+                    label: 'bannerRate'
                 }
             ],
             funcstatus:[
                 {
+                    value: '10',
+                    label: '10'
+                },
+                {
+                    value: '9',
+                    label: '9'
+                },
+                {
+                    value: '8',
+                    label: '8'
+                },
+                {
+                    value: '7',
+                    label: '7'
+                },
+                {
+                    value: '6',
+                    label: '6'
+                },
+                {
+                    value: '5',
+                    label: '5'
+                },
+                {
+                    value: '4',
+                    label: '4'
+                },
+                {
+                    value: '3',
+                    label: '3'
+                },
+                {
+                    value: '2',
+                    label: '2'
+                },
+                {
                     value: '1',
-                    label: '开'
+                    label: '1'
                 },
                 {
                     value: '0',
-                    label: '关'
+                    label: '0'
                 }
             ],
             tableData: [],
@@ -145,8 +137,8 @@ export default {
             form: {
                 game: this.selected_game,
                 channel : 'wx',
-                name : 'push',
-                status: '1'
+                funcname : 'bannerRate',
+                funcswitch: '3'
             },
             idx: -1
         }
@@ -192,12 +184,18 @@ export default {
                     this.tableData = []
                     // this.tableData = res.data
                     for(var i = 0; i < res.data.length; i++) {
-                        if (res.data[i].name != 'maxPumpTimes' && res.data[i].name != 'openVideoModal' && res.data[i].name != 'bannerRate') {
+                        if (res.data[i].name == 'bannerRate') {
                             let item = res.data[i]
                             item['status'] = item.status + ''
                             this.tableData.push(item)
                         }
                     } 
+
+                    // for(var i = 0; i < res.data.length; i++) {
+                    //     let item = res.data[i]
+                    //     item['status'] = item.status + ''
+                    //     this.tableData.push(item)
+                    // } 
                 } 
             }).catch(err => {
                 console.log(err)
@@ -249,8 +247,8 @@ export default {
             this.form = {
                 game: this.selected_game,
                 channel : 'wx',
-                name : 'push',
-                status: '1'
+                name : 'bannerRate',
+                status: '3'
             }
             this.editVisible = true
             this.actioning = 'add'
@@ -266,9 +264,8 @@ export default {
                 name : item.name,
                 status: item.status
             }
-            // this.editVisible = true;
+            this.editVisible = true;
             this.actioning = 'edit'
-            this.saveEdit()
         },
         // 保存编辑
         saveEdit() {
