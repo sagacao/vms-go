@@ -84,9 +84,33 @@ export default {
                 {
                     value: 'openVideoModal',
                     label: 'openVideoModal'
+                },
+                {
+                    value: 'bannerRate',
+                    label: 'bannerRate'
                 }
             ],
             funcstatus:[
+                {
+                    value: '10',
+                    label: '10'
+                },
+                {
+                    value: '9',
+                    label: '9'
+                },
+                {
+                    value: '8',
+                    label: '8'
+                },
+                {
+                    value: '7',
+                    label: '7'
+                },
+                {
+                    value: '6',
+                    label: '6'
+                },
                 {
                     value: '5',
                     label: '5'
@@ -168,7 +192,7 @@ export default {
                     this.tableData = []
                     // this.tableData = res.data
                     for(var i = 0; i < res.data.length; i++) {
-                        if (res.data[i].name == 'maxPumpTimes' || res.data[i].name == 'openVideoModal') {
+                        if (res.data[i].name == 'maxPumpTimes' || res.data[i].name == 'openVideoModal' || res.data[i].name == 'bannerRate') {
                             let item = res.data[i]
                             item['status'] = item.status + ''
                             this.tableData.push(item)

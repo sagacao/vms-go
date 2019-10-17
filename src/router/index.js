@@ -170,12 +170,6 @@ export const asyncRouterMap = [
         meta: { title: '渠道砸蛋', roles: ['admin', 'saga'] }
       },
       {
-        path: 'banner',
-        component: () => import('@/views/svrmgr/banner'), // Parent router-view
-        name: 'banner',
-        meta: { title: '渠道banner', roles: ['admin', 'saga'] }
-      },
-      {
         path: 'gifts',
         component: () => import('@/views/svrmgr/gifts'), // Parent router-view
         name: 'gifts',
