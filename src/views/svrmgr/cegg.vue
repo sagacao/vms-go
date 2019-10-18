@@ -88,6 +88,10 @@ export default {
                 {
                     value: 'bannerRate',
                     label: 'bannerRate'
+                },
+                {
+                    value: 'VideoRate',
+                    label: 'VideoRate'
                 }
             ],
             funcstatus:[
@@ -192,7 +196,12 @@ export default {
                     this.tableData = []
                     // this.tableData = res.data
                     for(var i = 0; i < res.data.length; i++) {
-                        if (res.data[i].name == 'maxPumpTimes' || res.data[i].name == 'openVideoModal' || res.data[i].name == 'bannerRate') {
+                        if (
+                            res.data[i].name == 'maxPumpTimes' 
+                        || res.data[i].name == 'openVideoModal' 
+                        || res.data[i].name == 'bannerRate' 
+                        || res.data[i].name == 'VideoRate'
+                        ) {
                             let item = res.data[i]
                             item['status'] = item.status + ''
                             this.tableData.push(item)
