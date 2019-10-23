@@ -59,7 +59,7 @@
                     <el-select v-model="form.status" placeholder="请选择" >
                         <el-option v-for="item in funcstatus" :key="item.value" :label="item.label" :value="item.value">
                             <span style="float: left">{{ item.label }}</span>
-                            <span style="float: right; color: #8492a6; font-size: 13px">{{ item.value }}</span>
+                            <span style="float: right; color: #8492a6; font-size: 12px">{{ item.value }}</span>
                         </el-option>
                     </el-select>
                 </el-form-item>
@@ -124,6 +124,14 @@ export default {
                 {
                     value: 'dropPage',
                     label: 'dropPage'
+                },
+                {
+                    value: 'videoWithShare',
+                    label: '0直接播视频1先分享后视频'
+                },
+                {
+                    value: 'bannerMoveUp',
+                    label: '0正常位置1表示由下到上'
                 }
             ],
             funcstatus:[
@@ -192,8 +200,11 @@ export default {
                     this.tableData = []
                     // this.tableData = res.data
                     for(var i = 0; i < res.data.length; i++) {
-                        if (res.data[i].name != 'maxPumpTimes' && res.data[i].name != 'openVideoModal' 
-                        && res.data[i].name != 'bannerRate' && res.data[i].name != 'VideoRate' ) {
+                        if (
+                            res.data[i].name != 'maxPumpTimes' && res.data[i].name != 'openVideoModal' 
+                        && res.data[i].name != 'bannerRate' && res.data[i].name != 'VideoRate' 
+                        && res.data[i].name != 'eggBannerVideo' && res.data[i].name != 'rewardWithVideo' 
+                        ) {
                             let item = res.data[i]
                             item['status'] = item.status + ''
                             this.tableData.push(item)

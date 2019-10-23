@@ -55,7 +55,7 @@
                     <el-select v-model="form.status" placeholder="请选择" >
                         <el-option v-for="item in funcstatus" :key="item.value" :label="item.label" :value="item.value">
                             <span style="float: left">{{ item.label }}</span>
-                            <span style="float: right; color: #8492a6; font-size: 13px">{{ item.value }}</span>
+                            <span style="float: right; color: #8492a6; font-size: 12px">{{ item.value }}</span>
                         </el-option>
                     </el-select>
                 </el-form-item>
@@ -92,6 +92,14 @@ export default {
                 {
                     value: 'VideoRate',
                     label: 'VideoRate'
+                },
+                {
+                    value: 'eggBannerVideo',
+                    label: '金蛋视频百分比'
+                },
+                {
+                    value: 'rewardWithVideo',
+                    label: '0直接领取1-10视频领取概率'
                 }
             ],
             funcstatus:[
@@ -200,7 +208,9 @@ export default {
                             res.data[i].name == 'maxPumpTimes' 
                         || res.data[i].name == 'openVideoModal' 
                         || res.data[i].name == 'bannerRate' 
-                        || res.data[i].name == 'VideoRate'
+                        || res.data[i].name == 'VideoRate' 
+                        || res.data[i].name == 'eggBannerVideo' 
+                        || res.data[i].name == 'rewardWithVideo'
                         ) {
                             let item = res.data[i]
                             item['status'] = item.status + ''
