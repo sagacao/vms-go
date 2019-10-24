@@ -132,6 +132,10 @@ export default {
                 {
                     value: 'bannerMoveUp',
                     label: '0正常位置1表示由下到上'
+                },
+                {
+                    value: 'endPageJFCP',
+                    label: 'endPageJFCP'
                 }
             ],
             funcstatus:[
