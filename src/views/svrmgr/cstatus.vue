@@ -136,6 +136,18 @@ export default {
                 {
                     value: 'endPageJFCP',
                     label: 'endPageJFCP'
+                },
+                {
+                    value: 'dropPageDelay',
+                    label: '1:过5秒自动关闭'
+                },
+                {
+                    value: 'rewardWithPushIcon',
+                    label: '0:视频 1:积分'
+                },
+                {
+                    value: 'battlePushIcon',
+                    label: '0:关闭 1:开启'
                 }
             ],
             funcstatus:[
