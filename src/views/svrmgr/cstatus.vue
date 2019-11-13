@@ -36,7 +36,7 @@
                 </el-table-column>
             </el-table>
             <div class="pagination">
-                <el-pagination background @current-change="handleCurrentChange" layout="prev, pager, next" :total="10">
+                <el-pagination background @current-change="handleCurrentChange" layout="prev, pager, next" :total="30">
                 </el-pagination>
             </div>
         </div>
@@ -224,7 +224,6 @@ export default {
                             res.data[i].name != 'maxPumpTimes' && res.data[i].name != 'openVideoModal' 
                         && res.data[i].name != 'bannerRate' && res.data[i].name != 'VideoRate' 
                         && res.data[i].name != 'eggBannerVideo' && res.data[i].name != 'rewardWithVideo' 
-                        && res.data[i].name != 'bannerTips'
                         ) {
                             let item = res.data[i]
                             item['status'] = item.status + ''
