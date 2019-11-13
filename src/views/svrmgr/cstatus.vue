@@ -148,6 +148,10 @@ export default {
                 {
                     value: 'battlePushIcon',
                     label: '0:关闭 1:开启'
+                },
+                {
+                    value: 'bannerTips',
+                    label: '0:关闭 1:开启'
                 }
             ],
             funcstatus:[
@@ -220,6 +224,7 @@ export default {
                             res.data[i].name != 'maxPumpTimes' && res.data[i].name != 'openVideoModal' 
                         && res.data[i].name != 'bannerRate' && res.data[i].name != 'VideoRate' 
                         && res.data[i].name != 'eggBannerVideo' && res.data[i].name != 'rewardWithVideo' 
+                        && res.data[i].name != 'bannerTips'
                         ) {
                             let item = res.data[i]
                             item['status'] = item.status + ''
