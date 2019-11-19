@@ -152,6 +152,14 @@ export default {
                 {
                     value: 'bannerTips',
                     label: '0:关闭 1:开启'
+                },
+                {
+                    value: 'ipEgg',
+                    label: '0:关闭 1:开启ip屏蔽'
+                },
+                {
+                    value: 'ipDaoliang',
+                    label: '0:关闭 1:开启ip屏蔽'
                 }
             ],
             funcstatus:[
