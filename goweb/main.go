@@ -7,15 +7,39 @@ import (
 	"os/signal"
 	"path"
 	"time"
+	"vms-go/goweb/controllers"
 	"vms-go/goweb/dbs"
 	"vms-go/goweb/routers"
 	"vms-go/goweb/settings"
+
+	"github.com/robfig/cron"
 
 	"github.com/sagacao/goworld/engine/binutil"
 	"github.com/sagacao/goworld/engine/gwlog"
 
 	"github.com/gin-gonic/gin"
 )
+
+func startCronTask() *cron.Cron {
+	c := cron.New()
+
+	spec := "0 30 19 * * ?"
+	c.AddFunc(spec, func() {
+		controllers.CronTask()
+	})
+
+	spec2 := "0 0 7 * * ?"
+	c.AddFunc(spec2, func() {
+		controllers.CronTask()
+	})
+
+	c.Start()
+	return c
+}
+
+func stopCronTask(c *cron.Cron) {
+	c.Stop()
+}
 
 func prepare() {
 	// logger.SetRollingDaily(settings.SvrConfig.Env.ACCESS_LOG_PATH, settings.SvrConfig.Env.ACCESS_LOG_NAME)
@@ -62,6 +86,7 @@ func main() {
 			gwlog.Fatal("listen: ", err)
 		}
 	}()
+	c := startCronTask()
 	// logger.Info("Http Serving at: ", addr)
 	gwlog.Infof("Http Serving at: %s", addr)
 
@@ -69,6 +94,7 @@ func main() {
 	signal.Notify(quit, os.Interrupt)
 	<-quit
 	gwlog.Infof("Shutdown Server ...")
+	stopCronTask(c)
 
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()

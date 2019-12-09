@@ -4,6 +4,7 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/url"
+	"time"
 	"vms-go/goweb/settings"
 
 	"github.com/gin-gonic/gin"
@@ -131,4 +132,42 @@ func RemoveSvrChannelStatus(c *gin.Context) {
 	gwlog.Debug("RemoveSvrChannelStatus:body", string(body))
 
 	c.JSON(http.StatusOK, gin.H{"data": gin.H{}, "errorCode": 0})
+}
+
+func autoChangeStatus(game, channel, name, status string) {
+	gwlog.Info("AutoChangeStatus", game, channel, name, status)
+
+	urlstr := settings.SvrConfig.Env.URL + "/status/setChannelSwitch"
+	resp, err := http.PostForm(urlstr,
+		url.Values{
+			"gameId":  {game},
+			"channel": {channel},
+			"name":    {name},
+			"status":  {status},
+			"action":  {"edit"},
+		})
+	if err != nil {
+		gwlog.Error("AutoChangeStatus PostForm err", err)
+		return
+	}
+	defer resp.Body.Close()
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		gwlog.Error("AutoChangeStatus ReadAll err", err)
+		return
+	}
+	gwlog.Debug("AutoChangeStatus:body", string(body))
+}
+
+func CronTask() {
+	hour := time.Now().Hour()
+	if hour == 19 {
+		autoChangeStatus("20901", "wx", "push", "0")
+		// autoChangeStatus("21201", "wx", "ipEgg", 0)
+	} else {
+		// autoChangeStatus("21201", "wx", "ipEgg", 1)
+		// autoChangeStatus("", "wx", "", 1)
+	}
+
+	gwlog.Debug("CronTask -----------> ", hour)
 }
