@@ -160,6 +160,18 @@ export default {
                 {
                     value: 'ipDaoliang',
                     label: '0:关闭 1:开启ip屏蔽'
+                },
+                {
+                    value: 'signVideoOrIcon',
+                    label: '0:视频 1:积分'
+                },
+                {
+                    value: 'bannerOrIcon',
+                    label: '0:原有逻辑 1:其他逻辑'
+                },
+                {
+                    value: 'reliveMoneyOrIcon',
+                    label: '0:原有逻辑 1:其他逻辑'
                 }
             ],
             funcstatus:[

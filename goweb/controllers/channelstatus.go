@@ -162,10 +162,10 @@ func autoChangeStatus(game, channel, name, status string) {
 func CronTask() {
 	hour := time.Now().Hour()
 	if hour == 19 {
-		autoChangeStatus("20901", "wx", "push", "0")
-		// autoChangeStatus("21201", "wx", "ipEgg", 0)
+		// autoChangeStatus("20901", "wx", "push", "0")
+		autoChangeStatus("21201", "wx", "ipEgg", "0")
 	} else {
-		// autoChangeStatus("21201", "wx", "ipEgg", 1)
+		autoChangeStatus("21201", "wx", "ipEgg", "1")
 		// autoChangeStatus("", "wx", "", 1)
 	}
 

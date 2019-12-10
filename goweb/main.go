@@ -21,7 +21,7 @@ import (
 )
 
 func startCronTask() *cron.Cron {
-	c := cron.New()
+	c := cron.New(cron.WithSeconds(), cron.WithChain())
 
 	spec := "0 30 19 * * ?"
 	c.AddFunc(spec, func() {
