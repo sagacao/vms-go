@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-select v-model="svalue" placeholder="游戏" >
+    <el-select v-model="svalue" placeholder="游戏">
       <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
         <span style="float: left">{{ item.label }}</span>
         <span style="float: right; color: #8492a6; font-size: 13px">{{ item.value }}</span>
@@ -59,6 +59,10 @@ export default {
                 {
                     value: '21201',
                     label: '躲猫猫'
+                },
+                {
+                    value: '600001',
+                    label: '发射球球'
                 }
             ],
             svalue: ''
