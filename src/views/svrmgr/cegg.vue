@@ -1,71 +1,66 @@
 <template>
-    <div class="table">
-        <div class="app-container">
-            <div class="handle-box">
-                <el-row :gutter="10">
-                    <el-col :span="4">
-                        <xdh-select v-model="selected_game"> </xdh-select>
-                    </el-col>
-                    <el-col :span="2">
-                        <el-button type="primary" icon="el-icon-search" @click="handleSearch">搜索</el-button>
-                    </el-col>
-                    <el-col :span="2" :offset="4">
-                        <el-button type="primary"  @click="handleAdd">新增<i class="el-icon-upload el-icon--right"></i></el-button>
-                    </el-col>
-                </el-row>
-            </div>
-            <el-divider></el-divider>
-            <el-divider></el-divider>
-            <el-table :data="data" border class="table" :sort-by = "[{prop: 'channel', order: 'ascending'}, {prop: 'funcname', order: 'ascending'}]" >
-                <el-table-column prop="game" label="游戏" width="100">
-                </el-table-column>
-                <el-table-column prop="channel" label="渠道" sortable width="200">
-                </el-table-column>
-                <el-table-column prop="name" label="名字" sortable width="200">
-                </el-table-column>
-                <el-table-column property="status" label="状态" width="160" align="center">
-                </el-table-column>
-                <el-table-column label="操作" align="center">
-                    <template slot-scope="scope">
-                        <el-button type="text" icon="el-icon-edit" @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
-                    </template>
-                </el-table-column>
-            </el-table>
-            <div class="pagination">
-                <el-pagination background @current-change="handleCurrentChange" layout="prev, pager, next" :total="10">
-                </el-pagination>
-            </div>
-        </div>
-
-        <!-- 编辑弹出框 -->
-        <el-dialog title="编辑" :visible.sync="editVisible" width="50%">
-            <el-form ref="form" :model="form" label-width="100px">
-                <el-form-item label="渠道">
-                    <el-input v-model="form.channel">wx</el-input>
-                </el-form-item>
-                <el-form-item label="名字">
-                    <el-select v-model="form.name" placeholder="请选择" >
-                        <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
-                            <span style="float: left">{{ item.label }}</span>
-                            <span style="float: right; color: #8492a6; font-size: 13px">{{ item.value }}</span>
-                        </el-option>
-                    </el-select>
-                </el-form-item>
-                <el-form-item label="状态">
-                    <el-select v-model="form.status" placeholder="请选择" >
-                        <el-option v-for="item in funcstatus" :key="item.value" :label="item.label" :value="item.value">
-                            <span style="float: left">{{ item.label }}</span>
-                            <span style="float: right; color: #8492a6; font-size: 12px">{{ item.value }}</span>
-                        </el-option>
-                    </el-select>
-                </el-form-item>
-            </el-form>
-            <span slot="footer" class="dialog-footer">
-                <el-button @click="editVisible = false">取 消</el-button>
-                <el-button type="primary" @click="saveEdit">确 定</el-button>
-            </span>
-        </el-dialog>
+  <div class="table">
+    <div class="app-container">
+      <div class="handle-box">
+        <el-row :gutter="10">
+          <el-col :span="4">
+            <xdh-select v-model="selected_game" />
+          </el-col>
+          <el-col :span="2">
+            <el-button type="primary" icon="el-icon-search" @click="handleSearch">搜索</el-button>
+          </el-col>
+          <el-col :span="2" :offset="4">
+            <el-button type="primary" @click="handleAdd">新增<i class="el-icon-upload el-icon--right" /></el-button>
+          </el-col>
+        </el-row>
+      </div>
+      <el-divider />
+      <el-divider />
+      <el-table :data="data" border class="table" :sort-by="[{prop: 'channel', order: 'ascending'}, {prop: 'funcname', order: 'ascending'}]">
+        <el-table-column prop="game" label="游戏" width="100" />
+        <el-table-column prop="channel" label="渠道" sortable width="200" />
+        <el-table-column prop="name" label="名字" sortable width="200" />
+        <el-table-column property="status" label="状态" width="160" align="center" />
+        <el-table-column label="操作" align="center">
+          <template slot-scope="scope">
+            <el-button type="text" icon="el-icon-edit" @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
+          </template>
+        </el-table-column>
+      </el-table>
+      <div class="pagination">
+        <el-pagination background layout="prev, pager, next" :total="10" @current-change="handleCurrentChange" />
+      </div>
     </div>
+
+    <!-- 编辑弹出框 -->
+    <el-dialog title="编辑" :visible.sync="editVisible" width="50%">
+      <el-form ref="form" :model="form" label-width="100px">
+        <el-form-item label="渠道">
+          <el-input v-model="form.channel">wx</el-input>
+        </el-form-item>
+        <el-form-item label="名字">
+          <el-select v-model="form.name" placeholder="请选择">
+            <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
+              <span style="float: left">{{ item.label }}</span>
+              <span style="float: right; color: #8492a6; font-size: 13px">{{ item.value }}</span>
+            </el-option>
+          </el-select>
+        </el-form-item>
+        <el-form-item label="状态">
+          <el-select v-model="form.status" placeholder="请选择">
+            <el-option v-for="item in funcstatus" :key="item.value" :label="item.label" :value="item.value">
+              <span style="float: left">{{ item.label }}</span>
+              <span style="float: right; color: #8492a6; font-size: 12px">{{ item.value }}</span>
+            </el-option>
+          </el-select>
+        </el-form-item>
+      </el-form>
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="editVisible = false">取 消</el-button>
+        <el-button type="primary" @click="saveEdit">确 定</el-button>
+      </span>
+    </el-dialog>
+  </div>
 </template>
 
 <script>
@@ -100,6 +95,14 @@ export default {
                 {
                     value: 'rewardWithVideo',
                     label: '0直接领取1-10视频领取概率'
+                },
+                {
+                    value: 'intenum',
+                    label: 'intenum'
+                },
+                {
+                    value: 'intetick',
+                    label: 'intetick'
                 }
             ],
             funcstatus:[
@@ -210,7 +213,9 @@ export default {
                         || res.data[i].name == 'bannerRate' 
                         || res.data[i].name == 'VideoRate' 
                         || res.data[i].name == 'eggBannerVideo' 
-                        || res.data[i].name == 'rewardWithVideo'
+                        || res.data[i].name == 'rewardWithVideo' 
+                        || res.data[i].name == 'intenum' 
+                        || res.data[i].name == 'intetick'
                         ) {
                             let item = res.data[i]
                             item['status'] = item.status + ''
