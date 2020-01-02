@@ -183,6 +183,10 @@ export default {
                 {
                     value: 'shownative',
                     label: '0:关闭 1:开启'
+                },
+                {
+                    value: 'ipban',
+                    label: '0:关闭 1:开启'
                 }
             ],
             funcstatus:[
