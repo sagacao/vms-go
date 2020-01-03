@@ -63,6 +63,10 @@ export default {
                 {
                     value: '600001',
                     label: '发射球球'
+                },
+                {
+                    value: '21301',
+                    label: '疯狂球球HD'
                 }
             ],
             svalue: ''
