@@ -187,6 +187,18 @@ export default {
                 {
                     value: 'ipban',
                     label: '0:关闭 1:开启'
+                },
+                {
+                    value: 'showMainTJ',
+                    label: '0:关闭 1:开启'
+                },
+                {
+                    value: 'showFriendTJ',
+                    label: '0:关闭 1:开启'
+                },
+                {
+                    value: 'showResultTJ',
+                    label: '0:关闭 1:开启'
                 }
             ],
             funcstatus:[
